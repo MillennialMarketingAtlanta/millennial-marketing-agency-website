@@ -98,3 +98,23 @@ document.querySelectorAll('.industry-filter-group').forEach(group => {
         icon.innerHTML = nextState ? '&#65124;' : '&#65125;';
     });
 });
+
+// Creative disciplines accordion
+document.querySelectorAll('.discipline-card').forEach(card => {
+    const toggle = card.querySelector('.discipline-toggle');
+    const list = card.querySelector('.discipline-list');
+    const icon = card.querySelector('.discipline-icon');
+
+    if (!toggle || !list || !icon) {
+        return;
+    }
+
+    toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        const nextState = !expanded;
+
+        toggle.setAttribute('aria-expanded', String(nextState));
+        list.hidden = !nextState;
+        icon.innerHTML = nextState ? '&#65124;' : '&#65125;';
+    });
+});

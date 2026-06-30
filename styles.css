@@ -26,6 +26,10 @@
     box-sizing: border-box;
 }
 
+img {
+    border-radius: 0;
+}
+
 :root {
     --cream: #EFE7E1;
     --cream-dark: #F2ECE9;
@@ -404,7 +408,7 @@ body {
 
 .industry-showcase {
     background-color: var(--cream);
-    padding: 9rem 7.5rem 5rem;
+    padding: 9rem 7.5rem 9rem;
 }
 
 .industry-showcase > * {
@@ -549,7 +553,6 @@ body {
     display: block;
     margin-bottom: 0.4rem;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
     transition: box-shadow 0.3s ease;
 }
 
@@ -665,6 +668,108 @@ body {
     top: 47%;
     transform: translateY(-50%);
     font-size: 0.9em;
+}
+
+/* =========================================
+   CREATIVE DISCIPLINES
+   ========================================= */
+
+.disciplines {
+    background-color: var(--cream);
+}
+
+.disciplines-inner {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 8.2rem 7.5rem 5.8rem;
+}
+
+.disciplines-heading {
+    text-align: center;
+    margin-bottom: 3.8rem;
+}
+
+.disciplines-heading p {
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+    font-size: clamp(1.21rem, 2.42vw, 1.705rem);
+    line-height: 1.55;
+    color: var(--charcoal);
+}
+
+.disciplines-heading em {
+    font-style: italic;
+}
+
+.disciplines-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.6rem;
+    align-items: start;
+}
+
+.discipline-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin-bottom: 0.85rem;
+}
+
+.discipline-image-storytelling {
+    object-position: center 30%;
+}
+
+.discipline-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 0.55rem;
+    cursor: pointer;
+    text-align: left;
+    color: var(--charcoal);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.discipline-icon {
+    font-size: 0.72rem;
+    line-height: 1;
+}
+
+.discipline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.discipline-list li {
+    position: relative;
+    padding-left: 0.75rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.92rem;
+    color: var(--charcoal);
+    line-height: 1.22;
+    margin-bottom: 0.25rem;
+}
+
+.discipline-list li::before {
+    content: '\203A';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--charcoal);
+}
+
+.disciplines-cta-wrap {
+    margin-top: 2.1rem;
+    text-align: center;
 }
 
 /* =========================================
@@ -932,6 +1037,14 @@ body {
         margin-top: 2rem;
     }
 
+    .disciplines-inner {
+        padding: 5.5rem 2.2rem 4.2rem;
+    }
+
+    .disciplines-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .about-image img {
         min-height: 320px;
     }
@@ -994,6 +1107,19 @@ body {
 
     .clients-cta {
         margin-left: 0;
+    }
+
+    .disciplines-inner {
+        padding: 4.2rem 1.5rem 3.5rem;
+    }
+
+    .disciplines-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .disciplines-heading {
+        margin-bottom: 2.4rem;
     }
 
     .intro-content p {
