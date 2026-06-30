@@ -399,6 +399,135 @@ body {
 }
 
 /* =========================================
+   INDUSTRY SHOWCASE
+   ========================================= */
+
+.industry-showcase {
+    background-color: var(--cream);
+    padding: 5rem 6rem 5.5rem;
+}
+
+.industry-heading {
+    text-align: center;
+    margin-bottom: 2.8rem;
+}
+
+.industry-heading p {
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    line-height: 1.2;
+    color: var(--charcoal);
+}
+
+.industry-heading em {
+    font-style: italic;
+}
+
+.industry-layout {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 4.6rem;
+    align-items: start;
+}
+
+.industry-filters {
+    padding-top: 0.2rem;
+}
+
+.industry-filter-group {
+    border-bottom: 1px solid rgba(105, 96, 86, 0.45);
+    margin-bottom: 1rem;
+    padding-bottom: 0.55rem;
+    position: relative;
+}
+
+.industry-filter-group::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border: 1px solid rgba(105, 96, 86, 0.65);
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    background: var(--cream);
+}
+
+.industry-filter-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--charcoal);
+    margin-bottom: 0.55rem;
+}
+
+.industry-filter-title span {
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.industry-filter-list {
+    list-style: none;
+    margin: 0.7rem 0 0.1rem;
+    padding: 0;
+}
+
+.industry-filter-list li {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.7rem;
+    color: var(--charcoal);
+    line-height: 1.25;
+    margin-bottom: 0.25rem;
+    position: relative;
+    padding-left: 1.1rem;
+}
+
+.industry-filter-list li::before {
+    content: '\203A';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--charcoal-light);
+}
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.6rem 1.3rem;
+}
+
+.industry-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0.55rem;
+}
+
+.industry-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 0.05rem;
+}
+
+.industry-card p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--charcoal);
+    text-decoration: underline;
+    text-underline-offset: 0.1em;
+}
+
+/* =========================================
    WHO WE ARE
    ========================================= */
 
@@ -627,6 +756,19 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .industry-showcase {
+        padding: 3.2rem 1.5rem;
+    }
+
+    .industry-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .industry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .about-image img {
         min-height: 320px;
     }
@@ -662,6 +804,10 @@ body {
 
     .intro-content p {
         font-size: 1.1rem;
+    }
+
+    .industry-grid {
+        grid-template-columns: 1fr;
     }
 
     .footer-nav {
