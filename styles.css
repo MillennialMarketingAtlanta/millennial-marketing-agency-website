@@ -440,8 +440,8 @@ body {
 
 .about-content p {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
-    font-size: 1.1rem;
-    line-height: 1.85;
+    font-size: clamp(1.21rem, 2.42vw, 1.705rem);
+    line-height: 1.55;
     color: var(--charcoal);
     font-weight: 400;
     margin-bottom: 2rem;
