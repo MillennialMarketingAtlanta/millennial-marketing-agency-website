@@ -1,7 +1,528 @@
+/* =========================================
+   MILLENNIAL MARKETING AGENCY — STYLES
+   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --cream: #f0ebe3;
+    --cream-dark: #e8e0d6;
+    --charcoal: #2a2826;
+    --charcoal-light: #4a4744;
+    --white: #ffffff;
+    --warm-gray: #9e9890;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--charcoal);
+    background-color: var(--white);
+    font-weight: 300;
+}
+
+/* =========================================
+   HERO + NAV
+   ========================================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 27, 24, 0.45);
+    z-index: 1;
+}
+
+/* Navigation */
+.navbar {
+    position: relative;
+    z-index: 10;
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.logo {
+    text-align: center;
+    color: var(--white);
+    line-height: 1;
+}
+
+.logo-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+}
+
+.logo-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+}
+
+.logo-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    font-weight: 400;
+    margin-top: 0.3rem;
+    opacity: 0.85;
+}
+
+.hamburger {
+    position: absolute;
+    right: 0;
+    top: 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background-color: var(--white);
+}
+
+/* Hero Quote */
+.hero-content {
+    position: relative;
+    z-index: 5;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.hero-content blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.7;
+    max-width: 580px;
+    border: none;
+}
+
+.hero-content blockquote em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Hero Footer Bar */
+.hero-footer {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+}
+
+.hero-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--white);
+    font-weight: 400;
+}
+
+.hero-arrow {
+    color: var(--white);
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* =========================================
+   INTRO SECTION
+   ========================================= */
+
+.intro {
+    background-color: var(--cream);
+    padding: 80px 2rem;
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.intro-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: var(--charcoal);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+}
+
+.intro-content p em {
+    font-style: italic;
+}
+
+.text-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--charcoal);
+    text-decoration: none;
+    border-bottom: 1px solid var(--charcoal);
+    padding-bottom: 2px;
+    font-weight: 500;
+}
+
+.text-link span {
+    margin-left: 4px;
+}
+
+/* =========================================
+   WORK / PORTFOLIO GRID
+   ========================================= */
+
+.work {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    height: 420px;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.work-item:hover img {
+    transform: scale(1.05);
+}
+
+.work-item--featured {
+    grid-column: span 1;
+}
+
+.work-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(20, 18, 15, 0.75));
+    padding: 2rem 1.25rem 1.25rem;
+    color: var(--white);
+}
+
+.work-item-overlay h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+}
+
+.work-item-overlay p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+    font-weight: 400;
+}
+
+/* =========================================
+   WHO WE ARE
+   ========================================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--cream);
+}
+
+.about-image {
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 500px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem;
+}
+
+.section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    font-weight: 500;
+    color: var(--charcoal);
+    display: block;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--charcoal);
+}
+
+.about-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: var(--charcoal);
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.about-content p em {
+    font-style: italic;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer {
+    background-color: var(--cream);
+    border-top: 1px solid var(--cream-dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem 4rem;
+    align-items: start;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.footer-nav a:hover {
+    opacity: 0.6;
+}
+
+.footer-logo {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+}
+
+.footer-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--charcoal-light);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+
+.footer-social a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--charcoal);
+    text-decoration: underline;
+    font-weight: 300;
+    transition: opacity 0.2s ease;
+}
+
+.footer-social a:hover {
+    opacity: 0.6;
+}
+
+.footer-copy {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    color: var(--warm-gray);
+    margin-top: 1.5rem;
+    font-weight: 300;
+}
+
+/* Contact Form in Footer */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 2rem;
+}
+
+.contact-form input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--charcoal-light);
+    padding: 0.85rem 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.contact-form input::placeholder {
+    color: var(--warm-gray);
+    font-size: 0.75rem;
+}
+
+.contact-form input:focus {
+    border-bottom-color: var(--charcoal);
+}
+
+.contact-form button {
+    align-self: flex-end;
+    margin-top: 1.25rem;
+    background: transparent;
+    border: 1px solid var(--charcoal);
+    padding: 0.6rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    color: var(--charcoal);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--charcoal);
+    color: var(--white);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+    .work-grid {
+        grid-template-columns: repeat(3, 1fr);
+        height: 320px;
+    }
+
+    .work-item:nth-child(4),
+    .work-item:nth-child(5) {
+        display: none;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        min-height: 320px;
+    }
+
+    .about-content {
+        padding: 3rem 2rem;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-content blockquote {
+        font-size: 1rem;
+    }
+
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+        height: 280px;
+    }
+
+    .work-item:nth-child(5) {
+        display: none;
+    }
+
+    .intro-content p {
+        font-size: 1rem;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 }
 
 :root {
