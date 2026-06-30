@@ -93,6 +93,9 @@ body {
 .footer-logo-img {
     height: 32px;
     filter: none;
+    margin: 0;
+    margin-left: 0;
+    display: block;
 }
 
 .logo-sub {
@@ -430,7 +433,7 @@ body {
 }
 
 .footer-info p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.7rem;
     color: var(--charcoal-light);
     line-height: 1.8;
@@ -444,7 +447,7 @@ body {
 }
 
 .footer-social a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.7rem;
     color: var(--charcoal);
     text-decoration: underline;
@@ -457,7 +460,7 @@ body {
 }
 
 .footer-copy {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.65rem;
     color: var(--warm-gray);
     margin-top: 1.5rem;
