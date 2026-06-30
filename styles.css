@@ -428,10 +428,11 @@ body {
 
 .section-label {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
     font-weight: 500;
     color: var(--charcoal);
+    text-transform: uppercase;
     display: block;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
