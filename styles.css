@@ -563,6 +563,103 @@ body {
 }
 
 /* =========================================
+   CLIENTS SHOWCASE
+   ========================================= */
+
+.clients-showcase {
+    position: relative;
+    background-image: linear-gradient(rgba(10, 15, 20, 0.48), rgba(10, 15, 20, 0.48)), url('design-assets/Links/0211_Hero_4thDraft_6k.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    min-height: 760px;
+}
+
+.clients-showcase-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 7.2rem 7.5rem 6.2rem;
+}
+
+.clients-showcase h2 {
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.9rem);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.clients-showcase h2 em {
+    font-style: italic;
+}
+
+.clients-header-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: end;
+    gap: 1rem;
+    margin-bottom: 4.6rem;
+}
+
+.clients-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.clients-rule {
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.76);
+    transform: translateY(-0.2rem);
+}
+
+.clients-columns {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.clients-columns ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clients-columns li {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.28rem, 1.42vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.26;
+    margin-bottom: 0.26rem;
+    color: rgba(255, 255, 255, 0.96);
+}
+
+.clients-cta {
+    display: inline-block;
+    margin-left: auto;
+    margin-top: 2.8rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.55rem, 1.65vw, 2.25rem);
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+    padding: 0 2rem 0.2rem 0;
+    position: relative;
+    width: fit-content;
+}
+
+.clients-cta::after {
+    content: '\2192';
+    position: absolute;
+    right: 0;
+    top: 47%;
+    transform: translateY(-50%);
+    font-size: 0.9em;
+}
+
+/* =========================================
    WHO WE ARE
    ========================================= */
 
@@ -804,6 +901,27 @@ body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .clients-showcase {
+        min-height: auto;
+    }
+
+    .clients-showcase-inner {
+        padding: 5rem 2.2rem 4.2rem;
+    }
+
+    .clients-header-row {
+        margin-bottom: 2.6rem;
+    }
+
+    .clients-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.4rem;
+    }
+
+    .clients-cta {
+        margin-top: 2rem;
+    }
+
     .about-image img {
         min-height: 320px;
     }
@@ -835,6 +953,37 @@ body {
     .work-item:nth-child(4),
     .work-item:nth-child(5) {
         display: none;
+    }
+
+    .clients-showcase-inner {
+        padding: 4.2rem 1.5rem 3.5rem;
+    }
+
+    .clients-showcase h2 {
+        margin-bottom: 2.5rem;
+        text-align: left;
+    }
+
+    .clients-header-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .clients-label {
+        font-size: 1.5rem;
+    }
+
+    .clients-rule {
+        transform: none;
+    }
+
+    .clients-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .clients-cta {
+        margin-left: 0;
     }
 
     .intro-content p {
