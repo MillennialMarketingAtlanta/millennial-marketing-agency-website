@@ -568,9 +568,10 @@ body {
 
 .clients-showcase {
     position: relative;
-    background-image: linear-gradient(rgba(10, 15, 20, 0.48), rgba(10, 15, 20, 0.48)), url('design-assets/Links/cooper-ware-1131.jpg');
+    background-image: linear-gradient(rgba(10, 15, 20, 0.34), rgba(10, 15, 20, 0.34)), url('design-assets/Links/cooper-ware-1131.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     color: var(--white);
     min-height: 760px;
 }
@@ -910,6 +911,7 @@ body {
 
     .clients-showcase {
         min-height: auto;
+        background-attachment: scroll;
     }
 
     .clients-showcase-inner {
