@@ -61,19 +61,33 @@ body {
 
 /* Navigation */
 .navbar {
-    position: relative;
-    z-index: 10;
-    padding: 2rem 2.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    padding: 1rem 2.5rem;
     display: flex;
     justify-content: center;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar.scrolled {
+    position: fixed;
+    z-index: 1300;
+    background-color: var(--cream);
+    border-bottom-color: rgba(105, 96, 86, 0.22);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.06);
 }
 
 .nav-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
 }
 
@@ -83,9 +97,13 @@ body {
     line-height: 1;
 }
 
+.navbar.scrolled .logo {
+    color: var(--charcoal);
+}
+
 .logo-img {
-    height: 38px;
-    width: auto;
+    width: 250px;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
@@ -108,9 +126,10 @@ body {
 }
 
 .hamburger {
-    position: fixed;
-    right: 2rem;
-    top: 2rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
@@ -126,6 +145,10 @@ body {
     width: 22px;
     height: 1px;
     background-color: var(--white);
+}
+
+.navbar.scrolled .hamburger span {
+    background-color: var(--charcoal);
 }
 
 /* Hero Quote */
@@ -217,17 +240,24 @@ body {
 
 .text-link {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
     color: var(--charcoal);
     text-decoration: none;
-    border-bottom: 1px solid var(--charcoal);
-    padding-bottom: 2px;
-    font-weight: 500;
+    border-bottom: 1px solid currentColor;
+    padding: 0 1.55rem 0.35rem 0;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
 }
 
-.text-link span {
-    margin-left: 4px;
+.text-link::after {
+    content: '\2192';
+    position: absolute;
+    right: 0;
+    top: 46%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
 }
 
 /* =========================================
@@ -305,15 +335,26 @@ body {
 
 .work-link {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
     color: var(--white);
     text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.5);
-    padding-bottom: 2px;
+    border-bottom: 1px solid currentColor;
+    padding: 0 1.45rem 0.28rem 0;
     width: fit-content;
     margin-top: 0.5rem;
-    font-weight: 400;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+.work-link::after {
+    content: '\2192';
+    position: absolute;
+    right: 0;
+    top: 46%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
 }
 
 /* Hover: expand column + show overlay */
@@ -390,6 +431,17 @@ body {
 
 .about-content p em {
     font-style: italic;
+}
+
+.about-content .text-link {
+    align-self: flex-end;
+    width: 165px;
+    text-align: right;
+    border-bottom-color: rgba(0, 0, 0, 0.55);
+    padding-right: 1.55rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 /* =========================================
@@ -502,20 +554,31 @@ body {
     align-self: flex-end;
     margin-top: 1.25rem;
     background: transparent;
-    border: 1px solid var(--charcoal);
-    padding: 0.6rem 2rem;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding: 0 1.55rem 0.35rem 0;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    font-weight: 600;
     color: var(--charcoal);
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: opacity 0.25s ease;
+    position: relative;
+    line-height: 1;
+}
+
+.contact-form button::after {
+    content: '\2192';
+    position: absolute;
+    right: 0;
+    top: 48%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
 }
 
 .contact-form button:hover {
-    background-color: var(--charcoal);
-    color: var(--white);
+    opacity: 0.65;
 }
 
 /* =========================================
@@ -553,11 +616,6 @@ body {
 }
 
 @media (max-width: 600px) {
-    .hamburger {
-        right: 1rem;
-        top: 1rem;
-    }
-
     .hero-content {
         padding: 2rem 1.5rem;
     }

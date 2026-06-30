@@ -9,6 +9,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Navbar: transparent on hero, fixed light bar after scrolling.
+const navbar = document.querySelector('.navbar');
+const navLogo = document.querySelector('.nav-logo');
+
+function updateNavbarState() {
+    if (!navbar || !navLogo) {
+        return;
+    }
+
+    const hasScrolled = window.scrollY > 12;
+    navbar.classList.toggle('scrolled', hasScrolled);
+
+    const lightLogo = navLogo.getAttribute('data-logo-light');
+    const darkLogo = navLogo.getAttribute('data-logo-dark');
+    navLogo.src = hasScrolled ? darkLogo : lightLogo;
+}
+
+window.addEventListener('scroll', updateNavbarState);
+updateNavbarState();
+
 // Contact form submission
 document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
