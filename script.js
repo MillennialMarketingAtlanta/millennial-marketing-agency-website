@@ -78,3 +78,23 @@ document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// Industry filter accordion
+document.querySelectorAll('.industry-filter-group').forEach(group => {
+    const toggle = group.querySelector('.industry-toggle');
+    const list = group.querySelector('.industry-filter-list');
+    const icon = group.querySelector('.industry-toggle-icon');
+
+    if (!toggle || !list || !icon) {
+        return;
+    }
+
+    toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        const nextState = !expanded;
+
+        toggle.setAttribute('aria-expanded', String(nextState));
+        list.hidden = !nextState;
+        icon.innerHTML = nextState ? '&#65124;' : '&#65125;';
+    });
+});
