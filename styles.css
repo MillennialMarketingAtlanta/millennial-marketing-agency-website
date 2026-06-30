@@ -340,6 +340,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: var(--cream);
+    padding: 90px 70px 80px;
+    column-gap: 56px;
+    align-items: start;
 }
 
 .about-image {
@@ -348,10 +351,10 @@ body {
 
 .about-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
-    min-height: 500px;
+    aspect-ratio: 4 / 5;
 }
 
 .about-content {
