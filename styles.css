@@ -390,6 +390,10 @@ body {
     opacity: 1;
 }
 
+.work-grid:hover .work-item--active:not(:hover) .work-item-overlay {
+    opacity: 0;
+}
+
 .work-item:hover img {
     transform: scale(1.04);
 }
@@ -457,14 +461,14 @@ body {
     width: fit-content;
     text-align: left;
     border-bottom-color: rgba(0, 0, 0, 0.55);
-    padding-right: 0;
+    padding-right: 1.55rem;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.02em;
 }
 
 .about-content .text-link::after {
-    right: -1.2rem;
+    right: 0;
 }
 
 /* =========================================
