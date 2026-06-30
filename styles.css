@@ -2,6 +2,24 @@
    MILLENNIAL MARKETING AGENCY — STYLES
    ========================================= */
 
+@font-face {
+    font-family: 'FreightDisp Pro';
+    src: url('assets/fonts/FreightDispPro-Regular.woff') format('woff'),
+         url('assets/fonts/FreightDispPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreightDisp Pro';
+    src: url('assets/fonts/FreightDispPro-LightItalic.woff') format('woff'),
+         url('assets/fonts/FreightDispPro-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -164,7 +182,7 @@ body {
 }
 
 .hero-content blockquote {
-    font-family: 'Playfair Display', serif;
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
     font-size: clamp(1.1rem, 2.2vw, 1.55rem);
     font-weight: 400;
     color: var(--white);
@@ -226,7 +244,7 @@ body {
 }
 
 .intro-content p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
     font-size: 1.15rem;
     line-height: 1.85;
     color: var(--charcoal);
@@ -307,7 +325,7 @@ body {
 }
 
 .work-item-overlay h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 400;
     font-style: italic;
@@ -421,7 +439,7 @@ body {
 }
 
 .about-content p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
     font-size: 1.1rem;
     line-height: 1.85;
     color: var(--charcoal);
