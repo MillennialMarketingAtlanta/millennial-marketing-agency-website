@@ -84,7 +84,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1100;
-    padding: 1rem 2.5rem;
+    padding: 1.35rem 2.5rem 0.85rem;
     display: flex;
     justify-content: center;
     background-color: transparent;
@@ -183,10 +183,10 @@ body {
 
 .hero-content blockquote {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
-    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    font-size: clamp(1.21rem, 2.42vw, 1.705rem);
     font-weight: 400;
     color: var(--white);
-    line-height: 1.7;
+    line-height: 1.55;
     max-width: 580px;
     border: none;
 }
@@ -245,8 +245,8 @@ body {
 
 .intro-content p {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
-    font-size: 1.15rem;
-    line-height: 1.85;
+    font-size: clamp(1.21rem, 2.42vw, 1.705rem);
+    line-height: 1.55;
     color: var(--charcoal);
     font-weight: 400;
     margin-bottom: 2.5rem;
@@ -639,7 +639,7 @@ body {
     }
 
     .hero-content blockquote {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .work-grid {
@@ -652,7 +652,7 @@ body {
     }
 
     .intro-content p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .footer-nav {
