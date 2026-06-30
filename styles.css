@@ -258,12 +258,12 @@ body {
 
 .text-link {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
     color: var(--charcoal);
     text-decoration: none;
     border-bottom: 1px solid currentColor;
-    padding: 0 1.55rem 0.35rem 0;
+    padding: 0 1.55rem 0.2rem 0;
     font-weight: 600;
     position: relative;
     display: inline-block;
@@ -273,7 +273,7 @@ body {
     content: '\2192';
     position: absolute;
     right: 0;
-    top: 46%;
+    top: 48%;
     transform: translateY(-50%);
     font-size: 0.9rem;
 }
@@ -568,7 +568,7 @@ body {
 
 .clients-showcase {
     position: relative;
-    background-image: linear-gradient(rgba(10, 15, 20, 0.48), rgba(10, 15, 20, 0.48)), url('design-assets/Links/0211_Hero_4thDraft_6k.jpg');
+    background-image: linear-gradient(rgba(10, 15, 20, 0.48), rgba(10, 15, 20, 0.48)), url('design-assets/Links/cooper-ware-1131.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -579,6 +579,9 @@ body {
     max-width: 1320px;
     margin: 0 auto;
     padding: 7.2rem 7.5rem 6.2rem;
+    min-height: 760px;
+    display: flex;
+    flex-direction: column;
 }
 
 .clients-showcase h2 {
@@ -603,8 +606,10 @@ body {
 
 .clients-label {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     line-height: 1;
 }
 
@@ -628,24 +633,26 @@ body {
 
 .clients-columns li {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(1.28rem, 1.42vw, 1.9rem);
+    font-size: 0.8rem;
     font-weight: 400;
-    line-height: 1.26;
+    line-height: 1.22;
     margin-bottom: 0.26rem;
     color: rgba(255, 255, 255, 0.96);
 }
 
 .clients-cta {
-    display: inline-block;
+    display: block;
+    align-self: flex-end;
     margin-left: auto;
-    margin-top: 2.8rem;
+    margin-top: auto;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(1.55rem, 1.65vw, 2.25rem);
+    font-size: 0.9rem;
     font-weight: 600;
+    letter-spacing: 0.02em;
     color: var(--white);
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.72);
-    padding: 0 2rem 0.2rem 0;
+    padding: 0 1.55rem 0.2rem 0;
     position: relative;
     width: fit-content;
 }
@@ -907,6 +914,7 @@ body {
 
     .clients-showcase-inner {
         padding: 5rem 2.2rem 4.2rem;
+        min-height: auto;
     }
 
     .clients-header-row {
