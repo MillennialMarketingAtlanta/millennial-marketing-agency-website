@@ -454,13 +454,17 @@ body {
 
 .about-content .text-link {
     align-self: flex-end;
-    width: 124px;
-    text-align: right;
+    width: fit-content;
+    text-align: left;
     border-bottom-color: rgba(0, 0, 0, 0.55);
-    padding-right: 1.55rem;
+    padding-right: 0;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.02em;
+}
+
+.about-content .text-link::after {
+    right: -1.2rem;
 }
 
 /* =========================================
