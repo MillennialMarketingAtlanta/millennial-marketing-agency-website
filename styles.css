@@ -105,9 +105,9 @@ body {
 }
 
 .hamburger {
-    position: absolute;
-    right: 0;
-    top: 0.25rem;
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -115,6 +115,7 @@ body {
     flex-direction: column;
     gap: 5px;
     padding: 4px;
+    z-index: 2000;
 }
 
 .hamburger span {
@@ -546,6 +547,11 @@ body {
 }
 
 @media (max-width: 600px) {
+    .hamburger {
+        right: 1rem;
+        top: 1rem;
+    }
+
     .hero-content {
         padding: 2rem 1.5rem;
     }
