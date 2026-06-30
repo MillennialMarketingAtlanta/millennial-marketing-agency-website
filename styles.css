@@ -9,12 +9,12 @@
 }
 
 :root {
-    --cream: #f0ebe3;
-    --cream-dark: #e8e0d6;
-    --charcoal: #2a2826;
-    --charcoal-light: #4a4744;
+    --cream: #EFE7E1;
+    --cream-dark: #F2ECE9;
+    --charcoal: #000000;
+    --charcoal-light: #696056;
     --white: #ffffff;
-    --warm-gray: #9e9890;
+    --warm-gray: #91887D;
 }
 
 html {
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     color: var(--charcoal);
     background-color: var(--white);
     font-weight: 300;
@@ -83,23 +83,20 @@ body {
     line-height: 1;
 }
 
-.logo-serif {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    letter-spacing: 0.05em;
+.logo-img {
+    height: 38px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-.logo-italic {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 1.6rem;
-    letter-spacing: 0.05em;
+.footer-logo-img {
+    height: 32px;
+    filter: none;
 }
 
 .logo-sub {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.55rem;
     letter-spacing: 0.25em;
     font-weight: 400;
@@ -140,9 +137,9 @@ body {
 }
 
 .hero-content blockquote {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(1.1rem, 2.2vw, 1.55rem);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--white);
     line-height: 1.7;
     max-width: 580px;
@@ -165,7 +162,7 @@ body {
 }
 
 .hero-tag {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     color: var(--white);
@@ -194,7 +191,7 @@ body {
 }
 
 .intro-content p {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.15rem;
     line-height: 1.85;
     color: var(--charcoal);
@@ -207,7 +204,7 @@ body {
 }
 
 .text-link {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     color: var(--charcoal);
@@ -313,7 +310,7 @@ body {
 }
 
 .section-label {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.65rem;
     letter-spacing: 0.22em;
     font-weight: 500;
@@ -325,7 +322,7 @@ body {
 }
 
 .about-content p {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     line-height: 1.85;
     color: var(--charcoal);
@@ -358,7 +355,7 @@ body {
 }
 
 .footer-nav a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     color: var(--charcoal);
@@ -425,7 +422,7 @@ body {
     border: none;
     border-bottom: 1px solid var(--charcoal-light);
     padding: 0.85rem 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.75rem;
     font-weight: 300;
     color: var(--charcoal);
@@ -449,7 +446,7 @@ body {
     background: transparent;
     border: 1px solid var(--charcoal);
     padding: 0.6rem 2rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     font-weight: 500;
