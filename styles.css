@@ -1195,6 +1195,11 @@ body {
         gap: 1.8rem;
         padding: 2.6rem;
         margin: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.14);
+    }
+
+    .footer::before {
+        display: none;
     }
 
     .footer-left {
@@ -1266,6 +1271,40 @@ body {
 
     .footer {
         padding: 2.2rem 1.7rem 2.8rem;
+    }
+
+    .footer-nav {
+        column-gap: 1rem;
+        row-gap: 0.35rem;
+        margin-bottom: 2.8rem;
+    }
+
+    .footer-nav a {
+        font-size: 0.78rem;
+    }
+
+    .footer-summary {
+        font-size: 1.02rem;
+        line-height: 1.38;
+        margin-bottom: 2.2rem;
+    }
+
+    .footer-meta {
+        gap: 0.9rem;
+    }
+
+    .footer-meta-label {
+        font-size: 0.78rem;
+    }
+
+    .footer-meta-value,
+    .footer-social a {
+        font-size: 0.88rem;
+    }
+
+    .footer-copy {
+        font-size: 0.76rem;
+        margin-top: 1.2rem;
     }
 
     .about {
