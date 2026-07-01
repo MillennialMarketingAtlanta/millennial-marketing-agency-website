@@ -216,11 +216,10 @@ body {
     position: relative;
     z-index: 5;
     display: grid;
-    grid-template-columns: 220px minmax(280px, 520px) auto;
+    grid-template-columns: 220px minmax(240px, 420px) 1fr;
     align-items: end;
-    gap: 2rem;
+    gap: 1.2rem;
     padding: 0 6rem 2rem;
-    justify-content: space-between;
 }
 
 .hero-footer::before {
@@ -248,7 +247,7 @@ body {
 }
 
 .hero-footer-copy {
-    max-width: 520px;
+    max-width: 420px;
     width: 100%;
     margin: 0;
     font-family: 'Barlow Condensed', sans-serif;
@@ -257,6 +256,7 @@ body {
     line-height: 1.28;
     color: rgba(255, 255, 255, 0.92);
     font-weight: 400;
+    justify-self: start;
 }
 
 .hero-cta {
@@ -737,7 +737,7 @@ body {
 .disciplines-inner {
     max-width: 1220px;
     margin: 0 auto;
-    padding: 8.2rem 7.5rem 3.4rem;
+    padding: 8.2rem 7.5rem 1.8rem;
 }
 
 .disciplines-heading {
@@ -823,11 +823,6 @@ body {
     color: var(--charcoal);
 }
 
-.disciplines-cta-wrap {
-    margin-top: 2.1rem;
-    text-align: center;
-}
-
 /* =========================================
    WHO WE ARE
    ========================================= */
@@ -907,27 +902,37 @@ body {
 
 .footer {
     background-color: var(--cream);
-    border-top: 1px solid var(--cream-dark);
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    border-radius: 24px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    padding: 4rem 4rem;
+    grid-template-columns: minmax(340px, 0.88fr) minmax(460px, 1.32fr);
+    gap: 1.6rem;
+    padding: 3.8rem 3.6rem;
+    margin: 1rem;
     align-items: start;
+}
+
+.footer-left {
+    border-right: 1px solid rgba(0, 0, 0, 0.28);
+    padding-right: 2.3rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-nav {
     display: flex;
     gap: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 4.2rem;
 }
 
 .footer-nav a {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
     color: var(--charcoal);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: opacity 0.2s ease;
 }
 
@@ -936,31 +941,70 @@ body {
 }
 
 .footer-logo {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.9rem;
     font-size: 1.4rem;
     color: var(--charcoal);
 }
 
-.footer-info p {
+.footer-descriptor {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    color: var(--charcoal-light);
-    line-height: 1.8;
-    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 2rem;
+}
+
+.footer-summary {
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+    font-size: clamp(1.12rem, 1.6vw, 1.8rem);
+    line-height: 1.33;
+    color: var(--charcoal);
+    max-width: 380px;
+    margin-bottom: 3.2rem;
+}
+
+.footer-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.footer-meta-row {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.footer-meta-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.footer-meta-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    line-height: 1.28;
+    color: #29241f;
+    font-weight: 400;
 }
 
 .footer-social {
     display: flex;
     gap: 1rem;
-    margin-top: 0.75rem;
+    margin-top: 0;
 }
 
 .footer-social a {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: var(--charcoal);
     text-decoration: underline;
-    font-weight: 300;
+    font-weight: 400;
     transition: opacity 0.2s ease;
 }
 
@@ -970,72 +1014,22 @@ body {
 
 .footer-copy {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem;
-    color: var(--warm-gray);
-    margin-top: 1.5rem;
-    font-weight: 300;
+    font-size: 0.86rem;
+    color: #3b342d;
+    margin-top: auto;
+    padding-top: 2.4rem;
+    font-weight: 400;
 }
 
-/* Contact Form in Footer */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-top: 2rem;
+.footer-right {
+    padding-left: 0.8rem;
 }
 
-.contact-form input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--charcoal-light);
-    padding: 0.85rem 0;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 300;
-    color: var(--charcoal);
-    letter-spacing: 0.05em;
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-
-.contact-form input::placeholder {
-    color: var(--warm-gray);
-    font-size: 0.75rem;
-}
-
-.contact-form input:focus {
-    border-bottom-color: var(--charcoal);
-}
-
-.contact-form button {
-    align-self: flex-end;
-    margin-top: 1.25rem;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid currentColor;
-    padding: 0 1.55rem 0.35rem 0;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
-    font-weight: 600;
-    color: var(--charcoal);
-    cursor: pointer;
-    transition: opacity 0.25s ease;
-    position: relative;
-    line-height: 1;
-}
-
-.contact-form button::after {
-    content: '\2192';
-    position: absolute;
-    right: 0;
-    top: 48%;
-    transform: translateY(-50%);
-    font-size: 0.9rem;
-}
-
-.contact-form button:hover {
-    opacity: 0.65;
+.footer-right img {
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    object-fit: cover;
+    display: block;
 }
 
 /* =========================================
@@ -1123,7 +1117,7 @@ body {
     }
 
     .disciplines-inner {
-        padding: 5.5rem 2.2rem 4.2rem;
+        padding: 5.5rem 2.2rem 2.6rem;
     }
 
     .disciplines-grid {
@@ -1140,8 +1134,20 @@ body {
 
     .footer {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 3rem 2rem;
+        gap: 1.8rem;
+        padding: 2rem;
+        margin: 0.8rem;
+    }
+
+    .footer-left {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        padding-right: 0;
+        padding-bottom: 1.7rem;
+    }
+
+    .footer-right {
+        padding-left: 0;
     }
 }
 
@@ -1220,7 +1226,7 @@ body {
     }
 
     .disciplines-inner {
-        padding: 4.2rem 1.5rem 3.5rem;
+        padding: 4.2rem 1.5rem 2.2rem;
     }
 
     .disciplines-grid {
@@ -1243,6 +1249,15 @@ body {
     .footer-nav {
         flex-wrap: wrap;
         gap: 1rem;
+    }
+
+    .footer-meta-row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .footer-social {
+        flex-wrap: wrap;
     }
 }
 
