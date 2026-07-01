@@ -104,6 +104,30 @@ const workGrid = document.querySelector('.work-grid');
 if (workGrid && window.matchMedia('(max-width: 600px)').matches) {
     const cards = Array.from(workGrid.querySelectorAll('.work-item'));
     const getCardByTitle = (title) => cards.find((card) => card.querySelector('h3')?.textContent.trim() === title);
+    const setCenteredWorkCard = () => {
+        const mobileCards = Array.from(workGrid.querySelectorAll('.work-item'));
+        if (!mobileCards.length) {
+            return;
+        }
+
+        const stripCenter = workGrid.scrollLeft + workGrid.clientWidth / 2;
+        let closestCard = mobileCards[0];
+        let smallestDistance = Number.POSITIVE_INFINITY;
+
+        mobileCards.forEach((card) => {
+            const cardCenter = card.offsetLeft + card.clientWidth / 2;
+            const distance = Math.abs(cardCenter - stripCenter);
+
+            if (distance < smallestDistance) {
+                smallestDistance = distance;
+                closestCard = card;
+            }
+        });
+
+        mobileCards.forEach((card) => {
+            card.classList.toggle('is-centered', card === closestCard);
+        });
+    };
 
     const officeBarCard = getCardByTitle('The Office Bar');
     const featuredCard = getCardByTitle('1105 West Peachtree') || workGrid.querySelector('.work-item--active');
@@ -124,7 +148,21 @@ if (workGrid && window.matchMedia('(max-width: 600px)').matches) {
 
         const centeredOffset = centeredCard.offsetLeft - (workGrid.clientWidth - centeredCard.clientWidth) / 2;
         workGrid.scrollLeft = Math.max(0, centeredOffset);
+        setCenteredWorkCard();
     });
+
+    let ticking = false;
+    workGrid.addEventListener('scroll', () => {
+        if (ticking) {
+            return;
+        }
+
+        ticking = true;
+        requestAnimationFrame(() => {
+            setCenteredWorkCard();
+            ticking = false;
+        });
+    }, { passive: true });
 }
 
 // Creative disciplines accordion

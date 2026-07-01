@@ -1246,6 +1246,18 @@ body {
         scroll-snap-stop: always;
     }
 
+    .work-item .work-item-overlay,
+    .work-item--active .work-item-overlay {
+        opacity: 0;
+        transform: translateY(26px) scale(0.97);
+        transition: opacity 0.28s ease, transform 0.34s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .work-item.is-centered .work-item-overlay {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
     .work-item:nth-child(4),
     .work-item:nth-child(5) {
         display: block;
