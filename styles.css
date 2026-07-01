@@ -598,6 +598,7 @@ body {
 }
 
 .industry-card {
+    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -622,6 +623,14 @@ body {
     line-height: 1.1;
     color: var(--charcoal);
     margin-bottom: 0;
+}
+
+.industry-card-overlay {
+    margin-top: 0.4rem;
+}
+
+.industry-card-cta {
+    display: none;
 }
 
 /* =========================================
@@ -1328,6 +1337,70 @@ body {
 
     .industry-grid {
         grid-template-columns: 1fr;
+        gap: 0.95rem;
+    }
+
+    .industry-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    }
+
+    .industry-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(11, 10, 9, 0.82) 0%, rgba(11, 10, 9, 0.56) 34%, rgba(11, 10, 9, 0.12) 66%, rgba(11, 10, 9, 0) 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .industry-card img {
+        aspect-ratio: 2.25 / 1;
+        margin-bottom: 0;
+        box-shadow: none;
+    }
+
+    .industry-card-overlay {
+        position: absolute;
+        left: 1.25rem;
+        right: 1rem;
+        bottom: 1rem;
+        margin-top: 0;
+        z-index: 2;
+    }
+
+    .industry-card h4 {
+        color: var(--white);
+        font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.58rem;
+        text-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+    }
+
+    .industry-card-cta {
+        display: inline-block;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: var(--white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+        padding: 0 1.45rem 0.2rem 0;
+        position: relative;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .industry-card-cta::after {
+        content: '\2192';
+        position: absolute;
+        right: 0;
+        top: 48%;
+        transform: translateY(-50%);
+        font-size: 0.95rem;
     }
 
     .footer-nav {
