@@ -758,7 +758,7 @@ body {
 .disciplines-inner {
     max-width: 1220px;
     margin: 0 auto;
-    padding: 8.2rem 7.5rem 1.8rem;
+    padding: 8.2rem 7.5rem 3.6rem;
 }
 
 .disciplines-heading {
@@ -850,16 +850,17 @@ body {
    ========================================= */
 
 .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: var(--cream);
-    padding: 90px 70px 80px;
-    column-gap: 56px;
-    align-items: start;
+    position: relative;
+    display: block;
+    background-image: linear-gradient(rgba(18, 14, 11, 0.28), rgba(18, 14, 11, 0.28)), url('design-assets/Links/2O6A7863.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 7.2rem 2rem;
 }
 
 .about-image {
-    overflow: hidden;
+    display: none;
 }
 
 .about-image img {
@@ -871,10 +872,14 @@ body {
 }
 
 .about-content {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5rem 4rem;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3.1rem 2.6rem;
 }
 
 .section-label {
@@ -882,19 +887,19 @@ body {
     font-size: 0.9rem;
     letter-spacing: 0.05em;
     font-weight: 500;
-    color: var(--charcoal);
+    color: var(--white);
     text-transform: uppercase;
     display: block;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--charcoal);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .about-content p {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
     font-size: clamp(1.21rem, 2.42vw, 1.705rem);
     line-height: 1.55;
-    color: var(--charcoal);
+    color: var(--white);
     font-weight: 400;
     margin-bottom: 2rem;
 }
@@ -907,7 +912,8 @@ body {
     align-self: flex-end;
     width: fit-content;
     text-align: left;
-    border-bottom-color: rgba(0, 0, 0, 0.55);
+    color: var(--white);
+    border-bottom-color: rgba(255, 255, 255, 0.75);
     padding-right: 1.55rem;
     font-size: 0.9rem;
     font-weight: 600;
@@ -1105,7 +1111,7 @@ body {
     }
 
     .about {
-        grid-template-columns: 1fr;
+        padding: 5.2rem 2rem;
     }
 
     .industry-showcase {
@@ -1145,15 +1151,11 @@ body {
     }
 
     .disciplines-inner {
-        padding: 5.5rem 2.2rem 2.6rem;
+        padding: 5.5rem 2.2rem 5.2rem;
     }
 
     .disciplines-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .about-image img {
-        min-height: 320px;
     }
 
     .about-content {
@@ -1236,6 +1238,17 @@ body {
 
     .footer {
         padding: 2.2rem 1.7rem 2.8rem;
+    }
+
+    .about {
+        padding: 4.3rem 0;
+        background-position: center;
+    }
+
+    .about-content {
+        max-width: none;
+        margin: 0 1.5rem;
+        padding: 2.35rem 1.5rem;
     }
 
     .work {
@@ -1322,7 +1335,7 @@ body {
     }
 
     .disciplines-inner {
-        padding: 4.2rem 1.5rem 2.2rem;
+        padding: 4.2rem 1.5rem 4.4rem;
     }
 
     .disciplines-grid {
@@ -1368,7 +1381,7 @@ body {
     }
 
     .discipline-list {
-        margin: 0 0 0.7rem;
+        margin: 0.5rem 0 0.7rem;
     }
 
     .discipline-list li {
