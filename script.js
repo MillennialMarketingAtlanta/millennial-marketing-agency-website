@@ -90,6 +90,11 @@ const resumeVideoPlayback = (video) => {
 };
 
 autoplayVideos.forEach((video) => {
+    const loopSecondsValue = Number.parseFloat(video.dataset.loopSeconds || '');
+    const customLoopSeconds = Number.isFinite(loopSecondsValue) && loopSecondsValue > 0 ? loopSecondsValue : null;
+    const trimSecondsValue = Number.parseFloat(video.dataset.loopTrim || '');
+    const loopTrimSeconds = Number.isFinite(trimSecondsValue) && trimSecondsValue > 0 ? trimSecondsValue : 0.06;
+
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
@@ -115,7 +120,13 @@ autoplayVideos.forEach((video) => {
             return;
         }
 
-        if (video.duration - video.currentTime < 0.06) {
+        if (customLoopSeconds && video.currentTime >= Math.min(customLoopSeconds, video.duration)) {
+            video.currentTime = 0;
+            resumeVideoPlayback(video);
+            return;
+        }
+
+        if (video.duration - video.currentTime < loopTrimSeconds) {
             video.currentTime = 0;
             resumeVideoPlayback(video);
         }
