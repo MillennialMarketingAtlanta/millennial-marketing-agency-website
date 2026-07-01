@@ -619,6 +619,11 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
+.industry-card--food-beverage img,
+.industry-card--food-beverage video {
+    object-position: center 62%;
+}
+
 .industry-card h4 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1rem;

@@ -79,6 +79,61 @@ document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
     observer.observe(el);
 });
 
+// Keep autoplay videos looping smoothly across mobile/browser pause behaviors.
+const autoplayVideos = Array.from(document.querySelectorAll('video[autoplay]'));
+
+const resumeVideoPlayback = (video) => {
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+    }
+};
+
+autoplayVideos.forEach((video) => {
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('loop', '');
+    video.setAttribute('playsinline', '');
+
+    video.addEventListener('loadeddata', () => resumeVideoPlayback(video));
+    video.addEventListener('canplay', () => resumeVideoPlayback(video));
+    video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        resumeVideoPlayback(video);
+    });
+
+    video.addEventListener('pause', () => {
+        if (!document.hidden && !video.ended) {
+            resumeVideoPlayback(video);
+        }
+    });
+
+    video.addEventListener('timeupdate', () => {
+        if (!Number.isFinite(video.duration) || video.duration <= 0) {
+            return;
+        }
+
+        if (video.duration - video.currentTime < 0.06) {
+            video.currentTime = 0;
+            resumeVideoPlayback(video);
+        }
+    });
+
+    resumeVideoPlayback(video);
+});
+
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        autoplayVideos.forEach((video) => resumeVideoPlayback(video));
+    }
+});
+
+window.addEventListener('pageshow', () => {
+    autoplayVideos.forEach((video) => resumeVideoPlayback(video));
+});
+
 // Industry filter accordion
 const collapseIndustryByDefault = window.matchMedia('(max-width: 600px)').matches;
 
