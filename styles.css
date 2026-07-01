@@ -179,66 +179,86 @@ body {
     z-index: 5;
     flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 4rem;
-    text-align: center;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 12rem 6rem 2rem;
+    text-align: left;
 }
 
-.hero-content blockquote {
+.hero-headline {
+    max-width: 520px;
+}
+
+.hero-headline p {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
-    font-size: clamp(1.21rem, 2.42vw, 1.705rem);
+    font-size: clamp(2.1rem, 4vw, 3.25rem);
     font-weight: 400;
     color: var(--white);
-    line-height: 1.55;
-    max-width: 580px;
-    border: none;
+    line-height: 1.08;
 }
 
-.hero-content blockquote em {
+.hero-headline p em {
     font-style: italic;
     font-weight: 400;
+}
+
+.hero-headline h1 {
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+    font-size: clamp(4rem, 7.4vw, 6.1rem);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 0.94;
+    letter-spacing: -0.01em;
 }
 
 /* Hero Footer Bar */
 .hero-footer {
     position: relative;
     z-index: 5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0 2rem;
+    display: grid;
+    grid-template-columns: 220px minmax(280px, 1fr) auto;
+    align-items: end;
+    gap: 2rem;
+    padding: 0 6rem 2rem;
 }
 
 .hero-footer::before {
     content: '';
     display: block;
-    width: 100%;
+    width: calc(100% - 12rem);
     height: 1px;
     background-color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 1rem;
+    margin: 0 6rem 1.2rem;
+    grid-column: 1 / -1;
 }
 
-.hero-tag {
+.hero-footer-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.08rem;
+}
+
+.hero-footer-label span {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
     color: var(--white);
-    font-weight: 500;
-    text-align: center;
+    font-weight: 600;
 }
 
-.hero-specialization {
-    margin-top: 0.9rem;
+.hero-footer-copy {
+    max-width: 520px;
+    margin: 0;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    color: rgba(255, 255, 255, 0.86);
-    font-weight: 500;
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+    line-height: 1.28;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 400;
 }
 
 .hero-cta {
-    margin-top: 0.5rem;
+    margin-top: 0;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     letter-spacing: 0.02em;
@@ -249,6 +269,7 @@ body {
     font-weight: 600;
     position: relative;
     display: inline-block;
+    justify-self: end;
 }
 
 .hero-cta::after {
@@ -713,7 +734,7 @@ body {
 .disciplines-inner {
     max-width: 1220px;
     margin: 0 auto;
-    padding: 8.2rem 7.5rem 5.8rem;
+    padding: 8.2rem 7.5rem 3.4rem;
 }
 
 .disciplines-heading {
@@ -1019,6 +1040,35 @@ body {
    ========================================= */
 
 @media (max-width: 900px) {
+    .hero-content {
+        align-items: center;
+        padding: 11rem 2.2rem 2rem;
+        text-align: center;
+    }
+
+    .hero-headline {
+        max-width: 100%;
+    }
+
+    .hero-headline h1 {
+        font-size: clamp(3.2rem, 10vw, 4.6rem);
+    }
+
+    .hero-footer {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0 2.2rem 1.8rem;
+    }
+
+    .hero-footer::before {
+        width: calc(100% - 4.4rem);
+        margin: 0 2.2rem 1rem;
+    }
+
+    .hero-cta {
+        justify-self: start;
+    }
+
     .work-grid {
         flex-wrap: nowrap;
         height: 380px;
@@ -1094,11 +1144,36 @@ body {
 
 @media (max-width: 600px) {
     .hero-content {
-        padding: 2rem 1.5rem;
+        padding: 9.8rem 1.5rem 1.2rem;
     }
 
-    .hero-content blockquote {
-        font-size: 1.1rem;
+    .hero-headline p {
+        font-size: 1.95rem;
+    }
+
+    .hero-headline h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-footer {
+        padding: 0 1.5rem 1.4rem;
+    }
+
+    .hero-footer::before {
+        width: calc(100% - 3rem);
+        margin: 0 1.5rem 0.9rem;
+    }
+
+    .hero-footer-label span {
+        font-size: 0.82rem;
+    }
+
+    .hero-footer-copy {
+        font-size: 0.78rem;
+    }
+
+    .hero-cta {
+        font-size: 0.82rem;
     }
 
     .work-grid {
