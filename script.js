@@ -80,6 +80,8 @@ document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
 });
 
 // Industry filter accordion
+const collapseIndustryByDefault = window.matchMedia('(max-width: 600px)').matches;
+
 document.querySelectorAll('.industry-filter-group').forEach(group => {
     const toggle = group.querySelector('.industry-toggle');
     const list = group.querySelector('.industry-filter-list');
@@ -89,6 +91,13 @@ document.querySelectorAll('.industry-filter-group').forEach(group => {
         return;
     }
 
+    if (collapseIndustryByDefault) {
+        toggle.setAttribute('aria-expanded', 'false');
+        list.hidden = true;
+        icon.textContent = '+';
+        group.classList.remove('active');
+    }
+
     toggle.addEventListener('click', () => {
         const expanded = toggle.getAttribute('aria-expanded') === 'true';
         const nextState = !expanded;
@@ -96,6 +105,7 @@ document.querySelectorAll('.industry-filter-group').forEach(group => {
         toggle.setAttribute('aria-expanded', String(nextState));
         list.hidden = !nextState;
         icon.textContent = nextState ? '-' : '+';
+        group.classList.toggle('active', nextState);
     });
 });
 

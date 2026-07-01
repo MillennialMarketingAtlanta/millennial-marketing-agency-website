@@ -37,6 +37,7 @@ img {
     --charcoal-light: #696056;
     --white: #ffffff;
     --warm-gray: #91887D;
+    --section-lede-size: clamp(1.21rem, 2.42vw, 1.705rem);
 }
 
 html {
@@ -310,7 +311,7 @@ body {
 
 .intro-content p {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
-    font-size: clamp(1.21rem, 2.42vw, 1.705rem);
+    font-size: var(--section-lede-size);
     line-height: 1.55;
     color: var(--charcoal);
     font-weight: 400;
@@ -486,7 +487,7 @@ body {
 
 .industry-heading p {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
-    font-size: clamp(1.21rem, 2.42vw, 1.705rem);
+    font-size: var(--section-lede-size);
     line-height: 1.55;
     color: var(--charcoal);
 }
@@ -648,8 +649,9 @@ body {
 
 .clients-showcase h2 {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
-    font-size: clamp(1.5rem, 2.5vw, 2.9rem);
+    font-size: var(--section-lede-size);
     font-weight: 400;
+    line-height: 1.55;
     text-align: center;
     margin-bottom: 4rem;
 }
@@ -749,7 +751,7 @@ body {
 
 .disciplines-heading p {
     font-family: 'FreightDisp Pro', 'Playfair Display', serif;
-    font-size: clamp(1.21rem, 2.42vw, 1.705rem);
+    font-size: var(--section-lede-size);
     line-height: 1.55;
     color: var(--charcoal);
 }
@@ -1308,6 +1310,12 @@ body {
     }
 
     .intro-content p {
+        font-size: 1.27rem;
+    }
+
+    .industry-heading p,
+    .clients-showcase h2,
+    .disciplines-heading p {
         font-size: 1.27rem;
     }
 
