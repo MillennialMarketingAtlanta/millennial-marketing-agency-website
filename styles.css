@@ -109,7 +109,7 @@ body {
     max-width: 1200px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
 }
 
@@ -130,8 +130,13 @@ body {
     margin: 0 auto;
 }
 
+.nav-logo {
+    width: 175px;
+    margin-bottom: 0;
+}
+
 .footer-logo-img {
-    height: 32px;
+    height: 52px;
     filter: none;
     margin: 0;
     margin-left: 0;
@@ -902,14 +907,24 @@ body {
 
 .footer {
     background-color: var(--cream);
-    border: 1px solid rgba(0, 0, 0, 0.22);
-    border-radius: 24px;
+    border-top: none;
+    position: relative;
     display: grid;
     grid-template-columns: minmax(340px, 0.88fr) minmax(460px, 1.32fr);
     gap: 1.6rem;
-    padding: 3.8rem 3.6rem;
-    margin: 1rem;
+    padding: 9rem 3.6rem 3.8rem;
+    margin: 0;
     align-items: start;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 4.8rem;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.14);
 }
 
 .footer-left {
@@ -921,18 +936,23 @@ body {
 }
 
 .footer-nav {
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 1.7rem;
+    row-gap: 0.55rem;
     margin-bottom: 4.2rem;
 }
 
 .footer-nav a {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.82rem;
-    letter-spacing: 0.18em;
+    font-size: 0.9rem;
+    letter-spacing: 0;
     color: var(--charcoal);
     text-decoration: none;
     font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 1.2;
     transition: opacity 0.2s ease;
 }
 
@@ -941,18 +961,9 @@ body {
 }
 
 .footer-logo {
-    margin-bottom: 0.9rem;
+    margin-bottom: 1.6rem;
     font-size: 1.4rem;
     color: var(--charcoal);
-}
-
-.footer-descriptor {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 0.2em;
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: 2rem;
 }
 
 .footer-summary {
@@ -1136,7 +1147,7 @@ body {
         grid-template-columns: 1fr;
         gap: 1.8rem;
         padding: 2rem;
-        margin: 0.8rem;
+        margin: 0;
     }
 
     .footer-left {
