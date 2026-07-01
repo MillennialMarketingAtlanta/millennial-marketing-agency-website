@@ -216,19 +216,22 @@ body {
     position: relative;
     z-index: 5;
     display: grid;
-    grid-template-columns: 220px minmax(280px, 1fr) auto;
+    grid-template-columns: 220px minmax(280px, 520px) auto;
     align-items: end;
     gap: 2rem;
     padding: 0 6rem 2rem;
+    justify-content: space-between;
 }
 
 .hero-footer::before {
     content: '';
     display: block;
-    width: calc(100% - 12rem);
+    width: 100vw;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.58);
-    margin: 0 6rem 1.2rem;
+    margin: 0 0 0.5rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
     grid-column: 1 / -1;
 }
 
@@ -248,6 +251,7 @@ body {
 
 .hero-footer-copy {
     max-width: 520px;
+    width: 100%;
     margin: 0;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.88rem;
