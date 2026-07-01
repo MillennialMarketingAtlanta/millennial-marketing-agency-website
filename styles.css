@@ -181,7 +181,7 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    padding: 12rem 6rem 2rem;
+    padding: 12rem 6rem 4.1rem;
     text-align: left;
 }
 
@@ -227,7 +227,7 @@ body {
     display: block;
     width: calc(100% - 12rem);
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.58);
     margin: 0 6rem 1.2rem;
     grid-column: 1 / -1;
 }
@@ -265,11 +265,12 @@ body {
     color: var(--white);
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.75);
-    padding: 0 1.55rem 0.2rem 0;
+    padding: 0 1.35rem 0.15rem 0;
     font-weight: 600;
     position: relative;
     display: inline-block;
     justify-self: end;
+    margin-right: 0.15rem;
 }
 
 .hero-cta::after {
