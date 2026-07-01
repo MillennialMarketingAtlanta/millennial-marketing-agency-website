@@ -99,6 +99,34 @@ document.querySelectorAll('.industry-filter-group').forEach(group => {
     });
 });
 
+// Mobile work-strip starts one card in so users immediately see both scroll directions.
+const workGrid = document.querySelector('.work-grid');
+if (workGrid && window.matchMedia('(max-width: 600px)').matches) {
+    const cards = Array.from(workGrid.querySelectorAll('.work-item'));
+    const getCardByTitle = (title) => cards.find((card) => card.querySelector('h3')?.textContent.trim() === title);
+
+    const officeBarCard = getCardByTitle('The Office Bar');
+    const featuredCard = getCardByTitle('1105 West Peachtree') || workGrid.querySelector('.work-item--active');
+    const west12Card = getCardByTitle('40 West 12th');
+
+    if (officeBarCard && featuredCard && west12Card) {
+        const prioritized = [officeBarCard, featuredCard, west12Card];
+        const remainder = cards.filter((card) => !prioritized.includes(card));
+
+        [...prioritized, ...remainder].forEach((card) => workGrid.appendChild(card));
+    }
+
+    requestAnimationFrame(() => {
+        const centeredCard = getCardByTitle('1105 West Peachtree') || workGrid.querySelector('.work-item--active') || workGrid.querySelector('.work-item:nth-child(2)');
+        if (!centeredCard) {
+            return;
+        }
+
+        const centeredOffset = centeredCard.offsetLeft - (workGrid.clientWidth - centeredCard.clientWidth) / 2;
+        workGrid.scrollLeft = Math.max(0, centeredOffset);
+    });
+}
+
 // Creative disciplines accordion
 document.querySelectorAll('.discipline-card').forEach(card => {
     const toggle = card.querySelector('.discipline-toggle');

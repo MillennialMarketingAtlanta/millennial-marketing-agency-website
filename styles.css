@@ -1166,13 +1166,17 @@ body {
     }
 
     .hero-content {
-        align-items: flex-start;
+        align-items: flex-end;
+        justify-content: flex-start;
         text-align: left;
-        padding: 7.2rem 1.5rem 0.8rem;
+        padding: 6.575rem 1.5rem 0;
     }
 
     .hero-headline {
-        max-width: 94%;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        transform: translateY(-25px);
     }
 
     .hero-headline p {
@@ -1190,12 +1194,12 @@ body {
 
     .hero-footer {
         gap: 0.55rem;
-        padding: 0 1.5rem 1rem;
+        padding: 0 1.5rem 2.6rem;
     }
 
     .hero-footer::before {
         width: 100%;
-        margin: 0 0 0.6rem;
+        margin: 0 0 0.45rem;
     }
 
     .hero-footer-label span {
@@ -1214,13 +1218,37 @@ body {
         padding: 2.2rem 1.7rem 2.8rem;
     }
 
+    .work {
+        overflow: hidden;
+    }
+
     .work-grid {
-        height: 260px;
+        height: 66svh;
+        min-height: 430px;
+        gap: 0;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 11vw;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .work-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .work-item {
+        flex: 0 0 78vw;
+        min-width: 78vw;
+        margin-right: 0;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
     }
 
     .work-item:nth-child(4),
     .work-item:nth-child(5) {
-        display: none;
+        display: block;
     }
 
     .clients-showcase-inner {
