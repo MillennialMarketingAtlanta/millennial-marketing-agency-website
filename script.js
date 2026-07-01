@@ -242,7 +242,10 @@ if (workGrid && window.matchMedia('(max-width: 600px)').matches) {
 }
 
 // Creative disciplines accordion
-document.querySelectorAll('.discipline-card').forEach(card => {
+const disciplineCards = Array.from(document.querySelectorAll('.discipline-card'));
+const collapseDisciplinesByDefault = window.matchMedia('(max-width: 600px)').matches;
+
+const setDisciplineState = (card, isExpanded) => {
     const toggle = card.querySelector('.discipline-toggle');
     const list = card.querySelector('.discipline-list');
     const icon = card.querySelector('.discipline-icon');
@@ -251,12 +254,32 @@ document.querySelectorAll('.discipline-card').forEach(card => {
         return;
     }
 
-    toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        const nextState = !expanded;
+    toggle.setAttribute('aria-expanded', String(isExpanded));
+    list.hidden = !isExpanded;
+    icon.textContent = isExpanded ? '-' : '+';
+    card.classList.toggle('active', isExpanded);
+};
 
-        toggle.setAttribute('aria-expanded', String(nextState));
-        list.hidden = !nextState;
-        icon.innerHTML = nextState ? '&#65124;' : '&#65125;';
+disciplineCards.forEach((card) => {
+    const toggle = card.querySelector('.discipline-toggle');
+    const initiallyExpanded = collapseDisciplinesByDefault ? false : toggle?.getAttribute('aria-expanded') === 'true';
+
+    setDisciplineState(card, initiallyExpanded);
+
+    if (!toggle) {
+        return;
+    }
+
+    toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        const nextState = !isExpanded;
+
+        disciplineCards.forEach((otherCard) => {
+            if (otherCard !== card) {
+                setDisciplineState(otherCard, false);
+            }
+        });
+
+        setDisciplineState(card, nextState);
     });
 });

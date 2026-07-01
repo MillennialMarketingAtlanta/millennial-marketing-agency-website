@@ -784,7 +784,8 @@ body {
     align-items: start;
 }
 
-.discipline-card img {
+.discipline-card img,
+.discipline-card video {
     width: 100%;
     aspect-ratio: 1 / 1.2;
     object-fit: cover;
@@ -1326,11 +1327,61 @@ body {
 
     .disciplines-grid {
         grid-template-columns: 1fr;
-        gap: 1.2rem;
+        gap: 0;
     }
 
     .disciplines-heading {
         margin-bottom: 2.4rem;
+    }
+
+    .discipline-card {
+        padding: 1.2rem 0;
+        margin-bottom: 0;
+    }
+
+    .discipline-card img,
+    .discipline-card video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1.05;
+        object-fit: cover;
+        margin-bottom: 1.2rem;
+    }
+
+    .discipline-toggle {
+        padding: 1.02rem 0;
+        margin-bottom: 0;
+        border-top: 1px solid rgba(105, 96, 86, 0.22);
+        border-bottom: 1px solid rgba(105, 96, 86, 0.22);
+    }
+
+    .discipline-toggle span:first-child {
+        font-size: 0.83rem;
+        font-weight: 500;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+    }
+
+    .discipline-icon {
+        font-size: 1.6rem;
+        line-height: 1;
+    }
+
+    .discipline-list {
+        margin: 0 0 0.7rem;
+    }
+
+    .discipline-list li {
+        font-size: 0.9rem;
+        line-height: 1.24;
+        margin-bottom: 0.4rem;
+        padding-left: 0.95rem;
+        letter-spacing: 0.015em;
+        color: var(--charcoal-light);
+    }
+
+    .discipline-list li::before {
+        color: var(--charcoal-light);
     }
 
     .intro-content p {
