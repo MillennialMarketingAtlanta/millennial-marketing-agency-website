@@ -845,6 +845,30 @@ body {
     color: var(--charcoal);
 }
 
+.disciplines-build {
+    background-color: var(--cream);
+}
+
+.disciplines-build-inner {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 7.5rem 8.1rem;
+    text-align: center;
+}
+
+.disciplines-build-link {
+    font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+    font-size: clamp(1.55rem, 2.2vw, 2.3rem);
+    line-height: 1.2;
+    color: var(--charcoal);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.disciplines-build-link em {
+    font-style: italic;
+}
+
 /* =========================================
    WHO WE ARE
    ========================================= */
@@ -1158,6 +1182,10 @@ body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .disciplines-build-inner {
+        padding: 0 2.2rem 6.3rem;
+    }
+
     .about-content {
         padding: 3rem 2rem;
     }
@@ -1243,6 +1271,10 @@ body {
     .about {
         padding: 4.3rem 0;
         background-position: center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 68svh;
     }
 
     .about-content {
@@ -1341,6 +1373,15 @@ body {
     .disciplines-grid {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+
+    .disciplines-build-inner {
+        padding: 0 1.5rem 5.4rem;
+    }
+
+    .disciplines-build-link {
+        font-size: 1.27rem;
+        line-height: 1.55;
     }
 
     .disciplines-heading {

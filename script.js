@@ -89,6 +89,19 @@ const resumeVideoPlayback = (video) => {
     }
 };
 
+const replaceVideoWithPosterFallback = (video) => {
+    const posterSrc = video.getAttribute('poster');
+    if (!posterSrc) {
+        return;
+    }
+
+    const fallbackImage = document.createElement('img');
+    fallbackImage.src = posterSrc;
+    fallbackImage.alt = video.getAttribute('aria-label') || 'Section visual';
+    fallbackImage.className = video.className;
+    video.replaceWith(fallbackImage);
+};
+
 autoplayVideos.forEach((video) => {
     const loopSecondsValue = Number.parseFloat(video.dataset.loopSeconds || '');
     const customLoopSeconds = Number.isFinite(loopSecondsValue) && loopSecondsValue > 0 ? loopSecondsValue : null;
@@ -104,6 +117,7 @@ autoplayVideos.forEach((video) => {
 
     video.addEventListener('loadeddata', () => resumeVideoPlayback(video));
     video.addEventListener('canplay', () => resumeVideoPlayback(video));
+    video.addEventListener('error', () => replaceVideoWithPosterFallback(video));
     video.addEventListener('ended', () => {
         video.currentTime = 0;
         resumeVideoPlayback(video);
