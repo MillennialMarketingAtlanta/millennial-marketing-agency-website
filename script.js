@@ -95,7 +95,7 @@ document.querySelectorAll('.industry-filter-group').forEach(group => {
 
         toggle.setAttribute('aria-expanded', String(nextState));
         list.hidden = !nextState;
-        icon.innerHTML = nextState ? '&#65124;' : '&#65125;';
+        icon.textContent = nextState ? '-' : '+';
     });
 });
 
