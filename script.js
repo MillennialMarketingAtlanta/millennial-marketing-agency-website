@@ -1,9 +1,14 @@
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (!href || href === '#') {
+            return;
+        }
+
+        const target = document.querySelector(href);
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({ behavior: 'smooth' });
         }
     });
@@ -12,6 +17,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar: transparent on hero, fixed light bar after scrolling.
 const navbar = document.querySelector('.navbar');
 const navLogo = document.querySelector('.nav-logo');
+const hamburgerButton = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const navMenuCloseButton = document.querySelector('.nav-menu-close');
+
+const closeNavMenu = () => {
+    if (!navMenu || !hamburgerButton) {
+        return;
+    }
+
+    navMenu.classList.remove('is-open');
+    navMenu.setAttribute('aria-hidden', 'true');
+    hamburgerButton.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+};
+
+const openNavMenu = () => {
+    if (!navMenu || !hamburgerButton) {
+        return;
+    }
+
+    navMenu.classList.add('is-open');
+    navMenu.setAttribute('aria-hidden', 'false');
+    hamburgerButton.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('menu-open');
+};
+
+if (hamburgerButton && navMenu && navMenuCloseButton) {
+    hamburgerButton.addEventListener('click', () => {
+        const isOpen = navMenu.classList.contains('is-open');
+        if (isOpen) {
+            closeNavMenu();
+            return;
+        }
+
+        openNavMenu();
+    });
+
+    navMenuCloseButton.addEventListener('click', closeNavMenu);
+
+    navMenu.addEventListener('click', (event) => {
+        if (event.target === navMenu) {
+            closeNavMenu();
+        }
+    });
+
+    navMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', closeNavMenu);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeNavMenu();
+        }
+    });
+}
 
 function updateNavbarState() {
     if (!navbar || !navLogo) {
@@ -159,6 +219,21 @@ window.addEventListener('pageshow', () => {
     autoplayVideos.forEach((video) => resumeVideoPlayback(video));
 });
 
+// On mobile Safari, some videos need an extra play attempt once they are on-screen.
+if (window.matchMedia('(max-width: 600px)').matches) {
+    const mobileVideoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                resumeVideoPlayback(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.35
+    });
+
+    autoplayVideos.forEach((video) => mobileVideoObserver.observe(video));
+}
+
 // Industry filter accordion
 const collapseIndustryByDefault = window.matchMedia('(max-width: 600px)').matches;
 
@@ -297,3 +372,72 @@ disciplineCards.forEach((card) => {
         setDisciplineState(card, nextState);
     });
 });
+
+// Mobile clients list preview toggle (shows half list by default on small screens).
+const clientsColumns = document.querySelector('.clients-columns');
+const clientsViewMoreButton = document.querySelector('.clients-view-more');
+const clientsMobileQuery = window.matchMedia('(max-width: 600px)');
+
+if (clientsColumns && clientsViewMoreButton) {
+    const originalClientLists = Array.from(clientsColumns.querySelectorAll(':scope > ul'));
+    const allClientNames = originalClientLists.flatMap((list) => Array.from(list.querySelectorAll('li'), (item) => item.textContent.trim()));
+    let generatedMobileLists = [];
+
+    const ensureGeneratedMobileLists = () => {
+        if (generatedMobileLists.length) {
+            return generatedMobileLists;
+        }
+
+        generatedMobileLists = [document.createElement('ul'), document.createElement('ul')];
+        generatedMobileLists.forEach((list) => {
+            list.className = 'clients-mobile-list';
+            clientsColumns.appendChild(list);
+        });
+
+        return generatedMobileLists;
+    };
+
+    const renderMobileClientColumns = (expanded) => {
+        const mobileLists = ensureGeneratedMobileLists();
+        const visibleNames = expanded ? allClientNames : allClientNames.slice(0, Math.ceil(allClientNames.length / 2));
+        const splitIndex = Math.ceil(visibleNames.length / 2);
+        const columnGroups = [visibleNames.slice(0, splitIndex), visibleNames.slice(splitIndex)];
+
+        clientsColumns.classList.add('is-mobile-balanced');
+
+        mobileLists.forEach((list, index) => {
+            list.innerHTML = columnGroups[index].map((name) => `<li>${name}</li>`).join('');
+        });
+    };
+
+    const resetClientsPreviewForViewport = () => {
+        if (clientsMobileQuery.matches) {
+            clientsColumns.classList.remove('is-expanded');
+            renderMobileClientColumns(false);
+            clientsViewMoreButton.setAttribute('aria-expanded', 'false');
+            clientsViewMoreButton.textContent = 'View More';
+            return;
+        }
+
+        clientsColumns.classList.remove('is-mobile-balanced');
+        clientsColumns.classList.add('is-expanded');
+        clientsViewMoreButton.setAttribute('aria-expanded', 'true');
+        clientsViewMoreButton.textContent = 'View More';
+    };
+
+    resetClientsPreviewForViewport();
+
+    clientsMobileQuery.addEventListener('change', resetClientsPreviewForViewport);
+
+    clientsViewMoreButton.addEventListener('click', () => {
+        if (!clientsMobileQuery.matches) {
+            return;
+        }
+
+        const willExpand = !clientsColumns.classList.contains('is-expanded');
+        clientsColumns.classList.toggle('is-expanded', willExpand);
+        renderMobileClientColumns(willExpand);
+        clientsViewMoreButton.setAttribute('aria-expanded', String(willExpand));
+        clientsViewMoreButton.textContent = willExpand ? 'View Less' : 'View More';
+    });
+}

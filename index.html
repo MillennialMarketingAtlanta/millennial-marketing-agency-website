@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Millennial Marketing Agency</title>
+    <title>Millennial Marketing Agency | Creative Marketing & Brand Strategy</title>
+    <meta name="description" content="Millennial Marketing Agency is an Atlanta-based creative agency helping real estate, hospitality, and lifestyle brands grow through marketing strategy, branding, and content storytelling.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Millennial Marketing Agency | Creative Marketing & Brand Strategy">
+    <meta property="og:description" content="Atlanta-based creative marketing and brand strategy for real estate, hospitality, and lifestyle brands.">
+    <meta property="og:image" content="design-assets/Links/Zuzka_Vaclavik_636.jpg">
+    <meta property="og:url" content="https://millennial-marketing-agency-website.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Millennial Marketing Agency | Creative Marketing & Brand Strategy">
+    <meta name="twitter:description" content="Atlanta-based creative marketing and brand strategy for real estate, hospitality, and lifestyle brands.">
+    <meta name="twitter:image" content="design-assets/Links/Zuzka_Vaclavik_636.jpg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,14 +35,54 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="MainLogo-White.png" alt="Millennial Marketing" class="logo-img nav-logo" data-logo-light="MainLogo-White.png" data-logo-dark="Fixed.svg">
+                    <a href="#home" aria-label="Millennial Marketing home">
+                        <img src="MainLogo-White.png" alt="Millennial Marketing" class="logo-img nav-logo" data-logo-light="MainLogo-White.png" data-logo-dark="Fixed.svg">
+                    </a>
                 </div>
-                <button class="hamburger" aria-label="Menu">
+                <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
                     <span></span>
                     <span></span>
                 </button>
             </div>
         </nav>
+
+        <aside class="nav-menu" id="site-menu" aria-hidden="true">
+            <div class="nav-menu-panel">
+                <button class="nav-menu-close" type="button" aria-label="Close menu">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav-menu-links" aria-label="Primary">
+                    <a href="#home">Home <span aria-hidden="true">&#8594;</span></a>
+                    <a href="#disciplines">Services <span aria-hidden="true">&#8594;</span></a>
+                    <a href="#work">History of Success <span aria-hidden="true">&#8594;</span></a>
+                    <a href="#about">Who We Are <span aria-hidden="true">&#8594;</span></a>
+                    <a href="#mission">Mission <span aria-hidden="true">&#8594;</span></a>
+                </nav>
+
+                <div class="nav-menu-footer">
+                    <p>Creative Marketing &amp;<br>Brand Strategy</p>
+                    <div class="nav-menu-social">
+                        <a href="https://www.linkedin.com/company/106850932/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M6.94 8.5V19H3.55V8.5h3.39ZM5.24 3C6.33 3 7 3.72 7 4.67c0 .93-.66 1.66-1.77 1.66h-.02c-1.07 0-1.74-.73-1.74-1.66C3.47 3.72 4.15 3 5.24 3ZM20.5 12.98V19h-3.39v-5.63c0-1.41-.5-2.37-1.77-2.37-.97 0-1.55.66-1.8 1.29-.09.23-.11.56-.11.89V19H10.04s.04-9.72 0-10.5h3.39v1.49c.45-.69 1.25-1.67 3.03-1.67 2.22 0 3.89 1.45 3.89 4.56Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/millennialmarketingatl/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.35A4.65 4.65 0 1 1 7.35 12 4.66 4.66 0 0 1 12 7.35Zm0 1.8A2.85 2.85 0 1 0 14.85 12 2.85 2.85 0 0 0 12 9.15Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:ginger@millennialmarketingagency.com,christa@millennialmarketingagency.com" aria-label="Contact">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.2l8 5.33 8-5.33V7H4Zm16 10V9.4l-7.45 4.97a1 1 0 0 1-1.1 0L4 9.4V17h16Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
 
         <div class="hero-content">
             <div class="hero-headline">
@@ -61,48 +114,21 @@
     <section id="work" class="work">
         <div class="work-grid">
             <div class="work-item">
+                <img src="design-assets/Links/waldorf.png" alt="The Waldorf Astoria">
+                <div class="work-item-overlay">
+                    <h3>The Waldorf Astoria</h3>
+                    <span class="work-industry">INDUSTRY: REAL ESTATE</span>
+                    <p>Marketing strategy and repositioning for the final residences at Waldorf Astoria Buckhead Atlanta, including a comprehensive marketing audit and targeted campaign to drive urgency and accelerate sellout.</p>
+                    <a href="coming-soon.html" class="work-link">View</a>
+                </div>
+            </div>
+            <div class="work-item">
                 <img src="design-assets/Links/_Epicurean Atlanta - The Office Bar - Bar.jpg" alt="The Office Bar">
                 <div class="work-item-overlay">
                     <h3>The Office Bar</h3>
                     <span class="work-industry">INDUSTRY: FOOD & BEVERAGE</span>
                     <p>Strategic brand positioning and digital marketing for a premier Atlanta food and beverage destination.</p>
-                    <a href="#" class="work-link">View</a>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="studio-pilates.png" alt="The Studio Pilates">
-                <div class="work-item-overlay">
-                    <h3>The Studio Pilates</h3>
-                    <span class="work-industry">INDUSTRY: FITNESS & WELLNESS</span>
-                    <p>Social media strategy and content creation to build a thriving community in Atlanta.</p>
-                    <a href="#" class="work-link">View</a>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="downing-park.png" alt="Downing Park">
-                <div class="work-item-overlay">
-                    <h3>Downing Park</h3>
-                    <span class="work-industry">INDUSTRY: REAL ESTATE</span>
-                    <p>Brand development and creative strategy for a boutique residential community in Atlanta.</p>
-                    <a href="#" class="work-link">View</a>
-                </div>
-            </div>
-            <div class="work-item work-item--active">
-                <img src="1105-west-peachtree.jpg" alt="1105 West Peachtree">
-                <div class="work-item-overlay">
-                    <h3>1105 West Peachtree</h3>
-                    <span class="work-industry">INDUSTRY: MIXED-USE</span>
-                    <p>Brand positioning, asset creation, and city-block launch campaign.</p>
-                    <a href="#" class="work-link">View</a>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="design-assets/Links/em-work-2.png" alt="Emerson">
-                <div class="work-item-overlay">
-                    <h3>Emerson</h3>
-                    <span class="work-industry">INDUSTRY: REAL ESTATE</span>
-                    <p>Brand development for a premier residential development in the heart of Buckhead.</p>
-                    <a href="#" class="work-link">View</a>
+                    <a href="coming-soon.html" class="work-link">View</a>
                 </div>
             </div>
             <div class="work-item">
@@ -111,7 +137,52 @@
                     <h3>Shalom Park</h3>
                     <span class="work-industry">INDUSTRY: REAL ESTATE</span>
                     <p>Brand development of a premier collection of bespoke townhomes in Garden Hills.</p>
-                    <a href="#" class="work-link">View</a>
+                    <a href="coming-soon.html" class="work-link">View</a>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="studio-pilates.png" alt="The Studio Pilates">
+                <div class="work-item-overlay">
+                    <h3>The Studio Pilates</h3>
+                    <span class="work-industry">INDUSTRY: FITNESS & WELLNESS</span>
+                    <p>Social media strategy and content creation to build a thriving community in Atlanta.</p>
+                    <a href="coming-soon.html" class="work-link">View</a>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="downing-park.png" alt="Downing Park">
+                <div class="work-item-overlay">
+                    <h3>Downing Park</h3>
+                    <span class="work-industry">INDUSTRY: REAL ESTATE</span>
+                    <p>Brand development and creative strategy for a boutique residential community in Atlanta.</p>
+                    <a href="downing-park.html" class="work-link">View</a>
+                </div>
+            </div>
+            <div class="work-item work-item--active">
+                <img src="1105-west-peachtree.jpg" alt="1105 West Peachtree">
+                <div class="work-item-overlay">
+                    <h3>1105 West Peachtree</h3>
+                    <span class="work-industry">INDUSTRY: MIXED-USE</span>
+                    <p>Brand positioning, asset creation, and city-block launch campaign.</p>
+                    <a href="coming-soon.html" class="work-link">View</a>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="design-assets/Links/em-work-2.png" alt="Emerson">
+                <div class="work-item-overlay">
+                    <h3>Emerson</h3>
+                    <span class="work-industry">INDUSTRY: REAL ESTATE</span>
+                    <p>Brand development for a premier residential development in the heart of Buckhead.</p>
+                    <a href="coming-soon.html" class="work-link">View</a>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="design-assets/Links/peregrine-mockup.png" alt="Peregrine">
+                <div class="work-item-overlay">
+                    <h3>Peregrine</h3>
+                    <span class="work-industry">INDUSTRY: REAL ESTATE</span>
+                    <p>Full brand development execution for a premier new community launch in the valley between Cashiers and Highlands, North Carolina.</p>
+                    <a href="coming-soon.html" class="work-link">View</a>
                 </div>
             </div>
             <div class="work-item">
@@ -120,7 +191,16 @@
                     <h3>40 West 12th</h3>
                     <span class="work-industry">INDUSTRY: REAL ESTATE</span>
                     <p>Brand development and strategic marketing direction to position 40 West 12th as the premier destination for upscale urban living.</p>
-                    <a href="#" class="work-link">View</a>
+                    <a href="coming-soon.html" class="work-link">View</a>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="design-assets/Links/1065-midtown.png" alt="1065 Midtown">
+                <div class="work-item-overlay">
+                    <h3>1065 Midtown</h3>
+                    <span class="work-industry">INDUSTRY: REAL ESTATE</span>
+                    <p>Brand positioning and creative marketing showcasing an exclusive collection of luxury residences above Loews Atlanta Hotel in the heart of Midtown.</p>
+                    <a href="coming-soon.html" class="work-link">View</a>
                 </div>
             </div>
         </div>
@@ -186,14 +266,14 @@
                     </video>
                     <div class="industry-card-overlay">
                         <h4>Residential Real Estate</h4>
-                        <span class="industry-card-cta">View Work</span>
+                        <a href="coming-soon.html" class="industry-card-cta">View Work</a>
                     </div>
                 </article>
                 <article class="industry-card">
                     <img src="design-assets/Links/6Y8A2744.jpg" alt="Waldorf Astoria hospitality campaign">
                     <div class="industry-card-overlay">
                         <h4>Hospitality</h4>
-                        <span class="industry-card-cta">View Work</span>
+                        <a href="coming-soon.html" class="industry-card-cta">View Work</a>
                     </div>
                 </article>
                 <article class="industry-card industry-card--food-beverage">
@@ -202,14 +282,14 @@
                     </video>
                     <div class="industry-card-overlay">
                         <h4>Food + Beverage</h4>
-                        <span class="industry-card-cta">View Work</span>
+                        <a href="coming-soon.html" class="industry-card-cta">View Work</a>
                     </div>
                 </article>
                 <article class="industry-card">
                     <img src="design-assets/Links/Retail.png" alt="Soberish retail campaign">
                     <div class="industry-card-overlay">
                         <h4>Retail</h4>
-                        <span class="industry-card-cta">View Work</span>
+                        <a href="coming-soon.html" class="industry-card-cta">View Work</a>
                     </div>
                 </article>
                 <article class="industry-card">
@@ -218,14 +298,14 @@
                     </video>
                     <div class="industry-card-overlay">
                         <h4>Commercial Real Estate</h4>
-                        <span class="industry-card-cta">View Work</span>
+                        <a href="coming-soon.html" class="industry-card-cta">View Work</a>
                     </div>
                 </article>
                 <article class="industry-card">
                     <img src="design-assets/Links/fitness-wellness-2026.png" alt="The Studio Pilates fitness campaign">
                     <div class="industry-card-overlay">
                         <h4>Fitness + Wellness</h4>
-                        <span class="industry-card-cta">View Work</span>
+                        <a href="coming-soon.html" class="industry-card-cta">View Work</a>
                     </div>
                 </article>
             </div>
@@ -245,6 +325,7 @@
             <div class="clients-columns">
                 <ul>
                     <li>ACT Investments</li>
+                    <li>Alexander Scott Homes</li>
                     <li>Atlantic Investors Group</li>
                     <li>Brightman - Gil</li>
                     <li>Cablik Enterprises</li>
@@ -259,17 +340,19 @@
                 <ul>
                     <li>Daniel Corporation</li>
                     <li>Epic Development</li>
+                    <li>Epicurean Atlanta</li>
                     <li>Fairway Capital</li>
                     <li>Folia Group</li>
                     <li>GEM Realty Capital</li>
+                    <li>Ganek PC</li>
                     <li>GHC Housing</li>
                     <li>Glenfield Capital</li>
                     <li>Hedgewood Homes</li>
                     <li>Homesouth</li>
                     <li>Hypo Real Estate Capital</li>
-                    <li>iStar Financial</li>
                 </ul>
                 <ul>
+                    <li>iStar Financial</li>
                     <li>Jones Lang LaSalle</li>
                     <li>JPX Works</li>
                     <li>Loudermilk Companies</li>
@@ -287,6 +370,7 @@
                     <li>Southeast Capital Companies</li>
                     <li>ST Residential</li>
                     <li>Strand Properties</li>
+                    <li>The Office Bar</li>
                     <li>The Providence Group</li>
                     <li>The Studio Pilates</li>
                     <li>Tribridge Residential</li>
@@ -295,6 +379,8 @@
                     <li>Waldorf Astoria Hotels</li>
                 </ul>
             </div>
+
+            <button class="clients-view-more" type="button" aria-expanded="false">View More</button>
 
             <a href="#contact" class="clients-cta">Work With Us</a>
         </div>
@@ -340,10 +426,11 @@
                     </ul>
                 </article>
 
-                <article class="discipline-card">
+                <article class="discipline-card discipline-card--visual-storytelling">
                     <video class="discipline-image-storytelling" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="design-assets/Links/40W12 Lifestyle Film - MASTERED.00_00_52_02.Still030.jpg" aria-label="Visual storytelling showcase video">
                         <source src="assets/videos/visual-storytelling.mp4" type="video/mp4">
                     </video>
+                    <img class="discipline-image-storytelling-fallback" src="design-assets/Links/40W12 Lifestyle Film - MASTERED.00_00_52_02.Still030.jpg" alt="Visual storytelling showcase still">
                     <button class="discipline-toggle" type="button" aria-expanded="false">
                         <span>Visual Storytelling</span>
                         <span class="discipline-icon">&#65125;</span>
@@ -383,8 +470,12 @@
 
     <!-- Who We Are Section -->
     <section id="about" class="about">
+        <video class="about-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/videos/about-who-we-are.mp4" type="video/mp4">
+        </video>
+
         <div class="about-image">
-            <img src="design-assets/Links/2O6A7863.jpg" alt="Who We Are">
+            <img src="design-assets/Links/KVP_3444-2.jpg" alt="Who We Are">
         </div>
         <div class="about-content">
             <span class="section-label">WHO WE ARE</span>
@@ -397,7 +488,7 @@
     <section class="intro">
         <div class="intro-content">
             <p>Whether you're evolving an established brand or launching something entirely new, we combine thoughtful strategy with timeless creative to <em>shape brands people remember.</em></p>
-            <a href="#contact" class="text-link">Schedule a Consultation</a>
+            <a href="mailto:ginger@millennialmarketingagency.com,christa@millennialmarketingagency.com" class="text-link">Schedule a Consultation</a>
         </div>
     </section>
 
@@ -413,7 +504,9 @@
             </nav>
 
             <div class="footer-logo">
-                <img src="MainLogo-Black.svg" alt="Millennial Marketing" class="logo-img footer-logo-img">
+                <a href="#home" aria-label="Millennial Marketing home">
+                    <img src="MainLogo-Black.svg" alt="Millennial Marketing" class="logo-img footer-logo-img">
+                </a>
             </div>
 
             <p class="footer-summary">A marketing and branding agency helping real estate, hospitality, and lifestyle brands tell their story with strategy and style.</p>
@@ -425,14 +518,14 @@
                 </div>
                 <div class="footer-meta-row">
                     <span class="footer-meta-label">ADDRESS</span>
-                    <span class="footer-meta-value">1579 Monroe Drive NE, Suite 323<br>Atlanta, Georgia 30324</span>
+                    <span class="footer-meta-value">1579 Monroe Drive NE, Suite 322<br>Atlanta, Georgia 30324</span>
                 </div>
                 <div class="footer-meta-row">
                     <span class="footer-meta-label">SOCIAL</span>
                     <div class="footer-social">
-                        <a href="#">Instagram</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">LinkedIn</a>
+                        <a href="https://www.instagram.com/millennialmarketingatl/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="mailto:ginger@millennialmarketingagency.com,christa@millennialmarketingagency.com">Email</a>
+                        <a href="https://www.linkedin.com/company/106850932/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
             </div>

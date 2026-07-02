@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Millennial Marketing</title>
+    <meta name="description" content="Millennial Marketing case studies are coming soon. Explore our Atlanta-based creative agency for marketing strategy, branding, and storytelling.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Coming Soon | Millennial Marketing">
+    <meta property="og:description" content="Great work takes time. Check back soon for Millennial Marketing case studies and recent projects.">
+    <meta property="og:image" content="design-assets/Links/Zuzka_Vaclavik_636.jpg">
+    <meta property="og:url" content="https://millennial-marketing-agency-website.vercel.app/coming-soon.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coming Soon | Millennial Marketing">
+    <meta name="twitter:description" content="Check back soon for Millennial Marketing case studies and recent projects.">
+    <meta name="twitter:image" content="design-assets/Links/Zuzka_Vaclavik_636.jpg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'FreightDisp Pro';
+            src: url('assets/fonts/FreightDispPro-Regular.woff') format('woff'),
+                 url('assets/fonts/FreightDispPro-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'FreightDisp Pro';
+            src: url('assets/fonts/FreightDispPro-LightItalic.woff') format('woff'),
+                 url('assets/fonts/FreightDispPro-LightItalic.ttf') format('truetype');
+            font-weight: 300;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        :root {
+            --coming-overlay: rgba(16, 13, 11, 0.46);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100svh;
+            background: linear-gradient(var(--coming-overlay), var(--coming-overlay)), url('design-assets/Links/Zuzka_Vaclavik_636.jpg') center / cover no-repeat;
+            color: #fff;
+        }
+
+        .coming-shell {
+            min-height: 100svh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero {
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: 7.2rem 1.6rem 2rem;
+        }
+
+        .panel {
+            width: min(620px, 100%);
+            text-align: center;
+            padding: 0;
+            background: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.35rem;
+        }
+
+        h1 {
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 2.6vw, 2.1rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        h1 em {
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .coming-shell .nav-menu-footer p {
+            color: #000;
+            text-align: left;
+            margin: 0;
+        }
+
+        .coming-shell .nav-menu-footer {
+            justify-content: flex-start;
+        }
+
+        .coming-shell .nav-menu-social {
+            margin-left: auto;
+        }
+
+        p {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.94rem;
+            line-height: 1.35;
+            color: rgba(255, 255, 255, 0.92);
+            margin: 0;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-link {
+            color: var(--white);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.78);
+            display: inline-block;
+            padding: 0 1.4rem 0.18rem 0;
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .back-link::after {
+            content: '\2192';
+            position: absolute;
+            right: 0;
+            top: 49%;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 6.6rem 1.2rem 1.6rem;
+            }
+
+            .panel {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="coming-shell">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" aria-label="Millennial Marketing home">
+                        <img src="MainLogo-White.png" alt="Millennial Marketing" class="logo-img nav-logo" data-logo-light="MainLogo-White.png" data-logo-dark="Fixed.svg">
+                    </a>
+                </div>
+                <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <aside class="nav-menu" id="site-menu" aria-hidden="true">
+            <div class="nav-menu-panel">
+                <button class="nav-menu-close" type="button" aria-label="Close menu">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav-menu-links" aria-label="Primary">
+                    <a href="index.html">Home <span aria-hidden="true">&#8594;</span></a>
+                    <a href="index.html#disciplines">Services <span aria-hidden="true">&#8594;</span></a>
+                    <a href="index.html#work">History of Success <span aria-hidden="true">&#8594;</span></a>
+                    <a href="index.html#about">Who We Are <span aria-hidden="true">&#8594;</span></a>
+                    <a href="index.html#mission">Mission <span aria-hidden="true">&#8594;</span></a>
+                </nav>
+
+                <div class="nav-menu-footer">
+                    <p>Creative Marketing &amp;<br>Brand Strategy</p>
+                    <div class="nav-menu-social">
+                        <a href="https://www.linkedin.com/company/106850932/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M6.94 8.5V19H3.55V8.5h3.39ZM5.24 3C6.33 3 7 3.72 7 4.67c0 .93-.66 1.66-1.77 1.66h-.02c-1.07 0-1.74-.73-1.74-1.66C3.47 3.72 4.15 3 5.24 3ZM20.5 12.98V19h-3.39v-5.63c0-1.41-.5-2.37-1.77-2.37-.97 0-1.55.66-1.8 1.29-.09.23-.11.56-.11.89V19H10.04s.04-9.72 0-10.5h3.39v1.49c.45-.69 1.25-1.67 3.03-1.67 2.22 0 3.89 1.45 3.89 4.56Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/millennialmarketingatl/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.35A4.65 4.65 0 1 1 7.35 12 4.66 4.66 0 0 1 12 7.35Zm0 1.8A2.85 2.85 0 1 0 14.85 12 2.85 2.85 0 0 0 12 9.15Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:ginger@millennialmarketingagency.com,christa@millennialmarketingagency.com" aria-label="Contact">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.2l8 5.33 8-5.33V7H4Zm16 10V9.4l-7.45 4.97a1 1 0 0 1-1.1 0L4 9.4V17h16Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="hero" aria-label="Coming soon notice">
+            <main class="panel">
+                <h1>Coming <em>Soon</em></h1>
+                <p>Great work takes time. Check back in later.</p>
+                <a class="back-link" href="index.html#work">Back to Main Site</a>
+            </main>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
