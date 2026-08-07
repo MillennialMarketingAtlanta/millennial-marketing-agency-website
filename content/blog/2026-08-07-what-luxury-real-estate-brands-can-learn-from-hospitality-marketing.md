@@ -50,4 +50,4 @@ When those elements are working in harmony, buyers notice. The brand feels coher
 
 If your development is preparing for launch, or if your current marketing feels disconnected from the quality of the product, this is a good moment to step back and ask whether your brand is telling the full story.
 
-We would love to talk about what that could look like for your project. [Schedule a conversation with our team.](https://millennialmarketingagency.com#contact)
+We would love to talk about what that could look like for your project.
