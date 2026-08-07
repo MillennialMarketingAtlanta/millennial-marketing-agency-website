@@ -102,6 +102,29 @@ function validateEditorialOutput(topic, editorialPass) {
     }
 }
 
+const TITLE_CASE_MINOR_WORDS = new Set([
+    'a', 'an', 'the', 'and', 'but', 'or', 'nor', 'for', 'so', 'yet',
+    'at', 'by', 'in', 'of', 'on', 'to', 'up', 'as', 'is', 'it',
+    'with', 'from', 'into', 'than', 'that', 'this'
+]);
+
+function toTitleCase(value) {
+    return String(value || '')
+        .trim()
+        .replace(/\S+/g, (word, offset) => {
+            const lower = word.toLowerCase();
+            if (offset === 0 || !TITLE_CASE_MINOR_WORDS.has(lower)) {
+                return lower.charAt(0).toUpperCase() + lower.slice(1);
+            }
+
+            return lower;
+        });
+}
+
+function capitalizeBullets(markdownBody) {
+    return markdownBody.replace(/^([ \t]*[-*+]\s+)([a-z])/gm, (_, prefix, letter) => `${prefix}${letter.toUpperCase()}`);
+}
+
 function slugify(value) {
     return value
         .toLowerCase()
@@ -158,7 +181,7 @@ function normalizeDescription(value) {
 }
 
 function buildTemplateEditorialPass(topic) {
-    const title = String(topic.topic || 'Weekly Marketing Insight').trim();
+    const title = toTitleCase(String(topic.topic || 'Weekly Marketing Insight').trim());
     const audience = String(topic.audience || 'brand leaders and in-house marketing teams').trim();
     const angle = String(topic.angle || 'practical strategy for stronger brand outcomes').trim();
     const primaryKeyword = String(topic.primaryKeyword || 'brand strategy').trim();
@@ -198,10 +221,10 @@ Execution improves when teams document how strategy translates into channel beha
 
 A simple operating playbook can include:
 
-- channel role definitions by funnel stage
-- content QA criteria tied to brand voice and positioning
-- measurement checkpoints for early signal detection
-- escalation paths when performance or timelines drift
+- Channel role definitions by funnel stage
+- Content QA criteria tied to brand voice and positioning
+- Measurement checkpoints for early signal detection
+- Escalation paths when performance or timelines drift
 
 This structure helps teams move quickly without sacrificing quality.
 
@@ -222,7 +245,7 @@ If you are ready to ${cta.toLowerCase()}, Millennial Marketing can help you turn
     return {
         title,
         description,
-        tags: [primaryKeyword, 'Marketing Strategy', 'Brand Development'],
+        tags: [toTitleCase(primaryKeyword), 'Marketing Strategy', 'Brand Development'],
         bodyMarkdown
     };
 }
@@ -236,12 +259,42 @@ async function saveCalendar(calendar) {
     await fs.writeFile(calendarPath, `${JSON.stringify(calendar, null, 2)}\n`);
 }
 
+const BRAND_VOICE_SPEC = `
+MILLENNIAL MARKETING AGENCY — BRAND VOICE AND FORMATTING SPEC
+
+Tone:
+- Warm, confident, and direct. Write like a trusted expert having a real conversation, not a consultant filing a report.
+- Avoid corporate jargon, overly abstract language, and phrases that sound like a whitepaper (e.g. "operationalize," "leverage synergies," "scalable solutions").
+- Be specific and concrete. Use short sentences when making a key point. Vary rhythm.
+- The agency is female-founded and Atlanta-based. The voice should feel polished but human and never cold.
+- Use active voice. Favor plain language over elevated vocabulary.
+
+Formatting:
+- Article title: Title Case. Capitalize every word except minor words (a, an, the, and, but, or, for, in, of, on, to, at, by, as) unless they start the title.
+- Section headings (##): Title Case using the same rule.
+- Tags: Title Case, 2-4 short phrases.
+- Every bullet point must begin with a capital letter.
+- Do not begin bullet points with the same word repeatedly.
+- Paragraphs should be 2-4 sentences. Avoid walls of text.
+- End with one warm, non-pushy CTA paragraph. Do not use phrases like "If you are ready to schedule a consultation." Instead invite the reader naturally into the next step.
+`;
+
 async function createClaudeDraft(topic) {
     if (!process.env.ANTHROPIC_API_KEY || !process.env.ANTHROPIC_MODEL) {
         throw new Error('ANTHROPIC_API_KEY and ANTHROPIC_MODEL are required.');
     }
 
-    const prompt = `You are writing a blog article for Millennial Marketing Agency, a female-founded Atlanta creative agency serving real estate, hospitality, and lifestyle brands.\n\nWrite a Markdown article with a clear argument, strong section headings, and a practical conclusion. Do not include frontmatter, code fences, or notes to the editor.\n\nTopic: ${topic.topic}\nPrimary keyword: ${topic.primaryKeyword}\nAudience: ${topic.audience}\nCTA goal: ${topic.cta}\nAngle: ${topic.angle}`;
+    const prompt = `You are writing a blog article for Millennial Marketing Agency, a female-founded Atlanta creative agency serving real estate, hospitality, and lifestyle brands.
+
+${BRAND_VOICE_SPEC}
+
+Write a Markdown article with a clear argument, strong section headings, and a practical conclusion. Do not include frontmatter, code fences, or notes to the editor.
+
+Topic: ${topic.topic}
+Primary keyword: ${topic.primaryKeyword}
+Audience: ${topic.audience}
+CTA goal: ${topic.cta}
+Angle: ${topic.angle}`;
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
@@ -275,6 +328,8 @@ async function createOpenAIDraft(topic) {
     }
 
     const prompt = `You are writing a blog article for Millennial Marketing Agency, a female-founded Atlanta creative agency serving real estate, hospitality, and lifestyle brands.
+
+${BRAND_VOICE_SPEC}
 
 Write a Markdown article with a clear argument, strong section headings, and a practical conclusion. Do not include frontmatter, code fences, or notes to the editor.
 
@@ -314,7 +369,30 @@ async function createEditorialPass(topic, draftMarkdown) {
         throw new Error('OPENAI_API_KEY and OPENAI_MODEL are required.');
     }
 
-    const prompt = `You are the editorial QA pass for Millennial Marketing Agency. Rewrite the supplied blog post for luxury-but-approachable brand voice, clearer structure, practical specificity, and SEO discipline.\n\nReturn valid JSON with this exact shape:\n{\n  "title": "...",\n  "description": "...",\n  "tags": ["tag 1", "tag 2"],\n  "bodyMarkdown": "..."\n}\n\nConstraints:\n- Description must be 140 to 160 characters.\n- Tags must be 2 to 4 short phrases.\n- bodyMarkdown must not contain frontmatter.\n- End with a soft consultation CTA.\n\nTopic metadata:\n${JSON.stringify(topic, null, 2)}\n\nDraft article:\n${draftMarkdown}`;
+    const prompt = `You are the editorial QA pass for Millennial Marketing Agency.
+
+${BRAND_VOICE_SPEC}
+
+Rewrite the supplied draft to match the brand voice and formatting spec above. Improve structure, specificity, and readability. Return valid JSON with this exact shape:
+{
+  "title": "...",
+  "description": "...",
+  "tags": ["Tag One", "Tag Two"],
+  "bodyMarkdown": "..."
+}
+
+Constraints:
+- title: Title Case.
+- description: 140 to 160 characters. Plain sentence, no title case.
+- tags: Title Case, 2 to 4 short phrases.
+- bodyMarkdown: no frontmatter. All section headings in Title Case. Every bullet point starts with a capital letter.
+- End bodyMarkdown with one warm CTA paragraph, not a formal sign-off.
+
+Topic metadata:
+${JSON.stringify(topic, null, 2)}
+
+Draft article:
+${draftMarkdown}`;
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -347,21 +425,24 @@ async function createAnthropicEditorialPass(topic, draftMarkdown) {
         throw new Error('ANTHROPIC_API_KEY and ANTHROPIC_MODEL are required for Anthropic editorial generation.');
     }
 
-    const prompt = `You are the editorial QA pass for Millennial Marketing Agency. Rewrite the supplied blog post for luxury-but-approachable brand voice, clearer structure, practical specificity, and SEO discipline.
+    const prompt = `You are the editorial QA pass for Millennial Marketing Agency.
 
-Return valid JSON with this exact shape:
+${BRAND_VOICE_SPEC}
+
+Rewrite the supplied draft to match the brand voice and formatting spec above. Improve structure, specificity, and readability. Return valid JSON with this exact shape:
 {
   "title": "...",
   "description": "...",
-  "tags": ["tag 1", "tag 2"],
+  "tags": ["Tag One", "Tag Two"],
   "bodyMarkdown": "..."
 }
 
 Constraints:
-- Description must be 140 to 160 characters.
-- Tags must be 2 to 4 short phrases.
-- bodyMarkdown must not contain frontmatter.
-- End with a soft consultation CTA.
+- title: Title Case.
+- description: 140 to 160 characters. Plain sentence, no title case.
+- tags: Title Case, 2 to 4 short phrases.
+- bodyMarkdown: no frontmatter. All section headings in Title Case. Every bullet point starts with a capital letter.
+- End bodyMarkdown with one warm CTA paragraph, not a formal sign-off.
 
 Topic metadata:
 ${JSON.stringify(topic, null, 2)}
@@ -443,15 +524,22 @@ async function main() {
     if (!usedTemplateFallback) {
         validateEditorialOutput(nextTopic, editorialPass);
     }
-    const slug = nextTopic.slug || slugify(editorialPass.title || nextTopic.topic);
+
+    // Enforce title case and capitalized bullets regardless of provider
+    const cleanTitle = toTitleCase(editorialPass.title || nextTopic.topic);
+    const cleanTags = (Array.isArray(editorialPass.tags) ? editorialPass.tags : [])
+        .map((tag) => toTitleCase(String(tag)));
+    const cleanBody = capitalizeBullets(String(editorialPass.bodyMarkdown || '').trim());
+
+    const slug = nextTopic.slug || slugify(cleanTitle);
     const fileName = `${todayIsoDate()}-${slug}.md`;
-    const frontmatter = matter.stringify(editorialPass.bodyMarkdown.trim(), {
-        title: editorialPass.title,
+    const frontmatter = matter.stringify(cleanBody, {
+        title: cleanTitle,
         slug,
         date: todayIsoDate(),
         description: editorialPass.description,
         author: 'Millennial Marketing Agency',
-        tags: editorialPass.tags
+        tags: cleanTags
     });
 
     await fs.mkdir(contentDir, { recursive: true });
