@@ -169,6 +169,46 @@ async function createClaudeDraft(topic) {
     return extractTextFromAnthropic(await response.json());
 }
 
+async function createOpenAIDraft(topic) {
+    if (!process.env.OPENAI_API_KEY || !process.env.OPENAI_MODEL) {
+        throw new Error('OPENAI_API_KEY and OPENAI_MODEL are required for OpenAI draft generation.');
+    }
+
+    const prompt = `You are writing a blog article for Millennial Marketing Agency, a female-founded Atlanta creative agency serving real estate, hospitality, and lifestyle brands.
+
+Write a Markdown article with a clear argument, strong section headings, and a practical conclusion. Do not include frontmatter, code fences, or notes to the editor.
+
+Topic: ${topic.topic}
+Primary keyword: ${topic.primaryKeyword}
+Audience: ${topic.audience}
+CTA goal: ${topic.cta}
+Angle: ${topic.angle}`;
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+        },
+        body: JSON.stringify({
+            model: process.env.OPENAI_MODEL,
+            temperature: 0.7,
+            messages: [
+                {
+                    role: 'user',
+                    content: prompt
+                }
+            ]
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error(`OpenAI draft request failed with ${response.status}`);
+    }
+
+    return extractTextFromOpenAI(await response.json());
+}
+
 async function createEditorialPass(topic, draftMarkdown) {
     if (!process.env.OPENAI_API_KEY || !process.env.OPENAI_MODEL) {
         throw new Error('OPENAI_API_KEY and OPENAI_MODEL are required.');
@@ -219,7 +259,13 @@ async function main() {
         return;
     }
 
-    const draftMarkdown = await createClaudeDraft(nextTopic);
+    let draftMarkdown;
+    try {
+        draftMarkdown = await createClaudeDraft(nextTopic);
+    } catch (anthropicError) {
+        console.warn(`Anthropic draft failed (${anthropicError.message}). Falling back to OpenAI draft generation.`);
+        draftMarkdown = await createOpenAIDraft(nextTopic);
+    }
     const editorialPass = await createEditorialPass(nextTopic, draftMarkdown);
     validateEditorialOutput(nextTopic, editorialPass);
     const slug = nextTopic.slug || slugify(editorialPass.title || nextTopic.topic);
