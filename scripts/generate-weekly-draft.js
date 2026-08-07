@@ -386,7 +386,7 @@ Constraints:
 - description: 140 to 160 characters. Plain sentence, no title case.
 - tags: Title Case, 2 to 4 short phrases.
 - bodyMarkdown: no frontmatter. All section headings in Title Case. Every bullet point starts with a capital letter.
-- End bodyMarkdown with one warm CTA paragraph, not a formal sign-off.
+- End bodyMarkdown with one warm closing paragraph (1-3 sentences) that invites the reader into the next step. Do NOT include any hyperlinks in this paragraph. Do NOT add a "Schedule a consultation" link or any anchor tag — a universal CTA button already appears below every post automatically.
 
 Topic metadata:
 ${JSON.stringify(topic, null, 2)}
@@ -442,7 +442,7 @@ Constraints:
 - description: 140 to 160 characters. Plain sentence, no title case.
 - tags: Title Case, 2 to 4 short phrases.
 - bodyMarkdown: no frontmatter. All section headings in Title Case. Every bullet point starts with a capital letter.
-- End bodyMarkdown with one warm CTA paragraph, not a formal sign-off.
+- End bodyMarkdown with one warm closing paragraph (1-3 sentences) that invites the reader into the next step. Do NOT include any hyperlinks in this paragraph. Do NOT add a "Schedule a consultation" link or any anchor tag — a universal CTA button already appears below every post automatically.
 
 Topic metadata:
 ${JSON.stringify(topic, null, 2)}
