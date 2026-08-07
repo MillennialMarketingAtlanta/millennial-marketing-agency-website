@@ -1,0 +1,2915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Studio Pilates Case Study | Millennial Marketing Agency</title>
+    <meta name="description" content="The Studio Pilates case study: social strategy, content production, and brand storytelling for a boutique fitness studio in Atlanta.">
+    <meta name="robots" content="index,follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Studio Pilates Case Study | Millennial Marketing Agency">
+    <meta property="og:description" content="See how Millennial Marketing positioned and launched The Studio Pilates with a premium creative marketing system.">
+    <meta property="og:image" content="studio-pilates.png">
+    <meta property="og:url" content="https://millennial-marketing-agency-website.vercel.app/studio-pilates.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Studio Pilates Case Study | Millennial Marketing Agency">
+    <meta name="twitter:description" content="A full project case study for The Studio Pilates by Millennial Marketing Agency.">
+    <meta name="twitter:image" content="studio-pilates.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dp-bg: var(--cream);
+            --dp-bg-soft: var(--cream);
+            --dp-ink: #1f1a16;
+            --dp-muted: #5f5850;
+            --dp-line: rgba(41, 35, 30, 0.15);
+            --dp-card: rgba(255, 255, 255, 0.8);
+        }
+
+        .case-study-shell {
+            background: var(--dp-bg);
+        }
+
+        .case-study-hero {
+            position: relative;
+            min-height: 84svh;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 6rem 5.1rem;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .case-study-hero .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .case-study-hero .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.58) 100%);
+        }
+
+        .case-study-hero-copy {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .case-study-kicker {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .case-study-hero-copy h1 {
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(2.3rem, 5.6vw, 4.85rem);
+            line-height: 0.94;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .case-study-hero-copy h1 em {
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .case-study-hero-copy p {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            line-height: 1.45;
+            max-width: 640px;
+            margin: 0;
+        }
+
+        .case-study-main {
+            background: var(--dp-bg);
+            padding-bottom: 2.7rem;
+        }
+
+        .case-study-intro,
+        .case-study-brand-discovery,
+        .case-study-band-inner,
+        .case-study-system,
+        .case-study-story-impact {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding-left: 2.2rem;
+            padding-right: 2.2rem;
+        }
+
+        .case-study-brand-discovery {
+            padding-top: 2.1rem;
+            padding-bottom: 0.8rem;
+            width: 100vw;
+            max-width: none;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .case-study-brand-discovery h2 {
+            margin: 0 0 0.85rem;
+            text-align: center;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.85rem, 2.15vw, 2.35rem);
+            font-weight: 400;
+            color: #1f1a16;
+        }
+
+        .case-study-brand-discovery-hero {
+            margin: 0;
+            display: grid;
+            grid-template-columns: minmax(360px, 0.86fr) minmax(0, 1.14fr);
+            gap: 1.15rem;
+            align-items: stretch;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .case-study-brand-discovery-hero::before {
+            content: none;
+        }
+
+        .case-study-brand-discovery-hero img {
+            width: 100%;
+            height: clamp(420px, 40vw, 620px);
+            object-fit: cover;
+            object-position: center 66%;
+            display: block;
+            transform: translateY(var(--bd-parallax-y, 0px));
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        .case-study-brand-discovery-copy {
+            position: static;
+            color: #1f1a16;
+            max-width: none;
+            display: grid;
+            gap: 0.72rem;
+            padding: clamp(1.15rem, 1.8vw, 1.6rem);
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            align-self: center;
+        }
+
+        .case-study-brand-discovery-copy .case-study-identity-subheading {
+            margin: 0;
+            font-size: 0.66rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #5f5850;
+            text-align: left;
+        }
+
+        .case-study-brand-discovery-copy .case-study-section-title {
+            margin: 0;
+            color: #1f1a16;
+            text-align: left;
+        }
+
+        .case-study-brand-discovery-copy p:not(.case-study-identity-subheading) {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
+            max-width: 46ch;
+            color: #302a25;
+        }
+
+        @media (min-width: 901px) {
+            .case-study-brand-discovery {
+                width: 100vw;
+                max-width: none;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .case-study-brand-discovery-hero {
+                position: relative;
+                display: block;
+                min-height: clamp(520px, 44vw, 760px);
+                overflow: hidden;
+            }
+
+            .case-study-brand-discovery-hero img {
+                width: 100%;
+                height: clamp(520px, 44vw, 760px);
+                object-fit: cover;
+                object-position: center 66%;
+                display: block;
+                transform: translateY(var(--bd-parallax-y, 0px)) scale(1.12);
+                transform-origin: center;
+                will-change: transform;
+            }
+
+            .case-study-brand-discovery-copy {
+                position: absolute;
+                top: clamp(1.1rem, 4vw, 3rem);
+                left: clamp(1.25rem, 5vw, 3.5rem);
+                z-index: 2;
+                color: #f8f6f2;
+                max-width: min(620px, calc(100vw - 4rem));
+                display: grid;
+                gap: 0.72rem;
+                padding: 0;
+                align-self: start;
+                justify-items: start;
+                text-align: left;
+            }
+
+            .case-study-brand-discovery-copy .case-study-identity-subheading {
+                color: rgba(248, 246, 242, 0.88);
+                text-align: left;
+            }
+
+            .case-study-brand-discovery-copy .case-study-section-title {
+                color: #f8f6f2;
+                text-align: left;
+            }
+
+            .case-study-brand-discovery-copy p:not(.case-study-identity-subheading) {
+                color: rgba(248, 246, 242, 0.96);
+                max-width: 46ch;
+            }
+
+            .case-study-application-grid figure.case-study-application-fullbleed {
+                width: auto;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        .case-study-brand-discovery-kicker {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.66rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: rgba(248, 246, 242, 0.88);
+        }
+
+        .case-study-intro {
+            padding-top: 3.8rem;
+            display: grid;
+            gap: 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .case-study-intro-top {
+            display: grid;
+            grid-template-columns: 1fr 0.72fr 0.88fr;
+            gap: 0;
+            align-items: start;
+            border-bottom: none;
+            padding-bottom: 1.15rem;
+            padding-top: 1.05rem;
+        }
+
+        .case-study-intro-top > *,
+        .case-study-intro-bottom > * {
+            min-width: 0;
+        }
+
+        .case-study-lede {
+            margin: 0;
+            padding: 0 2.25rem 1rem;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(2rem, 2.6vw, 2.85rem);
+            line-height: 1.11;
+            color: #1f1a16;
+            max-width: 24ch;
+            text-wrap: balance;
+        }
+
+        .case-study-meta {
+            border: none;
+            border-left: 1px solid var(--dp-line);
+            background: transparent;
+            padding: 0 1.45rem 1rem;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        .case-study-middle-copy {
+            padding: 0 1.7rem 1rem;
+            display: grid;
+            gap: 1.25rem;
+            align-content: start;
+            min-width: 0;
+        }
+
+        .case-study-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--dp-line);
+        }
+
+        .case-study-meta-block {
+            padding: 0 1rem;
+            border-right: 1px solid rgba(41, 35, 30, 0.12);
+        }
+
+        .case-study-meta-block:first-child {
+            padding-left: 0;
+        }
+
+        .case-study-meta-block:last-child {
+            padding-right: 0;
+            border-right: none;
+        }
+
+        .case-study-meta-block h3,
+        .case-study-services h3 {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.17em;
+            text-transform: uppercase;
+            color: #5f5850;
+            font-weight: 600;
+        }
+
+        .case-study-meta-block p {
+            margin: 0.34rem 0 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.88rem;
+            line-height: 1.3;
+            color: #1e1a17;
+        }
+
+        .case-study-services {
+            padding-top: 0.8rem;
+        }
+
+        .case-study-services ul {
+            margin: 0.38rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.35rem 1.2rem;
+        }
+
+        .case-study-services li {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.87rem;
+            color: #1e1a17;
+            line-height: 1.25;
+        }
+
+        .case-study-intro-bottom {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            align-items: start;
+            background: transparent;
+            overflow: hidden;
+            padding-top: 0.9rem;
+        }
+
+        .case-study-text-columns {
+            display: grid;
+            grid-template-columns: 1fr;
+            border-right: none;
+            gap: 0.8rem;
+            align-content: start;
+            padding-bottom: 0.8rem;
+            min-width: 0;
+            max-width: 760px;
+            justify-self: end;
+        }
+
+        .case-study-middle-copy .case-study-text-block {
+            padding: 0;
+            max-width: 33ch;
+        }
+
+        .case-study-text-block {
+            padding: 0 2.25rem 0.9rem;
+            border-right: none;
+            border-bottom: none;
+            min-width: 0;
+        }
+
+        .case-study-text-block:last-child {
+            border-bottom: none;
+        }
+
+        .case-study-caption {
+            margin: 0 0 0.7rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #5f5850;
+            font-weight: 600;
+        }
+
+        .case-study-text-block p {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.84rem;
+            line-height: 1.5;
+            color: #26211d;
+            overflow-wrap: anywhere;
+            word-break: normal;
+            max-width: 52ch;
+        }
+
+        .case-study-feature-image img,
+        .case-study-feature-image video {
+            width: 100%;
+            height: 100%;
+            min-height: 370px;
+            object-fit: cover;
+            object-position: 74% 58%;
+            display: block;
+            transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.2);
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        .case-study-visual-band {
+            margin-top: 0;
+            border-top: none;
+            border-bottom: none;
+            background: transparent;
+        }
+
+        .case-study-band-inner {
+            padding-top: 2.55rem;
+            padding-bottom: 2.9rem;
+        }
+
+        .case-study-identity-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+            gap: 1.2rem;
+            align-items: start;
+        }
+
+        .case-study-identity-copy {
+            padding: clamp(1.45rem, 2.1vw, 2rem);
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            min-height: 100%;
+            display: grid;
+            align-content: start;
+            gap: 0.72rem;
+        }
+
+        .case-study-section-title {
+            margin: 0;
+            text-align: left;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 2.35vw, 2.55rem);
+            line-height: 1.04;
+            font-weight: 400;
+            color: #1f1a16;
+        }
+
+        .case-study-identity-subheading {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.66rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #5f5850;
+        }
+
+        .case-study-identity-description {
+            margin: 0;
+            max-width: 48ch;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.56;
+            letter-spacing: 0.01em;
+            color: #26211d;
+        }
+
+        .case-study-identity-notes {
+            margin: 0.5rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .case-study-identity-notes li {
+            margin: 0;
+            padding-top: 0.5rem;
+            border-top: none;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #4f4841;
+        }
+
+        .case-study-identity-notes li + li {
+            border-top: 1px solid rgba(41, 35, 30, 0.14);
+        }
+
+        .case-study-identity-media {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
+            align-items: stretch;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-study-identity-card {
+            margin: 0;
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+        }
+
+        .case-study-identity-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .case-study-identity-card:first-child,
+        .case-study-identity-card:last-child {
+            min-height: 0;
+            transform: none;
+        }
+
+        .case-study-section-title em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .case-study-identity-rail {
+            margin-top: 1.5rem;
+            border-top: none;
+            padding-top: 1.4rem;
+            padding-left: clamp(1.45rem, 2.1vw, 2rem);
+            padding-right: clamp(1.45rem, 2.1vw, 2rem);
+        }
+
+        .case-study-identity-rail p {
+            margin: 0 0 0.5rem;
+            text-align: left;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #59524b;
+            font-weight: 600;
+        }
+
+        .case-study-identity-rail-grid {
+            display: flex;
+            height: 430px;
+            gap: 0;
+            overflow: hidden;
+        }
+
+        .case-study-identity-rail figure {
+            flex: 1;
+            margin: 0;
+            border: none;
+            background: transparent;
+            overflow: hidden;
+            position: relative;
+            transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .case-study-identity-rail:hover figure {
+            flex: 0.45;
+        }
+
+        .case-study-identity-rail:hover figure:hover,
+        .case-study-identity-rail figure.is-featured {
+            flex: 2.8;
+        }
+
+        .case-study-identity-rail:hover figure.is-featured:not(:hover) {
+            flex: 0.45;
+        }
+
+        .case-study-identity-rail img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.45s ease;
+        }
+
+        .case-study-identity-rail figure:hover img {
+            transform: scale(1.03);
+        }
+
+        .case-study-video-campaign {
+            margin-top: 4.65rem;
+            padding-left: clamp(1.45rem, 2.1vw, 2rem);
+            padding-right: clamp(1.45rem, 2.1vw, 2rem);
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .case-study-video-campaign-copy {
+            display: grid;
+            gap: 0.48rem;
+            max-width: 58ch;
+            margin: 0 auto;
+            justify-items: center;
+            text-align: center;
+            padding-bottom: 4.65rem;
+        }
+
+        .case-study-video-campaign-title {
+            margin: 0;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.65rem, 2.08vw, 2.15rem);
+            line-height: 1.08;
+            font-weight: 400;
+            color: #1f1a16;
+        }
+
+        .case-study-video-campaign-description {
+            margin: 0;
+            text-align: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+            color: #302a25;
+            max-width: 54ch;
+        }
+
+        .case-study-video-campaign-grid {
+            display: flex;
+            height: clamp(338px, 36.5vw, 495px);
+            gap: 0;
+            overflow: hidden;
+        }
+
+        .case-study-video-pane {
+            margin: 0;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+            position: relative;
+            background: #d8d0c6;
+            transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .case-study-video-pane::after {
+            content: none;
+        }
+
+        .case-study-video-pane img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.45s ease;
+        }
+
+        .case-study-video-campaign-grid .case-study-video-pane:nth-child(2) img {
+            object-position: 50% 14%;
+        }
+
+        .case-study-video-pane:hover img {
+            transform: scale(1.03);
+        }
+
+        .case-study-video-campaign-grid:hover .case-study-video-pane {
+            flex: 0.72;
+        }
+
+        .case-study-video-campaign-grid:hover .case-study-video-pane:hover {
+            flex: 2.05;
+        }
+
+        .case-study-video-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 6.2rem;
+            height: 1.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            background: rgba(26, 22, 18, 0.22);
+            color: #f6f2eb;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.56rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.38rem;
+            z-index: 1;
+            padding: 0 0.95rem;
+            backdrop-filter: blur(2px);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .case-study-video-play::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 0.26rem solid transparent;
+            border-bottom: 0.26rem solid transparent;
+            border-left: 0.38rem solid currentColor;
+        }
+
+        .case-study-project-impact {
+            margin-top: 4.65rem;
+            margin-bottom: 0;
+            padding-left: clamp(1.45rem, 2.1vw, 2rem);
+            padding-right: clamp(1.45rem, 2.1vw, 2rem);
+            display: grid;
+            gap: 2.55rem;
+        }
+
+        .case-study-project-impact-copy {
+            margin: 0 auto;
+            max-width: 66ch;
+            text-align: center;
+            display: grid;
+            gap: 0.52rem;
+        }
+
+        .case-study-project-impact-title {
+            margin: 0;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.68rem, 2.15vw, 2.25rem);
+            line-height: 1.08;
+            font-weight: 400;
+            color: #1f1a16;
+        }
+
+        .case-study-project-impact-title em {
+            white-space: nowrap;
+        }
+
+        .case-study-project-impact-description {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+            color: #302a25;
+            max-width: 62ch;
+            justify-self: center;
+        }
+
+        .case-study-project-impact-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.2rem 0.55rem;
+            max-width: 1020px;
+            width: 100%;
+            justify-self: center;
+        }
+
+        .case-study-project-impact-list li {
+            margin: 0;
+            padding: 0.35rem 0.85rem 0.45rem;
+            border-top: 1px solid rgba(41, 35, 30, 0.2);
+            display: grid;
+            gap: 0.28rem;
+        }
+
+        .case-study-project-impact-list-title {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.74rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #3a342d;
+            font-weight: 600;
+        }
+
+        .case-study-project-impact-list-copy {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.86rem;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
+            color: #3d3731;
+        }
+
+        .case-study-project-impact-close {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.86rem;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
+            color: #3d3731;
+            max-width: 62ch;
+            justify-self: center;
+            text-align: center;
+        }
+
+        .case-study-return-cta {
+            margin-top: 2.2rem;
+            margin-bottom: 0.275rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .case-study-return-cta-link {
+            margin-top: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            color: #1f1a16;
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding: 0 1.55rem 0.2rem 0;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .case-study-return-cta-link::after {
+            content: '\2192';
+            position: absolute;
+            right: 0;
+            top: 48%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .case-study-return-cta-link:hover,
+        .case-study-return-cta-link:focus-visible {
+            color: #1f1a16;
+        }
+
+        .case-study-mobile-closeout {
+            display: none;
+        }
+
+        .case-study-application-block {
+            margin-top: 2.8rem;
+            padding-left: clamp(1.45rem, 2.1vw, 2rem);
+            padding-right: clamp(1.45rem, 2.1vw, 2rem);
+        }
+
+        .case-study-application-copy {
+            margin-bottom: 4.05rem;
+            display: grid;
+            gap: 0.48rem;
+            max-width: 56ch;
+            margin-left: auto;
+            margin-right: auto;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .case-study-application-process {
+            margin: -1.85rem 0 6.075rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .case-study-application-step {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #4f4841;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .case-study-application-arrow {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.78rem;
+            color: #7a736c;
+            line-height: 1;
+        }
+
+        .case-study-application-copy .case-study-identity-subheading {
+            margin: 0;
+        }
+
+        .case-study-application-title {
+            margin: 0;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.7rem, 2.2vw, 2.25rem);
+            line-height: 1.08;
+            font-weight: 400;
+            color: #1f1a16;
+        }
+
+        .case-study-application-description {
+            margin: 0;
+            text-align: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+            color: #302a25;
+            max-width: 50ch;
+        }
+
+        .case-study-application-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+            gap: 0.75rem;
+            align-items: end;
+        }
+
+        .case-study-application-grid figure {
+            margin: 0;
+            min-height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .case-study-application-grid figure:not(.case-study-application-fullbleed) {
+            min-height: 0;
+            height: clamp(300px, 34vw, 500px);
+        }
+
+        .case-study-application-grid figure:nth-child(2) {
+            transform: none;
+            z-index: 1;
+        }
+
+        .case-study-application-grid figure.case-study-application-fullbleed {
+            grid-column: 1 / -1;
+            min-height: 340px;
+            margin-top: 1.5rem;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+        }
+
+        .case-study-application-grid figure.case-study-application-fullbleed:not(.case-study-application-fullbleed--orbit) > img {
+            transform: translate3d(0, var(--dp3-parallax-y, 0px), 0) scale(1.03);
+            transform-origin: center;
+            will-change: transform;
+            object-position: center 45%;
+        }
+
+        .case-study-application-grid figure.case-study-application-fullbleed--orbit {
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 52%, rgba(238, 230, 220, 0.98) 0%, rgba(220, 209, 197, 0.94) 66%, rgba(205, 190, 175, 0.92) 100%);
+        }
+
+        .case-study-social-orbit {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            isolation: isolate;
+            overflow: hidden;
+            --orbit-lane-y: 50%;
+            --orbit-card-gap: clamp(12px, 1.4vw, 22px);
+            --orbit-sequence-gap: clamp(12px, 1.4vw, 22px);
+        }
+
+        .case-study-social-orbit-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            z-index: 0;
+            transform: scale(1.01);
+        }
+
+        .case-study-social-orbit::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .case-study-social-orbit-lane {
+            position: absolute;
+            inset: 0;
+            z-index: 4;
+            pointer-events: none;
+            -webkit-mask-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 1) 24%,
+                rgba(0, 0, 0, 0) 28%,
+                rgba(0, 0, 0, 0) 72%,
+                rgba(0, 0, 0, 1) 76%,
+                rgba(0, 0, 0, 1) 100%
+            );
+            mask-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 1) 24%,
+                rgba(0, 0, 0, 0) 28%,
+                rgba(0, 0, 0, 0) 72%,
+                rgba(0, 0, 0, 1) 76%,
+                rgba(0, 0, 0, 1) 100%
+            );
+        }
+
+        .case-study-social-orbit-track {
+            position: absolute;
+            left: 0;
+            top: var(--orbit-lane-y);
+            display: flex;
+            align-items: center;
+            gap: var(--orbit-sequence-gap);
+            width: max-content;
+            transform: translate3d(0, -50%, 0);
+            animation: case-study-social-orbit-marquee 34s linear infinite;
+            animation-play-state: paused;
+            will-change: transform;
+        }
+
+        .case-study-social-orbit-sequence {
+            display: flex;
+            align-items: center;
+            gap: var(--orbit-card-gap);
+        }
+
+        .case-study-social-orbit-post {
+            position: relative;
+            width: clamp(112px, 11vw, 182px);
+            aspect-ratio: 4 / 5;
+            border-radius: 0.45rem;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 8px 18px rgba(20, 14, 9, 0.2);
+            flex: 0 0 auto;
+        }
+
+        .case-study-social-orbit.is-orbit-active .case-study-social-orbit-track {
+            animation-play-state: running;
+        }
+
+        .case-study-social-orbit-post img,
+        .case-study-social-orbit-post video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        @keyframes case-study-social-orbit-marquee {
+            0% {
+                transform: translate3d(0, -50%, 0);
+            }
+
+            100% {
+                transform: translate3d(calc(-50% - (var(--orbit-sequence-gap) / 2)), -50%, 0);
+            }
+        }
+
+        .case-study-application-grid img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .case-study-application-grid.case-study-application-grid--videos {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            align-items: stretch;
+        }
+
+        .case-study-application-grid.case-study-application-grid--videos figure {
+            min-height: 0;
+            height: auto;
+            aspect-ratio: 608 / 814;
+            transition: transform 0.35s ease;
+        }
+
+        .case-study-application-grid.case-study-application-grid--videos figure.case-study-application-fullbleed {
+            aspect-ratio: auto;
+            height: clamp(460px, 52vw, 760px);
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            margin-top: 2.7rem;
+        }
+
+        .case-study-application-grid.case-study-application-grid--videos figure:not(.case-study-application-fullbleed):hover {
+            transform: translateY(-8px);
+        }
+
+        .case-study-post-link {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .case-study-post-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease, filter 0.35s ease;
+        }
+
+        .case-study-post-link:hover img,
+        .case-study-post-link:focus-visible img {
+            transform: scale(1.04);
+            filter: saturate(1.03) contrast(1.02);
+        }
+
+        .case-study-post-link::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(16, 12, 10, 0) 55%, rgba(16, 12, 10, 0.36) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .case-study-post-link:hover::after,
+        .case-study-post-link:focus-visible::after {
+            opacity: 1;
+        }
+
+        .case-study-post-cta {
+            position: absolute;
+            left: 50%;
+            top: 72%;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.38rem;
+            min-width: 6.2rem;
+            height: 1.7rem;
+            padding: 0 0.95rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            background: rgba(26, 22, 18, 0.22);
+            backdrop-filter: blur(2px);
+            color: #f6f2eb;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.56rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease, background 0.3s ease;
+            pointer-events: none;
+        }
+
+        .case-study-post-cta::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 0.26rem solid transparent;
+            border-bottom: 0.26rem solid transparent;
+            border-left: 0.38rem solid currentColor;
+        }
+
+        .case-study-post-link:hover .case-study-post-cta,
+        .case-study-post-link:focus-visible .case-study-post-cta {
+            transform: translate(-50%, -50%) scale(1.03);
+            background: rgba(26, 22, 18, 0.32);
+        }
+
+        .case-study-post-link:focus-visible {
+            outline: 2px solid #f1e9dc;
+            outline-offset: -2px;
+        }
+
+
+        .case-study-logo-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .case-study-logo-strip img {
+            width: 100%;
+            height: 170px;
+            object-fit: contain;
+            background: transparent;
+            border: none;
+            display: block;
+        }
+
+        .case-study-mood-label {
+            margin: 0.2rem 0 0.65rem;
+            text-align: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.64rem;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            color: var(--dp-muted);
+            font-weight: 600;
+        }
+
+        .case-study-mood-strip {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 0.55rem;
+            align-items: stretch;
+        }
+
+        .case-study-mood-strip img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .case-study-fullbleed {
+            margin-top: 2.6rem;
+            overflow: hidden;
+            border-top: none;
+            border-bottom: none;
+            background: transparent;
+        }
+
+        .case-study-fullbleed img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .case-study-fullbleed-copy {
+            max-width: 1360px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 0;
+            align-items: stretch;
+            padding: 0 2.2rem;
+            color: #1f1a16;
+        }
+
+        .case-study-fullbleed-copy h2 {
+            margin: 0;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.85rem, 2.2vw, 2.45rem);
+            font-weight: 400;
+            line-height: 1.08;
+        }
+
+        .case-study-fullbleed-copy p {
+            margin: 0.55rem 0 0;
+            max-width: none;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .case-study-rendering-text {
+            border-right: none;
+            padding: 1.25rem 1.05rem;
+        }
+
+        .case-study-rendering-media {
+            min-height: 340px;
+        }
+
+        .case-study-system {
+            padding-top: 3.1rem;
+            padding-bottom: 2.5rem;
+            display: grid;
+            grid-template-columns: 0.72fr 0.72fr 1.06fr;
+            gap: 1.05rem;
+            border-bottom: none;
+            margin-top: 0;
+            position: relative;
+            z-index: 4;
+        }
+
+        .case-study-system-image {
+            display: block;
+            padding-top: 0;
+            padding-bottom: 3rem;
+        }
+
+        .case-study-system-pair {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+            gap: 1.15rem;
+            align-items: stretch;
+        }
+
+        .case-study-system-panel {
+            background: var(--dp-bg-soft);
+            border: 1px solid var(--dp-line);
+            overflow: hidden;
+        }
+
+        .case-study-system-panel figure {
+            margin: 0;
+            height: 100%;
+        }
+
+        .case-study-system-panel img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .case-study-system-copy {
+            padding: 1.45rem 1.4rem;
+            display: grid;
+            align-content: start;
+            gap: 0.55rem;
+        }
+
+        .case-study-system-kicker {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #5f5850;
+            font-weight: 600;
+        }
+
+        .case-study-system-copy h3 {
+            margin: 0;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            line-height: 1.08;
+            font-weight: 400;
+            color: #1f1a16;
+        }
+
+        .case-study-system-copy p {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.48;
+            color: #26211d;
+            max-width: 40ch;
+        }
+
+        .case-study-system-secondary {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            background: #f3f0ea;
+        }
+
+        .case-study-system-secondary.case-study-system-mood {
+            grid-template-rows: 1fr;
+            background: var(--dp-bg-soft);
+        }
+
+        .case-study-system-secondary.case-study-system-mood figure {
+            min-height: 100%;
+        }
+
+        .case-study-system-secondary.case-study-system-mood img {
+            object-fit: contain;
+            background: var(--dp-bg-soft);
+        }
+
+        .case-study-brand-elements {
+            margin-top: 0.75rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid rgba(41, 35, 30, 0.12);
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        .case-study-brand-elements img {
+            width: 160px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: saturate(0.94) contrast(1.04);
+        }
+
+        .case-study-brand-palette {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 0.35rem;
+            max-width: 260px;
+        }
+
+        .case-study-brand-palette span {
+            display: block;
+            height: 22px;
+            border: 1px solid rgba(41, 35, 30, 0.16);
+        }
+
+        .case-study-brand-type {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #5b544d;
+        }
+
+        .case-study-system-secondary figure {
+            min-height: 280px;
+        }
+
+        .case-study-system-left {
+            background: transparent;
+            border: none;
+            padding: 1.5rem;
+            box-shadow: none;
+        }
+
+        .case-study-system-left h2,
+        .case-study-system-middle h2,
+        .case-study-system-right h2,
+        .case-study-story h2,
+        .case-study-impact h2 {
+            margin: 0;
+            font-family: 'FreightDisp Pro', 'Playfair Display', serif;
+            font-size: clamp(1.65rem, 2.3vw, 2.3rem);
+            font-weight: 400;
+            color: #1f1a16;
+        }
+
+        .case-study-system-left p,
+        .case-study-system-middle p,
+        .case-study-story p,
+        .case-study-impact li,
+        .case-study-website-intro p {
+            margin: 0.65rem 0 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.93rem;
+            line-height: 1.58;
+            color: #26211d;
+        }
+
+        .case-study-color-row {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .case-study-color-row span {
+            display: block;
+            height: 36px;
+            border: 1px solid rgba(41, 35, 30, 0.16);
+        }
+
+        .case-study-system-right {
+            background: transparent;
+            border: none;
+            padding: 1.5rem;
+            box-shadow: none;
+        }
+
+        .case-study-system-middle {
+            background: transparent;
+            border: none;
+            padding: 1.5rem;
+        }
+
+        .case-study-type-sample {
+            margin-top: 0.95rem;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .case-study-type-sample h4 {
+            margin: 0;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #5d5750;
+            font-weight: 600;
+        }
+
+        .case-study-type-line {
+            margin: 0.3rem 0 0;
+            color: #1f1a16;
+            line-height: 1.25;
+        }
+
+        .case-study-type-line.serif {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+        }
+
+        .case-study-type-line.sans {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+        }
+
+        .case-study-app-grid {
+            margin-top: 0.9rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.55rem;
+        }
+
+        .case-study-app-grid img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .case-study-website-showcase {
+            padding-top: 2.4rem;
+            padding-bottom: 2.6rem;
+            border-bottom: none;
+        }
+
+        .case-study-website-intro {
+            max-width: 560px;
+            margin-bottom: 0.9rem;
+        }
+
+        .case-study-website-showcase img {
+            width: 100%;
+            height: auto;
+            border: none;
+            display: block;
+        }
+
+        .case-study-website-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 0.75rem;
+        }
+
+        .case-study-website-stack {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .case-study-story-impact {
+            padding-top: 2.5rem;
+            display: grid;
+            grid-template-columns: 0.75fr 1.08fr 0.84fr;
+            gap: 1rem;
+            align-items: start;
+            margin-top: 0.2rem;
+        }
+
+        .case-study-story,
+        .case-study-impact {
+            background: transparent;
+            border: none;
+            padding: 1.4rem;
+            box-shadow: none;
+        }
+
+        .case-study-story-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            text-decoration: none;
+            color: #1f1a16;
+            border-bottom: 1px solid #1f1a16;
+            padding-right: 1.1rem;
+            position: relative;
+            font-size: 0.86rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .case-study-story-link::after {
+            content: '\2192';
+            position: absolute;
+            right: 0;
+            top: 48%;
+            transform: translateY(-50%);
+        }
+
+        .case-study-story-media {
+            position: relative;
+            min-height: 280px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .case-study-story-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .case-study-play {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(17, 14, 11, 0.72);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 0.95rem;
+            line-height: 1;
+        }
+
+        .case-reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .case-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .case-study-impact ul {
+            margin: 1rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .case-study-impact li {
+            margin: 0;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(41, 35, 30, 0.13);
+            letter-spacing: 0.01em;
+        }
+
+        .case-study-impact li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        @media (min-width: 901px) {
+            .case-study-identity-media {
+                padding-right: clamp(1.45rem, 2.1vw, 2rem);
+            }
+
+            .case-study-application-grid figure.case-study-application-fullbleed {
+                width: auto;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .case-study-application-grid.case-study-application-grid--videos figure.case-study-application-fullbleed {
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .case-study-social-orbit {
+                --orbit-lane-y: 50%;
+                --orbit-card-gap: clamp(8px, 1.8vw, 14px);
+                --orbit-sequence-gap: clamp(8px, 1.8vw, 14px);
+            }
+
+            .case-study-social-orbit-post {
+                width: clamp(41px, 8.5vw, 64px);
+            }
+
+            .case-study-hero {
+                min-height: 56svh;
+                padding: 0 2.2rem 2.4rem;
+            }
+
+            .case-study-intro,
+            .case-study-brand-discovery,
+            .case-study-band-inner,
+            .case-study-system,
+            .case-study-story-impact {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .case-study-brand-discovery-copy {
+                max-width: min(540px, calc(100vw - 4.5rem));
+            }
+
+            .case-study-brand-discovery {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .case-study-intro {
+                border-radius: 0;
+            }
+
+            .case-study-intro-top,
+            .case-study-intro-bottom,
+            .case-study-system,
+            .case-study-story-impact {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-intro-top {
+                padding-bottom: 0.75rem;
+                padding-top: 0.9rem;
+            }
+
+            .case-study-lede {
+                padding: 0 1.65rem 1.45rem;
+                max-width: none;
+            }
+
+            .case-study-meta {
+                border-left: none;
+                border-top: none;
+                padding: 0 1.65rem 1rem;
+            }
+
+            .case-study-middle-copy {
+                padding: 0 1.65rem 1rem;
+            }
+
+            .case-study-meta-block {
+                padding: 0 0 0 0.75rem;
+            }
+
+            .case-study-meta-block:first-child {
+                padding-left: 0;
+            }
+
+            .case-study-text-columns {
+                border-right: none;
+                border-bottom: none;
+                max-width: none;
+                justify-self: start;
+            }
+
+            .case-study-middle-copy .case-study-text-block {
+                max-width: none;
+            }
+
+            .case-study-meta-grid {
+                grid-template-columns: 1fr;
+                gap: 0.7rem;
+                border-top: 1px solid var(--dp-line);
+                padding-top: 0.8rem;
+            }
+
+            .case-study-services ul {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                column-gap: 0.9rem;
+                row-gap: 0.4rem;
+                justify-items: start;
+            }
+
+            .case-study-services li {
+                width: 100%;
+                justify-self: stretch;
+                text-align: left;
+            }
+
+            .case-study-logo-strip,
+            .case-study-mood-strip {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .case-study-system-pair {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-mood-strip img {
+                height: 175px;
+            }
+
+            .case-study-fullbleed-copy {
+                grid-template-columns: 1fr;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .case-study-rendering-text {
+                border-right: none;
+                border-bottom: 1px solid var(--dp-line);
+            }
+
+            .case-study-rendering-media {
+                min-height: 320px;
+            }
+
+            .case-study-system {
+                margin-top: 0;
+            }
+
+            .case-study-website-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-app-grid img {
+                height: 190px;
+            }
+
+            .case-study-identity-grid,
+            .case-study-identity-media {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-identity-rail-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                height: auto;
+                gap: 0;
+            }
+
+            .case-study-identity-rail figure {
+                min-height: 220px;
+            }
+
+            .case-study-application-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+                align-items: stretch;
+            }
+
+            .case-study-video-campaign {
+                margin-top: 3.6rem;
+            }
+
+            .case-study-video-campaign-copy {
+                padding-bottom: 3.6rem;
+            }
+
+            .case-study-video-campaign-grid {
+                display: grid;
+                grid-auto-flow: column;
+                grid-auto-columns: min(62vw, 420px);
+                grid-template-columns: none;
+                overflow-x: auto;
+                overflow-y: hidden;
+                gap: 0.7rem;
+                padding-bottom: 0.35rem;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .case-study-project-impact {
+                margin-top: 4.8rem;
+                margin-bottom: 0;
+            }
+
+            .case-study-return-cta {
+                margin-top: 2rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .case-study-project-impact-list {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-video-pane:nth-child(3) {
+                grid-column: auto;
+            }
+
+            .case-study-video-pane {
+                min-height: 286px;
+                scroll-snap-align: start;
+            }
+
+            .case-study-application-process {
+                margin: -1.25rem 0 6.075rem;
+                gap: 0.5rem;
+            }
+
+            .case-study-application-grid figure {
+                min-height: 260px;
+            }
+
+            .case-study-application-grid figure:not(.case-study-application-fullbleed) {
+                height: 260px;
+            }
+
+            .case-study-application-grid figure:nth-child(2) {
+                transform: none;
+            }
+
+            .case-study-application-grid.case-study-application-grid--videos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .case-study-application-grid.case-study-application-grid--videos figure {
+                min-height: 0;
+                height: auto;
+                aspect-ratio: 608 / 814;
+            }
+
+            .case-study-application-grid.case-study-application-grid--videos figure.case-study-application-fullbleed {
+                height: clamp(300px, 42vw, 480px);
+                aspect-ratio: auto;
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                margin-top: 2rem;
+            }
+
+
+            .case-study-identity-card:first-child,
+            .case-study-identity-card:last-child {
+                min-height: auto;
+                transform: none;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+            .case-study-social-orbit-post {
+                width: clamp(37px, 10vw, 56px);
+            }
+
+            .case-study-social-orbit {
+                --orbit-lane-y: 50%;
+            }
+
+            .case-study-hero {
+                min-height: 74svh;
+                padding: 0 2.25rem 1.9rem;
+            }
+
+            .case-study-main {
+                padding-bottom: 0;
+            }
+
+            .case-study-hero-copy h1 {
+                font-size: clamp(2rem, 10.2vw, 2.8rem);
+                line-height: 0.9;
+            }
+
+            .case-study-hero-copy p {
+                font-size: 0.88rem;
+                max-width: 28ch;
+            }
+
+            .case-study-intro,
+            .case-study-brand-discovery,
+            .case-study-band-inner,
+            .case-study-system,
+            .case-study-story-impact,
+            .case-study-fullbleed-copy {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .case-study-brand-discovery {
+                padding-top: 1.55rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .case-study-brand-discovery-copy {
+                padding: 2rem 1rem;
+                max-width: none;
+                justify-items: center;
+                text-align: center;
+            }
+
+            .case-study-brand-discovery-hero {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+            }
+
+            .case-study-brand-discovery-copy p {
+                font-size: 0.84rem;
+                line-height: 1.5;
+                text-align: center;
+                max-width: 44ch;
+            }
+
+            .case-study-brand-discovery-copy .case-study-identity-subheading,
+            .case-study-brand-discovery-copy .case-study-section-title {
+                text-align: center;
+            }
+
+            .case-study-brand-discovery-copy .case-study-section-title {
+                font-size: clamp(1.4rem, 6.2vw, 1.62rem);
+                line-height: 1.04;
+            }
+
+            .case-study-brand-discovery-hero img {
+                height: min(62svh, 560px);
+                width: 100%;
+                object-fit: cover;
+                object-position: center 66%;
+                margin: 0 auto;
+                transform: none;
+            }
+
+            .case-study-intro {
+                padding-top: 1.9rem;
+                border-radius: 0;
+            }
+
+            .case-study-intro-top {
+                gap: 0.7rem;
+            }
+
+            .case-study-lede {
+                font-size: clamp(1.38rem, 7.2vw, 1.88rem);
+                max-width: 16ch;
+                line-height: 1.06;
+            }
+
+            .case-study-text-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-lede,
+            .case-study-meta,
+            .case-study-middle-copy {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                margin-left: 0;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .case-study-meta-grid {
+                gap: 0.55rem;
+            }
+
+            .case-study-meta-block {
+                border-right: none;
+                padding-left: 0;
+            }
+
+            .case-study-text-block {
+                border-right: none;
+                border-bottom: none;
+                padding: 0.15rem 0 0;
+            }
+
+            .case-study-text-block p {
+                max-width: none;
+                font-size: 0.84rem;
+                line-height: 1.38;
+            }
+
+            .case-study-text-block:last-child {
+                border-bottom: none;
+            }
+
+            .case-study-feature-image img,
+            .case-study-feature-image video {
+                min-height: 250px;
+            }
+
+            .case-study-section-title {
+                font-size: clamp(1.8rem, 9vw, 2.35rem);
+            }
+
+            .case-study-identity-copy .case-study-section-title {
+                font-size: clamp(1.4rem, 6.2vw, 1.62rem);
+                line-height: 1.04;
+            }
+
+            .case-study-band-inner {
+                padding-top: 1.35rem;
+                padding-bottom: 1.55rem;
+            }
+
+            .case-study-logo-strip,
+            .case-study-mood-strip,
+            .case-study-app-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-identity-media {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0;
+                width: 100%;
+                margin-bottom: 0;
+            }
+
+            .case-study-identity-card {
+                display: block;
+                visibility: visible;
+                opacity: 1;
+                overflow: hidden;
+                background: #ece7e0;
+                aspect-ratio: auto;
+            }
+
+            .case-study-identity-card img {
+                display: block;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .case-study-identity-rail-grid {
+                display: grid;
+                grid-auto-flow: column;
+                grid-auto-columns: 76vw;
+                grid-template-columns: none;
+                overflow-x: auto;
+                overflow-y: hidden;
+                gap: 0.7rem;
+                padding-bottom: 0.35rem;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .case-study-identity-rail {
+                margin-top: 0.35rem;
+                padding-top: 0.45rem;
+                padding-left: 0.9rem;
+                padding-right: 0.9rem;
+            }
+
+            .case-study-identity-rail figure {
+                min-height: 200px;
+                scroll-snap-align: start;
+            }
+
+            .case-study-video-campaign {
+                margin-top: 1.5rem;
+                gap: 0.55rem;
+                padding-left: 0.9rem;
+                padding-right: 0.9rem;
+            }
+
+            .case-study-video-campaign-copy {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            .case-study-video-campaign-grid {
+                display: flex;
+                align-items: flex-start;
+                height: auto;
+                overflow-x: auto;
+                overflow-y: visible;
+                gap: 0.7rem;
+                padding-bottom: 0.35rem;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .case-study-project-impact {
+                margin-top: 1.45rem;
+                margin-bottom: 0.2rem;
+                gap: 0.7rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .case-study-project-impact-copy {
+                margin: 0;
+                width: 100%;
+                max-width: none;
+                text-align: center;
+                justify-self: center;
+                justify-items: center;
+            }
+
+            .case-study-project-impact-description,
+            .case-study-project-impact-close {
+                width: 100%;
+                max-width: none;
+                justify-self: center;
+                text-align: center;
+            }
+
+            .case-study-project-impact > .case-study-project-impact-close,
+            .case-study-return-cta {
+                display: none;
+            }
+
+            .case-study-project-impact-list {
+                width: 100%;
+                justify-self: start;
+            }
+
+            .case-study-project-impact-list li {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .case-study-return-cta {
+                margin-top: 0.55rem;
+                margin-bottom: 0;
+                justify-content: flex-start;
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .case-study-return-cta-link {
+                display: inline-flex;
+                font-size: 0.76rem;
+                padding-right: 0.85rem;
+            }
+
+            .case-study-project-impact-list li {
+                padding: 0.7rem 0.8rem;
+            }
+
+            .case-study-mobile-closeout {
+                display: grid;
+                gap: 0.75rem;
+                padding: 0 1rem 3rem;
+                margin-top: 0;
+                justify-items: center;
+                text-align: center;
+            }
+
+            .case-study-shell .footer {
+                margin-top: -1.5rem;
+                padding-top: 1rem;
+            }
+
+            .case-study-mobile-closeout-copy {
+                margin: 0.25rem 0 0.75rem;
+                width: 100%;
+                max-width: none;
+                font-size: 0.92rem;
+                line-height: 1.5;
+                text-align: center;
+                padding-top: 0.85rem;
+                border-top: 1px solid rgba(41, 35, 30, 0.16);
+            }
+
+            .case-study-mobile-closeout-cta {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .case-study-mobile-closeout-cta .case-study-return-cta-link {
+                display: inline-flex;
+                font-size: 0.76rem;
+                padding-right: 0.85rem;
+            }
+
+            .case-study-project-impact-title {
+                font-size: clamp(1.3rem, 6.6vw, 1.62rem);
+            }
+
+            .case-study-video-pane {
+                min-height: 0;
+                height: auto;
+                flex: 0 0 78vw;
+                aspect-ratio: 2 / 3;
+                scroll-snap-align: start;
+                background: transparent;
+                transition: none;
+                overflow: hidden;
+            }
+
+            .case-study-video-campaign-grid:hover .case-study-video-pane,
+            .case-study-video-campaign-grid:hover .case-study-video-pane:hover {
+                flex: 0 0 78vw;
+            }
+
+            .case-study-video-pane img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                background: transparent;
+            }
+
+            .case-study-video-campaign-title {
+                font-size: clamp(1.34rem, 6.8vw, 1.72rem);
+            }
+
+            .case-study-application-block {
+                margin-top: 1.35rem;
+                padding-left: 0.9rem;
+                padding-right: 0.9rem;
+            }
+
+            .case-study-application-process {
+                margin: -0.7rem 0 1.25rem;
+                gap: 0.38rem;
+            }
+
+            .case-study-application-step {
+                font-size: 0.6rem;
+                letter-spacing: 0.12em;
+            }
+
+            .case-study-application-grid figure {
+                min-height: 195px;
+            }
+
+            .case-study-application-grid figure:not(.case-study-application-fullbleed) {
+                height: 195px;
+            }
+
+            .case-study-application-grid figure:nth-child(2) {
+                transform: none;
+            }
+
+            .case-study-application-grid.case-study-application-grid--videos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .case-study-application-grid.case-study-application-grid--videos figure {
+                min-height: 0;
+                height: auto;
+                aspect-ratio: 608 / 814;
+            }
+
+            .case-study-application-grid.case-study-application-grid--videos figure.case-study-application-fullbleed {
+                height: 300px;
+                aspect-ratio: auto;
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                margin-top: 1.6rem;
+            }
+
+
+            .case-study-logo-strip img,
+            .case-study-mood-strip img,
+            .case-study-app-grid img {
+                height: auto;
+            }
+
+            .case-study-identity-copy,
+            .case-study-application-copy,
+            .case-study-video-campaign-copy,
+            .case-study-project-impact-copy {
+                max-width: none;
+                padding: 1rem 1rem 1.05rem;
+                text-align: center;
+            }
+
+            .case-study-video-campaign-copy {
+                padding: 2rem 1rem 2.1rem;
+            }
+
+            .case-study-project-impact-copy {
+                align-items: center;
+                justify-items: center;
+            }
+
+            .case-study-project-impact-description,
+            .case-study-project-impact-close {
+                text-align: center;
+            }
+
+            .case-study-return-cta {
+                justify-content: flex-start;
+            }
+
+            .case-study-return-cta-link {
+                letter-spacing: 0.03em;
+            }
+
+            .case-study-rendering-media {
+                min-height: 260px;
+            }
+
+            .case-study-story-media {
+                min-height: 225px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .case-study-feature-image img,
+            .case-study-feature-image video {
+                transform: none;
+            }
+
+            .case-study-application-grid figure.case-study-application-fullbleed:not(.case-study-application-fullbleed--orbit) > img {
+                transform: none;
+            }
+
+            .case-study-social-orbit-track {
+                animation: none;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body class="case-study-shell">
+    <section id="home" class="case-study-hero">
+        <video class="hero-bg" autoplay muted loop playsinline aria-label="The Studio Pilates hero scene">
+            <source src="assets/case-studies/studio-pilates/content-strategy-video-2.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html#home" aria-label="Millennial Marketing home">
+                        <img src="MainLogo-White.png" alt="Millennial Marketing" class="logo-img nav-logo" data-logo-light="MainLogo-White.png" data-logo-dark="Fixed.svg">
+                    </a>
+                </div>
+                <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <aside class="nav-menu" id="site-menu" aria-hidden="true">
+            <div class="nav-menu-panel">
+                <button class="nav-menu-close" type="button" aria-label="Close menu">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav-menu-links" aria-label="Primary">
+                    <a href="index.html#home">Home <span aria-hidden="true">&#8594;</span></a>
+                    <a href="index.html#disciplines">Services <span aria-hidden="true">&#8594;</span></a>
+                    <a href="index.html#work">History of Success <span aria-hidden="true">&#8594;</span></a>
+                    <a href="index.html#about">Who We Are <span aria-hidden="true">&#8594;</span></a>
+                    <a href="meet-the-team.html">Meet the Team <span aria-hidden="true">&#8594;</span></a>
+                    <a href="index.html#home" style="display:none"></a>
+                    <a href="blog/">Blog <span aria-hidden="true">&#8594;</span></a>
+                </nav>
+
+                <div class="nav-menu-footer">
+                    <p>Creative Marketing &amp;<br>Brand Strategy</p>
+                    <div class="nav-menu-social">
+                        <a href="https://www.linkedin.com/company/106850932/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M6.94 8.5V19H3.55V8.5h3.39ZM5.24 3C6.33 3 7 3.72 7 4.67c0 .93-.66 1.66-1.77 1.66h-.02c-1.07 0-1.74-.73-1.74-1.66C3.47 3.72 4.15 3 5.24 3ZM20.5 12.98V19h-3.39v-5.63c0-1.41-.5-2.37-1.77-2.37-.97 0-1.55.66-1.8 1.29-.09.23-.11.56-.11.89V19H10.04s.04-9.72 0-10.5h3.39v1.49c.45-.69 1.25-1.67 3.03-1.67 2.22 0 3.89 1.45 3.89 4.56Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/millennialmarketingatl/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.45 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.35A4.65 4.65 0 1 1 7.35 12 4.66 4.66 0 0 1 12 7.35Zm0 1.8A2.85 2.85 0 1 0 14.85 12 2.85 2.85 0 0 0 12 9.15Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:ginger@millennialmarketingagency.com,christa@millennialmarketingagency.com" aria-label="Contact">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.2l8 5.33 8-5.33V7H4Zm16 10V9.4l-7.45 4.97a1 1 0 0 1-1.1 0L4 9.4V17h16Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="case-study-hero-copy">
+            <span class="case-study-kicker">Case Study | Fitness & Wellness</span>
+            <h1><em>The Studio Pilates</em></h1>
+        </div>
+    </section>
+
+    <main class="case-study-main">
+        <section class="case-study-intro" id="case-study">
+            <div class="case-study-intro-top case-reveal">
+                <p class="case-study-lede">Building a distinctive social presence through ongoing content strategy, original photography and video, and creative storytelling designed to keep the brand fresh, recognizable, and connected to its community.</p>
+
+                <div class="case-study-middle-copy" aria-label="Project summary">
+                    <article class="case-study-text-block">
+                        <p class="case-study-caption">About</p>
+                        <p>The Studio Pilates is an Atlanta-based Pilates studio known for making movement approachable, inclusive, and genuinely enjoyable. With a distinct retro-inspired personality and welcoming atmosphere, the brand offers group Reformer and Tower Pilates classes alongside private sessions. Our work brings that experience to life online, capturing the people, personality, movement, and culture behind the brand.</p>
+                    </article>
+                    <article class="case-study-text-block">
+                        <p class="case-study-caption">Our Role</p>
+                        <p>Millennial Marketing serves as The Studio Pilates' ongoing social media and content partner, leading strategy, creative direction, content planning, photography, short-form video, campaign development, channel management, and reporting. Through ongoing content production and an evolving social strategy, we translate the in-studio experience into a dynamic digital presence that balances education, community, lifestyle, trends, and promotion while remaining unmistakably true to the brand.</p>
+                    </article>
+                </div>
+
+                <aside class="case-study-meta" aria-label="Project details">
+                    <div class="case-study-meta-grid">
+                        <div class="case-study-meta-block">
+                            <h3>Client</h3>
+                            <p>The Studio Pilates</p>
+                        </div>
+                        <div class="case-study-meta-block">
+                            <h3>Location</h3>
+                            <p>Atlanta, Georgia</p>
+                        </div>
+                        <div class="case-study-meta-block">
+                            <h3>Industry</h3>
+                            <p>Fitness & Wellness</p>
+                        </div>
+                    </div>
+
+                    <div class="case-study-services">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Social Media Strategy</li>
+                            <li>Creative Direction</li>
+                            <li>Content Production</li>
+                            <li>Photography</li>
+                            <li>Short-Form Video</li>
+                            <li>Campaign Development</li>
+                            <li>Performance Reporting</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="case-study-intro-bottom case-reveal">
+                <figure class="case-study-feature-image">
+                    <img src="assets/case-studies/studio-pilates/hero-main.png" alt="The Studio Pilates featured visual">
+                </figure>
+            </div>
+
+        </section>
+
+        <section class="case-study-brand-discovery case-reveal" aria-label="Brand discovery">
+            <figure class="case-study-brand-discovery-hero">
+                <figcaption class="case-study-brand-discovery-copy">
+                    <p class="case-study-identity-subheading">Social-First</p>
+                    <h2 class="case-study-section-title">Creative Strategy</h2>
+                    <p>Our ongoing strategy balances education, entertainment, community, culture, and promotion. From Pilates tips and instructor storytelling to timely trends and campaign concepts, each content cycle is shaped around what will keep the audience engaged while supporting the studio's evolving priorities.</p>
+                </figcaption>
+                <img src="assets/case-studies/studio-pilates/tsp-guidelines.png" alt="The Studio Pilates brand discovery visual">
+            </figure>
+        </section>
+
+        <section class="case-study-visual-band case-reveal" aria-label="Visual identity section">
+            <div class="case-study-band-inner">
+                <div class="case-study-application-block" aria-label="Digital and print applications">
+                    <div class="case-study-application-copy">
+                        <p class="case-study-identity-subheading">Ongoing Content Creation</p>
+                        <h3 class="case-study-application-title">More than a beautiful feed.<br><em>A content strategy built to stay relevant.</em></h3>
+                        <p class="case-study-application-description">Through recurring content sessions, we capture the movement, personalities, and details that make The Studio Pilates distinct. Original photography and short-form video create an evolving library of content designed for social&mdash;giving the brand a consistent stream of fresh, authentic visuals.</p>
+                    </div>
+                    <div class="case-study-application-process" aria-label="Brand application process">
+                        <span class="case-study-application-step">Education / Community / Culture / Lifestyle</span>
+                    </div>
+                    <div class="case-study-application-grid case-study-application-grid--videos" role="presentation">
+                        <figure>
+                            <a class="case-study-post-link" href="https://www.instagram.com/p/DafurkQDHYA/" aria-label="View social post one" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/case-studies/studio-pilates/content-strategy-3.png" alt="The Studio Pilates educational Instagram carousel preview" loading="lazy" decoding="async">
+                                <span class="case-study-post-cta">View Post</span>
+                            </a>
+                        </figure>
+                        <figure>
+                            <a class="case-study-post-link" href="https://www.instagram.com/p/DanP9msChLz/" aria-label="View social post two" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/case-studies/studio-pilates/content-strategy-video.jpg" alt="The Studio Pilates short-form vertical video content preview" loading="lazy" decoding="async">
+                                <span class="case-study-post-cta">View Post</span>
+                            </a>
+                        </figure>
+                        <figure>
+                            <a class="case-study-post-link" href="https://www.instagram.com/p/DLps1qUq-lZ/?img_index=1" aria-label="View social post three" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/case-studies/studio-pilates/content-strategy-2.png" alt="The Studio Pilates community storytelling social post preview" loading="lazy" decoding="async">
+                                <span class="case-study-post-cta">View Post</span>
+                            </a>
+                        </figure>
+                        <figure>
+                            <a class="case-study-post-link" href="https://www.instagram.com/p/DX1lDJ2lo7u/?img_index=1" aria-label="View social post four" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/case-studies/studio-pilates/content-strategy-4.png" alt="The Studio Pilates wellness and movement content preview" loading="lazy" decoding="async">
+                                <span class="case-study-post-cta">View Post</span>
+                            </a>
+                        </figure>
+                        <figure class="case-study-application-fullbleed case-study-application-fullbleed--orbit">
+                            <div class="case-study-social-orbit" aria-label="Animated social media concept exploration">
+                                <img class="case-study-social-orbit-bg" src="assets/case-studies/studio-pilates/content-creation-2-fullbleed.png" alt="The Studio Pilates two-phone social media mockup" loading="lazy" decoding="async">
+                                <div class="case-study-social-orbit-lane" aria-hidden="true">
+                                    <div class="case-study-social-orbit-track">
+                                        <div class="case-study-social-orbit-sequence">
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-01.jpg" alt="The Studio Pilates animated social post one" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-02.jpg" alt="The Studio Pilates animated social post two" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-03.jpg" alt="The Studio Pilates animated social post three" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><video autoplay muted loop playsinline preload="metadata" aria-label="Animated social post video one"><source src="assets/case-studies/studio-pilates/animation/video-1.mp4" type="video/mp4"></video></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-04.jpg" alt="The Studio Pilates animated social post four" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-05.jpg" alt="The Studio Pilates animated social post five" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-06.jpg" alt="The Studio Pilates animated social post six" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-07.jpg" alt="The Studio Pilates animated social post seven" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><video autoplay muted loop playsinline preload="metadata" aria-label="Animated social post video two"><source src="assets/case-studies/studio-pilates/animation/video-2.mp4" type="video/mp4"></video></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-08.jpg" alt="The Studio Pilates animated social post eight" loading="lazy" decoding="async"></figure>
+                                        </div>
+                                        <div class="case-study-social-orbit-sequence" aria-hidden="true">
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-01.jpg" alt="The Studio Pilates hidden social post preview one" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-02.jpg" alt="The Studio Pilates hidden social post preview two" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-03.jpg" alt="The Studio Pilates hidden social post preview three" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/case-studies/studio-pilates/animation/video-1.mp4" type="video/mp4"></video></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-04.jpg" alt="The Studio Pilates hidden social post preview four" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-05.jpg" alt="The Studio Pilates hidden social post preview five" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-06.jpg" alt="The Studio Pilates hidden social post preview six" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-07.jpg" alt="The Studio Pilates hidden social post preview seven" loading="lazy" decoding="async"></figure>
+                                            <figure class="case-study-social-orbit-post"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/case-studies/studio-pilates/animation/video-2.mp4" type="video/mp4"></video></figure>
+                                            <figure class="case-study-social-orbit-post"><img src="assets/case-studies/studio-pilates/animation/anim-post-08.jpg" alt="The Studio Pilates hidden social post preview eight" loading="lazy" decoding="async"></figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+
+                <section class="case-study-video-campaign" aria-label="Video campaign">
+                    <div class="case-study-video-campaign-copy">
+                        <p class="case-study-identity-subheading">Brand Photography</p>
+                        <h3 class="case-study-video-campaign-title">Capturing the energy, personality, and people <em>behind the brand.</em></h3>
+                        <p class="case-study-video-campaign-description">Through recurring brand photography sessions, we create an evolving library of original imagery that brings The Studio Pilates to life. From movement and instructor portraits to candid moments and studio details, every image is captured with social storytelling in mind&mdash;creating content that feels authentic, distinctive, and unmistakably Studio.</p>
+                    </div>
+                    <div class="case-study-video-campaign-grid" role="presentation">
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-1-opt.jpg" alt="The Studio Pilates brand photography panel one">
+                        </figure>
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-2-replacement-opt.jpg" alt="The Studio Pilates brand photography panel two">
+                        </figure>
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-5-opt.jpg" alt="The Studio Pilates brand photography panel five">
+                        </figure>
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-6-opt.jpg" alt="The Studio Pilates brand photography panel six">
+                        </figure>
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-7-opt.jpg" alt="The Studio Pilates brand photography panel seven">
+                        </figure>
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-new-1-opt.jpg" alt="The Studio Pilates brand photography new panel one">
+                        </figure>
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-new-2-opt.jpg" alt="The Studio Pilates brand photography new panel two">
+                        </figure>
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-3-opt.jpg" alt="The Studio Pilates brand photography panel three">
+                        </figure>
+                        <figure class="case-study-video-pane">
+                            <img src="assets/case-studies/studio-pilates/brand-photo-new-3-opt.jpg" alt="The Studio Pilates brand photography new panel three">
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="case-study-project-impact" aria-label="Project impact">
+                    <div class="case-study-project-impact-copy">
+                        <p class="case-study-identity-subheading">The Impact</p>
+                        <h3 class="case-study-project-impact-title">Turning social engagement into<br><em>lasting studio growth.</em></h3>
+                        <p class="case-study-project-impact-description">Our ongoing partnership is designed to turn digital engagement into meaningful connection with the brand. Through consistent storytelling, community-focused content, and an evolving creative strategy, we keep current members connected while introducing new audiences to The Studio Pilates&mdash;supporting greater awareness, loyalty, retention, and long-term membership growth.</p>
+                    </div>
+                    <ul class="case-study-project-impact-list" aria-label="Project impact highlights">
+                        <li>
+                            <p class="case-study-project-impact-list-title">367+</p>
+                            <p class="case-study-project-impact-list-copy">Posts Published</p>
+                        </li>
+                        <li>
+                            <p class="case-study-project-impact-list-title">2.5M+</p>
+                            <p class="case-study-project-impact-list-copy">Post Views</p>
+                        </li>
+                        <li>
+                            <p class="case-study-project-impact-list-title">54K+</p>
+                            <p class="case-study-project-impact-list-copy">Post Engagement</p>
+                        </li>
+                        <li>
+                            <p class="case-study-project-impact-list-title">3K+</p>
+                            <p class="case-study-project-impact-list-copy">New Followers</p>
+                        </li>
+                    </ul>
+                    <p class="case-study-project-impact-close">Performance metrics reflect the period from February 10, 2025, through July 10, 2026, approximately a year and a half since the start of our partnership with The Studio Pilates.</p>
+                </section>
+
+                <div class="case-study-return-cta" aria-label="Return to all projects">
+                    <a class="case-study-return-cta-link" href="index.html#work">Back to All Projects</a>
+                </div>
+
+                <section class="case-study-mobile-closeout" aria-label="Project impact closeout">
+                    <p class="case-study-project-impact-close case-study-mobile-closeout-copy">Performance metrics reflect the period from February 10, 2025, through July 10, 2026, approximately a year and a half since the start of our partnership with The Studio Pilates.</p>
+                    <div class="case-study-mobile-closeout-cta" aria-label="Return to all projects">
+                        <a class="case-study-return-cta-link" href="index.html#work">Back to All Projects</a>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="footer-left">
+            <nav class="footer-nav">
+                <a href="index.html#disciplines">SERVICES</a>
+                <a href="index.html#work">HISTORY OF SUCCESS</a>
+                <a href="index.html#about">WHO WE ARE</a>
+                <a href="meet-the-team.html">MEET THE TEAM</a>
+                <a href="blog/">BLOG</a>
+            </nav>
+
+            <div class="footer-logo">
+                <a href="index.html#home" aria-label="Millennial Marketing home">
+                    <img src="MainLogo-Black.svg" alt="Millennial Marketing" class="logo-img footer-logo-img">
+                </a>
+            </div>
+
+            <p class="footer-summary">A marketing and branding agency helping real estate, hospitality, and lifestyle brands tell their story with strategy and style.</p>
+
+            <div class="footer-meta">
+                <div class="footer-meta-row">
+                    <span class="footer-meta-label">PHONE</span>
+                    <span class="footer-meta-value">770-855-9870</span>
+                </div>
+                <div class="footer-meta-row">
+                    <span class="footer-meta-label">ADDRESS</span>
+                    <span class="footer-meta-value">1579 Monroe Drive NE, Suite 322<br>Atlanta, Georgia 30324</span>
+                </div>
+                <div class="footer-meta-row">
+                    <span class="footer-meta-label">SOCIAL</span>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/millennialmarketingatl/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="mailto:ginger@millennialmarketingagency.com,christa@millennialmarketingagency.com">Email</a>
+                        <a href="https://www.linkedin.com/company/106850932/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer-copy">&copy;2026 Millennial Marketing Agency</p>
+        </div>
+
+        <div class="footer-right">
+            <img src="design-assets/Links/footer-photo-2026-08-23.png" alt="Styled interior still life">
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const caseRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '0px 0px 65% 0px'
+        });
+
+        document.querySelectorAll('.case-reveal').forEach((el) => caseRevealObserver.observe(el));
+
+        const caseParallaxImage = document.querySelector('.case-study-feature-image img, .case-study-feature-image video');
+        const brandDiscoveryParallaxImage = document.querySelector('.case-study-brand-discovery-hero img');
+        const dp3ParallaxImage = document.querySelector('.case-study-application-fullbleed:not(.case-study-application-fullbleed--orbit) img');
+        const desktopMediaQuery = window.matchMedia('(min-width: 901px)');
+        const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        if (caseParallaxImage && !reducedMotionQuery.matches) {
+            let isTicking = false;
+
+            const updateCaseParallax = () => {
+                const rect = caseParallaxImage.getBoundingClientRect();
+                const viewportHeight = window.innerHeight || 1;
+                const distanceFromCenter = (rect.top + rect.height / 2) - viewportHeight / 2;
+                const normalizedDistance = distanceFromCenter / viewportHeight;
+                const isMobileViewport = window.innerWidth <= 900;
+                const maxOffset = isMobileViewport ? 88 : 145;
+                const strength = isMobileViewport ? 108 : 170;
+                const yOffset = Math.max(-maxOffset, Math.min(maxOffset, -normalizedDistance * strength));
+
+                caseParallaxImage.style.setProperty('--parallax-y', `${yOffset}px`);
+                isTicking = false;
+            };
+
+            const requestParallaxUpdate = () => {
+                if (!isTicking) {
+                    window.requestAnimationFrame(updateCaseParallax);
+                    isTicking = true;
+                }
+            };
+
+            requestParallaxUpdate();
+            window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+            window.addEventListener('resize', requestParallaxUpdate);
+        }
+
+        if (brandDiscoveryParallaxImage && desktopMediaQuery.matches && !reducedMotionQuery.matches) {
+            let isBrandDiscoveryTicking = false;
+
+            const updateBrandDiscoveryParallax = () => {
+                const rect = brandDiscoveryParallaxImage.getBoundingClientRect();
+                const viewportHeight = window.innerHeight || 1;
+                const distanceFromCenter = (rect.top + rect.height / 2) - viewportHeight / 2;
+                const normalizedDistance = distanceFromCenter / viewportHeight;
+            const yOffset = Math.max(-110, Math.min(110, -normalizedDistance * 135));
+
+                brandDiscoveryParallaxImage.style.transform = `translateY(${yOffset}px)`;
+                isBrandDiscoveryTicking = false;
+            };
+
+            const requestBrandDiscoveryParallaxUpdate = () => {
+                if (!isBrandDiscoveryTicking) {
+                    window.requestAnimationFrame(updateBrandDiscoveryParallax);
+                    isBrandDiscoveryTicking = true;
+                }
+            };
+
+            requestBrandDiscoveryParallaxUpdate();
+            window.addEventListener('scroll', requestBrandDiscoveryParallaxUpdate, { passive: true });
+            window.addEventListener('resize', requestBrandDiscoveryParallaxUpdate);
+        }
+
+        if (dp3ParallaxImage && !reducedMotionQuery.matches) {
+            let isDp3Ticking = false;
+
+            const updateDp3Parallax = () => {
+                const rect = dp3ParallaxImage.getBoundingClientRect();
+                const viewportHeight = window.innerHeight || 1;
+                const distanceFromCenter = (rect.top + rect.height / 2) - viewportHeight / 2;
+                const normalizedDistance = distanceFromCenter / viewportHeight;
+                const isMobileViewport = window.innerWidth <= 900;
+                const maxOffset = isMobileViewport ? 84 : 120;
+                const strength = isMobileViewport ? 108 : 150;
+                const yOffset = Math.max(-maxOffset, Math.min(maxOffset, -normalizedDistance * strength));
+
+                dp3ParallaxImage.style.setProperty('--dp3-parallax-y', `${yOffset}px`);
+                isDp3Ticking = false;
+            };
+
+            const requestDp3ParallaxUpdate = () => {
+                if (!isDp3Ticking) {
+                    window.requestAnimationFrame(updateDp3Parallax);
+                    isDp3Ticking = true;
+                }
+            };
+
+            requestDp3ParallaxUpdate();
+            window.addEventListener('scroll', requestDp3ParallaxUpdate, { passive: true });
+            window.addEventListener('resize', requestDp3ParallaxUpdate);
+        }
+
+        const socialOrbit = document.querySelector('.case-study-social-orbit');
+
+        if (socialOrbit && !reducedMotionQuery.matches) {
+            const triggerOrbitBurst = () => {
+                socialOrbit.classList.remove('is-orbit-active');
+                void socialOrbit.offsetWidth;
+                socialOrbit.classList.add('is-orbit-active');
+            };
+
+            const socialOrbitObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        triggerOrbitBurst();
+                    }
+                });
+            }, {
+                threshold: 0.33,
+                rootMargin: '0px 0px -8% 0px'
+            });
+
+            socialOrbitObserver.observe(socialOrbit);
+        } else if (socialOrbit) {
+            socialOrbit.classList.add('is-orbit-active');
+        }
+    </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 title: Welcome to Millennial Marketing
 slug: welcome-to-millennial-marketing
-date: 2026-08-07
+date: 2026-08-01
 description: A place for thoughtful ideas, creative perspective, and the stories behind the work.
 author: Millennial Marketing Agency
 featuredImage: design-assets/Links/KVP_3444-2.jpg

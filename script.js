@@ -139,6 +139,31 @@ document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
     observer.observe(el);
 });
 
+// Optional card-level navigation for featured work cards.
+document.querySelectorAll('[data-card-link]').forEach((card) => {
+    const target = card.getAttribute('data-card-link');
+    if (!target) {
+        return;
+    }
+
+    card.addEventListener('click', (event) => {
+        if (event.target.closest('a, button')) {
+            return;
+        }
+
+        window.location.href = target;
+    });
+
+    card.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') {
+            return;
+        }
+
+        event.preventDefault();
+        window.location.href = target;
+    });
+});
+
 // Keep autoplay videos looping smoothly across mobile/browser pause behaviors.
 const autoplayVideos = Array.from(document.querySelectorAll('video[autoplay]'));
 
@@ -440,4 +465,102 @@ if (clientsColumns && clientsViewMoreButton) {
         clientsViewMoreButton.setAttribute('aria-expanded', String(willExpand));
         clientsViewMoreButton.textContent = willExpand ? 'View Less' : 'View More';
     });
+}
+
+// Keep leadership profile blocks equal height on desktop for cleaner alignment.
+const leadershipBlocks = Array.from(document.querySelectorAll('.team-leadership .leadership-feature'));
+if (leadershipBlocks.length > 1) {
+    const leadershipDesktopQuery = window.matchMedia('(min-width: 901px)');
+
+    const syncLeadershipBlockHeights = () => {
+        leadershipBlocks.forEach((block) => {
+            block.style.minHeight = '';
+        });
+
+        if (!leadershipDesktopQuery.matches) {
+            return;
+        }
+
+        let tallestBlockHeight = 0;
+        leadershipBlocks.forEach((block) => {
+            const measuredHeight = Math.ceil(block.getBoundingClientRect().height);
+            tallestBlockHeight = Math.max(tallestBlockHeight, measuredHeight);
+        });
+
+        leadershipBlocks.forEach((block) => {
+            block.style.minHeight = `${tallestBlockHeight}px`;
+        });
+    };
+
+    const scheduleLeadershipHeightSync = () => {
+        window.requestAnimationFrame(syncLeadershipBlockHeights);
+    };
+
+    scheduleLeadershipHeightSync();
+    window.addEventListener('resize', scheduleLeadershipHeightSync, { passive: true });
+    leadershipDesktopQuery.addEventListener('change', scheduleLeadershipHeightSync);
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(scheduleLeadershipHeightSync);
+    }
+}
+
+// Add parallax movement for the Different Perspectives transition section on desktop and mobile.
+const teamTransitionSection = document.querySelector('.team-transition');
+if (teamTransitionSection) {
+    const transitionMobileQuery = window.matchMedia('(max-width: 900px)');
+    const transitionReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const updateTeamTransitionParallax = () => {
+        if (transitionReducedMotionQuery.matches) {
+            teamTransitionSection.style.setProperty('--transition-parallax-y', '0px');
+            return;
+        }
+
+        const isMobile = transitionMobileQuery.matches;
+        const rect = teamTransitionSection.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        const offsetFromCenter = sectionCenter - viewportCenter;
+        const maxParallax = isMobile ? 95 : 80;
+        const parallaxSpeed = isMobile ? 0.17 : 0.14;
+        const parallaxY = Math.max(-maxParallax, Math.min(maxParallax, -offsetFromCenter * parallaxSpeed));
+        teamTransitionSection.style.setProperty('--transition-parallax-y', `${parallaxY}px`);
+    };
+
+    updateTeamTransitionParallax();
+    window.addEventListener('scroll', updateTeamTransitionParallax, { passive: true });
+    window.addEventListener('resize', updateTeamTransitionParallax, { passive: true });
+    transitionMobileQuery.addEventListener('change', updateTeamTransitionParallax);
+    transitionReducedMotionQuery.addEventListener('change', updateTeamTransitionParallax);
+}
+
+// Add parallax for the closing team image on both desktop and mobile.
+const teamCandidSection = document.querySelector('.team-candid-mosaic');
+if (teamCandidSection) {
+    const candidMobileQuery = window.matchMedia('(max-width: 900px)');
+    const candidReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const updateTeamCandidParallax = () => {
+        if (candidReducedMotionQuery.matches) {
+            teamCandidSection.style.setProperty('--candid-parallax-y', '0px');
+            return;
+        }
+
+        const isMobile = candidMobileQuery.matches;
+        const rect = teamCandidSection.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const viewportCenter = window.innerHeight / 2;
+        const offsetFromCenter = sectionCenter - viewportCenter;
+        const maxParallax = isMobile ? 120 : 85;
+        const parallaxSpeed = isMobile ? 0.28 : 0.18;
+        const parallaxY = Math.max(-maxParallax, Math.min(maxParallax, -offsetFromCenter * parallaxSpeed));
+        teamCandidSection.style.setProperty('--candid-parallax-y', `${parallaxY}px`);
+    };
+
+    updateTeamCandidParallax();
+    window.addEventListener('scroll', updateTeamCandidParallax, { passive: true });
+    window.addEventListener('resize', updateTeamCandidParallax, { passive: true });
+    candidMobileQuery.addEventListener('change', updateTeamCandidParallax);
+    candidReducedMotionQuery.addEventListener('change', updateTeamCandidParallax);
 }
