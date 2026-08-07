@@ -127,6 +127,23 @@ function extractTextFromOpenAI(responseJson) {
     return choice && choice.message && choice.message.content ? choice.message.content.trim() : '';
 }
 
+function parseJsonFromModelText(text) {
+    const normalized = String(text || '').trim();
+    if (!normalized) {
+        throw new Error('Model returned empty JSON payload.');
+    }
+
+    try {
+        return JSON.parse(normalized);
+    } catch {
+        const fencedMatch = normalized.match(/```json\s*([\s\S]*?)```/i) || normalized.match(/```\s*([\s\S]*?)```/i);
+        if (fencedMatch && fencedMatch[1]) {
+            return JSON.parse(fencedMatch[1].trim());
+        }
+        throw new Error('Unable to parse JSON from model response.');
+    }
+}
+
 async function loadCalendar() {
     const source = await fs.readFile(calendarPath, 'utf8');
     return JSON.parse(source);
@@ -239,7 +256,61 @@ async function createEditorialPass(topic, draftMarkdown) {
     }
 
     const text = extractTextFromOpenAI(await response.json());
-    return JSON.parse(text);
+    return parseJsonFromModelText(text);
+}
+
+async function createAnthropicEditorialPass(topic, draftMarkdown) {
+    if (!process.env.ANTHROPIC_API_KEY || !process.env.ANTHROPIC_MODEL) {
+        throw new Error('ANTHROPIC_API_KEY and ANTHROPIC_MODEL are required for Anthropic editorial generation.');
+    }
+
+    const prompt = `You are the editorial QA pass for Millennial Marketing Agency. Rewrite the supplied blog post for luxury-but-approachable brand voice, clearer structure, practical specificity, and SEO discipline.
+
+Return valid JSON with this exact shape:
+{
+  "title": "...",
+  "description": "...",
+  "tags": ["tag 1", "tag 2"],
+  "bodyMarkdown": "..."
+}
+
+Constraints:
+- Description must be 140 to 160 characters.
+- Tags must be 2 to 4 short phrases.
+- bodyMarkdown must not contain frontmatter.
+- End with a soft consultation CTA.
+
+Topic metadata:
+${JSON.stringify(topic, null, 2)}
+
+Draft article:
+${draftMarkdown}`;
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'x-api-key': process.env.ANTHROPIC_API_KEY,
+            'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({
+            model: process.env.ANTHROPIC_MODEL,
+            max_tokens: 2400,
+            messages: [
+                {
+                    role: 'user',
+                    content: prompt
+                }
+            ]
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error(`Anthropic editorial request failed with ${response.status}`);
+    }
+
+    const text = extractTextFromAnthropic(await response.json());
+    return parseJsonFromModelText(text);
 }
 
 async function selectNextTopic(calendar) {
@@ -266,7 +337,13 @@ async function main() {
         console.warn(`Anthropic draft failed (${anthropicError.message}). Falling back to OpenAI draft generation.`);
         draftMarkdown = await createOpenAIDraft(nextTopic);
     }
-    const editorialPass = await createEditorialPass(nextTopic, draftMarkdown);
+    let editorialPass;
+    try {
+        editorialPass = await createEditorialPass(nextTopic, draftMarkdown);
+    } catch (openAiError) {
+        console.warn(`OpenAI editorial pass failed (${openAiError.message}). Falling back to Anthropic editorial generation.`);
+        editorialPass = await createAnthropicEditorialPass(nextTopic, draftMarkdown);
+    }
     validateEditorialOutput(nextTopic, editorialPass);
     const slug = nextTopic.slug || slugify(editorialPass.title || nextTopic.topic);
     const fileName = `${todayIsoDate()}-${slug}.md`;
