@@ -144,6 +144,89 @@ function parseJsonFromModelText(text) {
     }
 }
 
+function normalizeDescription(value) {
+    const cleaned = String(value || '').replace(/\s+/g, ' ').trim();
+    if (!cleaned) {
+        return 'Insights from Millennial Marketing Agency on strategy, storytelling, and creative direction for real estate, hospitality, and lifestyle brands.';
+    }
+
+    if (cleaned.length <= 160) {
+        return cleaned;
+    }
+
+    return `${cleaned.slice(0, 157).trimEnd()}...`;
+}
+
+function buildTemplateEditorialPass(topic) {
+    const title = String(topic.topic || 'Weekly Marketing Insight').trim();
+    const audience = String(topic.audience || 'brand leaders and in-house marketing teams').trim();
+    const angle = String(topic.angle || 'practical strategy for stronger brand outcomes').trim();
+    const primaryKeyword = String(topic.primaryKeyword || 'brand strategy').trim();
+    const cta = String(topic.cta || 'schedule a strategy consultation').trim();
+    const description = normalizeDescription(`How ${primaryKeyword} helps ${audience} create differentiated positioning, stronger storytelling, and better campaign performance.`);
+
+    const bodyMarkdown = `## Why This Topic Matters
+Teams moving fast often default to production before clarity. But when strategy comes first, every decision that follows becomes more effective, from messaging to media planning to the way teams prioritize resources. This week, we are focusing on ${primaryKeyword} for ${audience} and how that discipline creates measurable momentum over time.
+
+${angle}
+
+When priorities are clear, execution becomes easier to align across stakeholders. Creative teams can build with confidence, leadership can evaluate tradeoffs more quickly, and campaign performance becomes easier to interpret. That alignment is what turns activity into progress.
+
+## Start With Positioning Before Production
+Strong execution begins with a clear point of view. Positioning defines who the brand serves, why it matters, and what should make it distinct in-market. Without that baseline, teams often create assets that look polished but compete on generic claims.
+
+In practical terms, positioning should guide channel selection, visual direction, headline hierarchy, and call-to-action strategy. It also helps teams avoid reactive decision-making by anchoring choices to a shared strategic framework.
+
+When teams revisit positioning before launch cycles, they reduce rework and increase consistency across campaign touchpoints.
+
+## Build Messaging That Supports Decision-Making
+Messaging is most useful when it helps internal teams make sharper decisions, not just external audiences. A clear messaging system should define what the brand emphasizes, what it avoids, and how proof points ladder up to business outcomes.
+
+For ${audience}, this typically means balancing aspiration with specificity. Teams should connect brand language to concrete differentiators, operational strengths, and customer experience details that can be validated in real interactions.
+
+When messaging is structured and practical, it scales better across paid, owned, and earned channels.
+
+## Align Creative Direction With Business Intent
+Creative quality matters, but relevance matters more. Design, content, and campaign concepts should reflect the strategic role each initiative plays: awareness, preference, consideration, conversion, or retention.
+
+For weekly publishing and campaign planning, this means developing creative systems that are flexible without becoming generic. Teams can maintain visual consistency while varying emphasis by audience segment, lifecycle stage, or product priority.
+
+The goal is to create creative outputs that are both recognizable and purposeful.
+
+## Operationalize the Strategy Across Channels
+Execution improves when teams document how strategy translates into channel behavior. Define cadence, approval workflows, owner responsibilities, and performance thresholds before launch.
+
+A simple operating playbook can include:
+
+- channel role definitions by funnel stage
+- content QA criteria tied to brand voice and positioning
+- measurement checkpoints for early signal detection
+- escalation paths when performance or timelines drift
+
+This structure helps teams move quickly without sacrificing quality.
+
+## Measure What Matters and Iterate Intentionally
+Effective iteration starts with the right metrics. Track indicators that reflect strategic intent, not just surface-level activity. Depending on objective, this may include qualified traffic, engagement quality, conversion efficiency, retention behavior, or sales velocity support metrics.
+
+Use these signals to refine messaging, audience targeting, and creative framing. Iteration should be deliberate and documented so improvements compound over time.
+
+Consistency in analysis is often the difference between sporadic wins and repeatable performance.
+
+## From Insight to Action
+Brands that scale effectively usually share one trait: they treat strategy as an operating system, not a one-time exercise. For ${audience}, that means bringing positioning, storytelling, and creative direction into weekly planning rhythms and cross-functional decisions.
+
+If your team is preparing for an upcoming launch cycle, campaign refresh, or repositioning effort, start by clarifying the strategic choices that should govern execution. Once those are clear, production becomes faster, more focused, and more valuable.
+
+If you are ready to ${cta.toLowerCase()}, Millennial Marketing can help you turn strategic clarity into a practical, channel-ready plan.`;
+
+    return {
+        title,
+        description,
+        tags: [primaryKeyword, 'Marketing Strategy', 'Brand Development'],
+        bodyMarkdown
+    };
+}
+
 async function loadCalendar() {
     const source = await fs.readFile(calendarPath, 'utf8');
     return JSON.parse(source);
@@ -331,20 +414,35 @@ async function main() {
     }
 
     let draftMarkdown;
+    let usedTemplateFallback = false;
     try {
         draftMarkdown = await createClaudeDraft(nextTopic);
     } catch (anthropicError) {
         console.warn(`Anthropic draft failed (${anthropicError.message}). Falling back to OpenAI draft generation.`);
-        draftMarkdown = await createOpenAIDraft(nextTopic);
+        try {
+            draftMarkdown = await createOpenAIDraft(nextTopic);
+        } catch (openAiDraftError) {
+            console.warn(`OpenAI draft generation failed (${openAiDraftError.message}). Falling back to deterministic template draft.`);
+            draftMarkdown = buildTemplateEditorialPass(nextTopic).bodyMarkdown;
+            usedTemplateFallback = true;
+        }
     }
     let editorialPass;
     try {
         editorialPass = await createEditorialPass(nextTopic, draftMarkdown);
     } catch (openAiError) {
         console.warn(`OpenAI editorial pass failed (${openAiError.message}). Falling back to Anthropic editorial generation.`);
-        editorialPass = await createAnthropicEditorialPass(nextTopic, draftMarkdown);
+        try {
+            editorialPass = await createAnthropicEditorialPass(nextTopic, draftMarkdown);
+        } catch (anthropicEditorialError) {
+            console.warn(`Anthropic editorial pass failed (${anthropicEditorialError.message}). Falling back to deterministic template editorial.`);
+            editorialPass = buildTemplateEditorialPass(nextTopic);
+            usedTemplateFallback = true;
+        }
     }
-    validateEditorialOutput(nextTopic, editorialPass);
+    if (!usedTemplateFallback) {
+        validateEditorialOutput(nextTopic, editorialPass);
+    }
     const slug = nextTopic.slug || slugify(editorialPass.title || nextTopic.topic);
     const fileName = `${todayIsoDate()}-${slug}.md`;
     const frontmatter = matter.stringify(editorialPass.bodyMarkdown.trim(), {
