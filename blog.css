@@ -512,6 +512,10 @@
         letter-spacing: 0.015em;
     }
 
+    .blog-card-link {
+        margin-top: 1.25rem;
+    }
+
     .blog-post-meta {
         gap: 0.25rem 0.75rem;
         margin-bottom: 0.75rem;
