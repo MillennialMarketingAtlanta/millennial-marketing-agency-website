@@ -231,5 +231,325 @@
     "cta": "Encourage readers to create a better publishing rhythm for the next quarter",
     "angle": "Show how editorial planning can connect strategic priorities to audience needs and commercial outcomes.",
     "status": "queued"
+  },
+  {
+    "topic": "Why naming a real estate development is a brand decision, not a marketing one",
+    "primaryKeyword": "real estate development naming",
+    "audience": "developers and project leads",
+    "cta": "Encourage a naming strategy conversation before launch",
+    "angle": "Show how a name sets the tone for every audience interaction and should be driven by positioning, not trends.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to build trust with luxury buyers before the first conversation",
+    "primaryKeyword": "luxury buyer trust",
+    "audience": "luxury residential sales teams and developers",
+    "cta": "Invite readers to evaluate how their brand presence builds buyer confidence",
+    "angle": "Explain how a polished, consistent brand experience primes trust before any direct sales interaction.",
+    "status": "queued"
+  },
+  {
+    "topic": "The difference between brand awareness and brand preference",
+    "primaryKeyword": "brand awareness vs brand preference",
+    "audience": "founders, executives, and marketing directors",
+    "cta": "Encourage a strategic conversation about how the brand is being perceived versus remembered",
+    "angle": "Show why being known is not enough and how brands can move audiences toward preference and loyalty.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why hospitality operators should think like brand builders",
+    "primaryKeyword": "hospitality branding",
+    "audience": "hospitality operators and lifestyle brand leaders",
+    "cta": "Invite readers to explore how a brand-first mindset can elevate the guest experience",
+    "angle": "Show how hospitality businesses that invest in brand clarity attract more loyal, higher-value guests.",
+    "status": "queued"
+  },
+  {
+    "topic": "How color and typography shape first impressions in real estate marketing",
+    "primaryKeyword": "real estate brand design",
+    "audience": "developers and in-house marketing teams",
+    "cta": "Encourage readers to review their visual identity with a brand strategy lens",
+    "angle": "Explain how visual language communicates credibility and personality before a single word is read.",
+    "status": "queued"
+  },
+  {
+    "topic": "What makes a brand feel timeless instead of trendy",
+    "primaryKeyword": "timeless brand design",
+    "audience": "founders and brand leaders in premium markets",
+    "cta": "Invite readers to evaluate whether their brand is built for longevity or just the current moment",
+    "angle": "Explore the design and messaging principles that help premium brands stay relevant across market cycles.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to use brand storytelling to support investor confidence",
+    "primaryKeyword": "real estate investor relations branding",
+    "audience": "developers and asset managers",
+    "cta": "Encourage readers to align their investor narrative with their brand story",
+    "angle": "Show how a clear, confident brand narrative can make a development more compelling to capital partners.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why the sales center experience is a brand opportunity most developers miss",
+    "primaryKeyword": "real estate sales center design",
+    "audience": "residential developers and sales teams",
+    "cta": "Invite readers to discuss how their sales environment reflects the brand promise",
+    "angle": "Explain how the physical and experiential design of a sales center should reinforce the project's brand story.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to position a boutique hotel or resort against larger chains",
+    "primaryKeyword": "boutique hotel branding",
+    "audience": "boutique hospitality operators and independent hotel owners",
+    "cta": "Encourage readers to explore a differentiation strategy built around character and experience",
+    "angle": "Show how independent properties can win by leaning into specificity, personality, and brand depth.",
+    "status": "queued"
+  },
+  {
+    "topic": "The strategic role of a brand style guide in a growing company",
+    "primaryKeyword": "brand style guide strategy",
+    "audience": "marketing leads and brand managers",
+    "cta": "Invite readers to assess whether their brand guidelines are clear enough to scale",
+    "angle": "Explain how a well-built style guide protects brand equity and speeds up production without losing consistency.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why luxury brands should resist the urge to explain too much",
+    "primaryKeyword": "luxury brand messaging restraint",
+    "audience": "luxury residential and hospitality brands",
+    "cta": "Encourage a brand message audit focused on clarity and restraint",
+    "angle": "Show how premium brands communicate confidence through what they choose not to say as much as what they do.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to align marketing strategy with the development timeline",
+    "primaryKeyword": "real estate development marketing timeline",
+    "audience": "developers and project marketers",
+    "cta": "Invite readers to map their brand and marketing activity to each stage of the development lifecycle",
+    "angle": "Show how matching marketing intensity to development milestones reduces waste and builds sustained momentum.",
+    "status": "queued"
+  },
+  {
+    "topic": "What separates a brand refresh from a full rebrand",
+    "primaryKeyword": "brand refresh vs rebrand",
+    "audience": "executives and marketing directors",
+    "cta": "Encourage readers to evaluate which type of brand evolution fits their current situation",
+    "angle": "Clarify the strategic distinction between refreshing visual identity and rethinking brand positioning from the ground up.",
+    "status": "queued"
+  },
+  {
+    "topic": "How neighborhood context shapes development brand positioning",
+    "primaryKeyword": "neighborhood branding real estate",
+    "audience": "urban developers and place-based marketers",
+    "cta": "Invite readers to explore how location narrative can strengthen the development story",
+    "angle": "Explain how embedding a project in its neighborhood context creates a more believable and compelling brand.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why consistency in brand execution matters more than creative novelty",
+    "primaryKeyword": "brand consistency strategy",
+    "audience": "marketing directors and creative teams",
+    "cta": "Encourage readers to audit how consistently their brand shows up across every channel",
+    "angle": "Make the case for reliability as a brand asset, showing how consistent execution builds trust over time.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to build a brand that attracts the right tenant mix",
+    "primaryKeyword": "mixed-use tenant branding",
+    "audience": "commercial real estate developers and asset managers",
+    "cta": "Invite readers to consider how their brand story shapes leasing conversations",
+    "angle": "Show how a well-positioned mixed-use brand attracts tenants that strengthen the overall project narrative.",
+    "status": "queued"
+  },
+  {
+    "topic": "What high-performing real estate brands do differently in digital",
+    "primaryKeyword": "real estate digital marketing strategy",
+    "audience": "developers and residential sales teams",
+    "cta": "Encourage readers to evaluate how their digital presence supports the brand",
+    "angle": "Identify the specific digital habits — content, design, and distribution — that separate strong real estate brands from average ones.",
+    "status": "queued"
+  },
+  {
+    "topic": "The role of copywriting in a premium brand experience",
+    "primaryKeyword": "brand copywriting strategy",
+    "audience": "brand teams, founders, and marketing leads",
+    "cta": "Invite readers to review whether their copy reflects the quality of their brand",
+    "angle": "Show how thoughtful, precise language is a brand asset that shapes perception at every touchpoint.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to create a sense of arrival in real estate and hospitality marketing",
+    "primaryKeyword": "experiential real estate marketing",
+    "audience": "developers, architects, and hospitality brands",
+    "cta": "Encourage a conversation about how the first impression of a project can be shaped through brand and design",
+    "angle": "Explore how the concept of arrival — physical and emotional — can be designed into the brand experience.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why category leadership requires a point of view, not just a product",
+    "primaryKeyword": "category leadership brand strategy",
+    "audience": "founders and executives in competitive markets",
+    "cta": "Invite readers to articulate the point of view behind their brand",
+    "angle": "Show how leading brands shape conversations in their category rather than responding to them.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to make your brand feel local without limiting its ambition",
+    "primaryKeyword": "local brand positioning",
+    "audience": "regional developers, restaurateurs, and lifestyle brands",
+    "cta": "Encourage readers to find the balance between local resonance and broader appeal",
+    "angle": "Explain how grounding a brand in place and community can actually increase its appeal to a wider audience.",
+    "status": "queued"
+  },
+  {
+    "topic": "What the best real estate brands get right about emotional positioning",
+    "primaryKeyword": "emotional brand positioning real estate",
+    "audience": "developers and residential sales directors",
+    "cta": "Invite readers to explore how their brand speaks to buyer emotion",
+    "angle": "Show how leading residential brands connect with aspiration, identity, and belonging rather than just features.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to communicate a price premium through brand positioning",
+    "primaryKeyword": "premium pricing brand strategy",
+    "audience": "luxury and premium market brands",
+    "cta": "Encourage a conversation about how brand positioning supports value perception",
+    "angle": "Explain how brand clarity and quality of presentation support a buyer's willingness to pay more.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why the best brand launches feel inevitable in retrospect",
+    "primaryKeyword": "brand launch strategy",
+    "audience": "marketing leaders and development teams",
+    "cta": "Invite readers to design their next launch with intention and strategic clarity",
+    "angle": "Explore what makes a launch feel earned — the preparation, positioning, and timing that precede a memorable introduction.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to use video to tell a brand story that static content cannot",
+    "primaryKeyword": "brand video storytelling",
+    "audience": "real estate and hospitality brands investing in content",
+    "cta": "Encourage readers to consider how video can deepen the brand narrative",
+    "angle": "Show how motion, voice, and pacing can communicate atmosphere, intention, and lifestyle more powerfully than photography alone.",
+    "status": "queued"
+  },
+  {
+    "topic": "What wellness-focused real estate brands need to get right",
+    "primaryKeyword": "wellness real estate branding",
+    "audience": "wellness-focused developers and lifestyle residential brands",
+    "cta": "Invite readers to evaluate whether their brand story matches the wellness promise",
+    "angle": "Show how wellness brands must go beyond amenity lists to communicate a coherent lifestyle philosophy.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to structure a brand brief that actually guides creative work",
+    "primaryKeyword": "brand brief strategy",
+    "audience": "marketing directors and agency partners",
+    "cta": "Encourage readers to refine their briefing process for more aligned creative outcomes",
+    "angle": "Explain what separates a useful brand brief from a generic one and how clarity in the brief improves every deliverable.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why the best hospitality brands make guests feel seen",
+    "primaryKeyword": "hospitality guest experience branding",
+    "audience": "hospitality operators and experience designers",
+    "cta": "Invite readers to explore how personalization and attentiveness can be built into the brand experience",
+    "angle": "Show how brands that communicate genuine care and attention create stronger loyalty than those focused only on aesthetics.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to build a brand that performs across multiple properties or locations",
+    "primaryKeyword": "multi-location brand strategy",
+    "audience": "multi-property developers and hospitality groups",
+    "cta": "Encourage a conversation about brand architecture across a growing portfolio",
+    "angle": "Explain how a strong master brand can unify a portfolio while allowing individual properties to express their character.",
+    "status": "queued"
+  },
+  {
+    "topic": "What makes a development feel curated rather than constructed",
+    "primaryKeyword": "curated real estate brand",
+    "audience": "design-led developers and luxury residential brands",
+    "cta": "Invite readers to evaluate the curation signals in their current brand experience",
+    "angle": "Show how deliberate editorial choices — in design, messaging, and experience — create a feeling of care and intentionality.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to approach brand strategy for a mixed-income or attainable housing development",
+    "primaryKeyword": "attainable housing branding",
+    "audience": "public-private developers and mission-driven real estate teams",
+    "cta": "Encourage readers to think about brand dignity and aspiration for all buyer types",
+    "angle": "Explore how attainable housing can be positioned with pride, warmth, and clarity without overclaiming luxury.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why great brands have an opinion about their audience",
+    "primaryKeyword": "audience-led brand strategy",
+    "audience": "founders and marketing strategists",
+    "cta": "Invite readers to articulate their brand's point of view on the people it serves",
+    "angle": "Show how knowing and respecting your audience at a deep level creates more resonant, effective brand communication.",
+    "status": "queued"
+  },
+  {
+    "topic": "The strategic value of restraint in luxury marketing",
+    "primaryKeyword": "luxury marketing restraint",
+    "audience": "luxury brand leaders and premium market marketers",
+    "cta": "Encourage readers to evaluate where their marketing could do more with less",
+    "angle": "Explain how deliberate simplicity — fewer words, quieter design, selective distribution — often signals premium quality more effectively.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to develop a brand narrative that survives a leadership change",
+    "primaryKeyword": "brand narrative resilience",
+    "audience": "executives and institutional investors",
+    "cta": "Invite readers to evaluate whether the brand story lives in the organization or just the founder",
+    "angle": "Show how documenting and operationalizing a brand narrative protects continuity through personnel and ownership transitions.",
+    "status": "queued"
+  },
+  {
+    "topic": "What real estate buyers actually look for on a development website",
+    "primaryKeyword": "real estate website buyer behavior",
+    "audience": "developers and digital marketing teams",
+    "cta": "Encourage readers to audit their website against buyer intent and decision patterns",
+    "angle": "Translate buyer research behaviors into actionable website content and experience recommendations.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to earn media coverage for a real estate or hospitality launch",
+    "primaryKeyword": "real estate PR strategy",
+    "audience": "developers and hospitality operators planning a launch",
+    "cta": "Invite readers to build a media strategy into their next launch plan",
+    "angle": "Show what makes a project newsworthy and how brand story and timing influence editorial interest.",
+    "status": "queued"
+  },
+  {
+    "topic": "Why the most effective brand strategies start with listening",
+    "primaryKeyword": "brand strategy research",
+    "audience": "founders and brand strategists",
+    "cta": "Encourage readers to invest in audience and market insight before building brand assets",
+    "angle": "Make the case for research and discovery as the foundation of brand work rather than an afterthought.",
+    "status": "queued"
+  },
+  {
+    "topic": "How signage and wayfinding can reinforce brand identity in a development",
+    "primaryKeyword": "environmental brand design",
+    "audience": "developers, architects, and brand experience teams",
+    "cta": "Invite readers to consider how physical brand touchpoints contribute to the overall experience",
+    "angle": "Show how environmental design elements like signage, materials, and wayfinding extend brand identity into the built environment.",
+    "status": "queued"
+  },
+  {
+    "topic": "What the most successful real estate brands have in common",
+    "primaryKeyword": "successful real estate branding",
+    "audience": "developers and marketing leaders looking for competitive insight",
+    "cta": "Encourage readers to evaluate their brand against the common traits of market leaders",
+    "angle": "Identify the shared strategic and creative characteristics of real estate brands that consistently outperform the market.",
+    "status": "queued"
+  },
+  {
+    "topic": "How to evaluate whether your brand is working",
+    "primaryKeyword": "brand performance measurement",
+    "audience": "marketing directors and leadership teams",
+    "cta": "Invite readers to establish a framework for measuring brand health",
+    "angle": "Offer practical signals — from qualitative feedback to sales patterns — that help teams understand whether their brand is resonating.",
+    "status": "queued"
   }
 ]
