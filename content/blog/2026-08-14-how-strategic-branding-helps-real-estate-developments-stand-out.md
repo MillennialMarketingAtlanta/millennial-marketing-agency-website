@@ -1,9 +1,10 @@
 ---
 title: How Strategic Branding Helps Real Estate Developments Stand Out
 slug: strategic-branding-real-estate-developments-stand-out
-date: 2026-08-14
+date: 2026-08-10
 description: How thoughtful positioning, storytelling and design transform a property into a brand buyers remember.
 author: Millennial Marketing Agency
+featuredImage: assets/case-studies/1105-west-peachtree/01-40-west-interactive-building-r00-1.jpg
 tags:
   - Brand Strategy
   - Real Estate Marketing
