@@ -8,7 +8,6 @@
     "build": "node scripts/build-blog.js",
     "blog:draft": "node scripts/generate-weekly-draft.js",
     "blog:draft:dry-run": "node scripts/generate-weekly-draft.js --dry-run",
-    "blog:automate": "node scripts/automate-blog-publishing.js",
     "start": "python -m http.server 8000"
   },
   "keywords": [

@@ -4,7 +4,6 @@ slug: what-luxury-real-estate-brands-can-learn-from-hospitality-marketing
 date: '2026-08-07'
 description: How hospitality-caliber thinking can sharpen the way luxury real estate brands position, present, and connect with the buyers who matter most.
 author: Millennial Marketing Agency
-featuredImage: assets/case-studies/waldorf-astoria/spa-for-two.jpg
 tags:
   - Luxury Real Estate Marketing
   - Brand Strategy
